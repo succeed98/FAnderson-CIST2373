@@ -1,0 +1,190 @@
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+
+
+/**
+ * Michael Arrey
+ * Java III
+ * I promise I wrote this code.
+ */
+public class customer {
+    
+   private String custFirstName;
+   private String custLastName;
+   private String custAddress;
+   private String custEmail;
+   private int custId;
+   private String custPassword;
+   
+   public customer(){
+   custFirstName = "";
+   custLastName = "";
+   custAddress = "";
+   custEmail = "";
+   custId = 0;
+   custPassword = "";
+   }
+   public customer(String firstName, String lastName, String address, String email, int Id, String password) {
+   
+   this.custFirstName = firstName;
+   this.custLastName = lastName;
+   this.custAddress = address;
+   this.custEmail = email;
+   this.custId = Id;
+   this.custPassword = password;
+   }
+   public String getFirstName(){
+       return custFirstName;
+   }
+   public String getLastName() {
+       return custLastName;
+   }
+   public String getAddress() {
+       return custAddress;
+   }
+   public String getEmail() {
+       return custEmail;
+   }
+   public int getId() {
+       return custId;
+   }
+   public String getPassword() {
+       return custPassword;
+   }
+   public void setFirstName(String firstName) {
+       this.custFirstName = firstName;
+   }
+   public void setLastName(String lastName) {
+        this.custLastName = lastName;
+   }
+   public void setAddress(String address) {
+       this.custAddress = address;
+   }
+   public void setEmail(String email) {
+       this.custEmail = email;
+   }
+   public void setId(int Id) {
+       this.custId = Id;
+   }
+   public void setPassword(String password) {
+       this.custPassword = password;
+   }
+   public void selectDB(int Id) {
+      custId = Id;
+   
+        try{
+        
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\tabe-ebob\\Desktop\\chattatech\\fall20\\javaIII\\ChattBankMDB.mdb");
+           
+            Statement statement = con.createStatement();
+            
+          ResultSet rs = statement.executeQuery("Select * from Customers where CustID = " + Id);
+				
+          rs.next();
+          custPassword = rs.getString(2);
+          custFirstName = rs.getString(3);
+          custLastName = rs.getString(4);
+          custAddress = rs.getString(5);
+          custEmail = rs.getString(6);
+          con.close();   
+        }
+        catch(Exception e) {
+            System.out.println(e);
+        }
+   
+   }
+   public void insertDB(String firstName, String lastName, String address, String email, int Id, String password) {
+       setFirstName(firstName);
+       setLastName(lastName);
+       setAddress(address);
+       setEmail(email);
+       setId(Id);
+       setPassword(password);
+       
+       try {
+       
+           Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+           
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\tabe-ebob\\Desktop\\chattatech\\fall20\\javaIII\\ChattBankMDB.mdb");
+           
+            Statement statement = con.createStatement();
+            
+            String value;
+            value ="Insert into Customers(CustID,CustFirstName,CustLastName,CustAddress,CustEmail,CustPassword) values("+getId()+","+
+					"'" +getFirstName() +"',"+
+                                        "'" +getLastName() +"',"+
+                                        "'" +getAddress() +"',"+
+					"'" +getEmail() +"',"+
+                                        "'" +getPassword()+"')";
+               System.out.println(value);
+                int check = statement.executeUpdate(value);
+               if(check == 1){
+                   System.out.println("value has been entered into database");
+                  
+               }else{
+                   System.out.println("Sorry could not insert value into database");
+                  
+               }
+               
+               con.close();
+           
+       }
+       catch(Exception e) {
+       
+           System.out.println(e);
+       }
+   }
+   public void deleteDB(int Id) {
+   
+       custId =Id;
+       try {
+       
+           Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+           
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\tabe-ebob\\Desktop\\chattatech\\fall20\\javaIII\\ChattBankMDB.mdb");
+           
+            Statement statement = con.createStatement();
+            
+            String value;
+            value = "delete * from Customers where CUSTID = '"+getId()+"'";
+            
+          
+               int check = statement.executeUpdate(value);
+               if(check == 1){
+                   System.out.println("delete successful");
+                  
+               }else{
+                   System.out.println("Sorry value could not be deleted at the moment");
+                  
+               }
+               
+               con.close();
+       }
+       catch(Exception e) {
+       
+           System.out.println(e);
+       }
+   }
+   public void display(){
+       
+        System.out.println("Customer ID: "+custId);
+        System.out.println("Customer Password: "+custPassword);
+        System.out.println("Customer First Name: "+custFirstName);
+        System.out.println("Customer Last Name: "+custLastName);
+        System.out.println("Customer Address: "+custAddress);
+        System.out.println("Customer Email "+custEmail); 
+    }
+   public static void main(String[]args) {
+       customer cust1 = new customer();
+       cust1.selectDB(3005);
+       cust1.insertDB("mike", "rey", "740 crossfire ridge nw", "rey@gmail.com", 7, "9111");
+       cust1.deleteDB(7);
+       cust1.display();
+   }
+}

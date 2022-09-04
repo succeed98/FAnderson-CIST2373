@@ -1,0 +1,83 @@
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Michael Arrey
+ * Java III
+ * 03/09/2020
+ * I promise I wrote this code myself.
+ */
+@WebServlet(urlPatterns = {"/loginServletDB"})
+public class loginServletDB extends HttpServlet {
+
+
+   
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        
+        PrintWriter out = response.getWriter();
+        String id, pword;
+        id = request.getParameter("cusId");
+        pword = request.getParameter("password");
+        
+         System.out.println("testing server: " + id);
+         System.out.println("testing server: " + pword);
+         
+        try{
+            
+        //Load Driver 
+        Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+        
+        //Get Connection 
+	Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\tabe-ebob\\Desktop\\chattatech\\fall20\\javaIII");
+        
+        PreparedStatement pstatement = con.prepareStatement("select * from Customers");
+           pstatement.setString(1,id);
+           pstatement.setString(2,pword);
+           
+        ResultSet rs= pstatement.executeQuery();
+        boolean check = rs.next(); //check represents each valid entry found in database.
+           
+        //if statement to check through database.
+           if(check) { // if a valid entry is found, execute statement below.
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet loginServletDB</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Valid User...</h1>");
+            out.println("</body>");
+            out.println("</html>");
+            }
+            else {
+             out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet loginServletDB</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Invalid User...</h1>");
+            out.println("</body>");
+            out.println("</html>");
+            }
+        }
+        catch(Exception e) {
+        
+            System.out.println(e);
+        }
+    }
+
+    

@@ -1,0 +1,64 @@
+<%-- 
+    Document   : displayAccount
+    Created on : 09/19/2021
+    Author     : FAREEDA ANDERSON
+--%>  
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import= "Chattpackage.account" %>
+<%@page import= "Chattpackage.customer" %>
+<%@page import= "Chattpackage.accountList" %>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>ChattBank</title>
+         <script type="text/javascrpt">
+            </script>
+    </head>
+    <body style="background-image: url(chattbank.jpg);  background-repeat: no-repeat;  background-size: cover;">
+            <div id="bankId">
+                <h1 style="color:brown">Welcome to <b>ChattBank</b></h1>
+            <p style="color: blue;">Banking as you imagine it</p>
+            </div>
+        
+         <% 
+                                        customer c1;
+                                        c1 = (customer)session.getAttribute("c1");
+                                        c1.Display();
+                                        account a1 = null;
+                                        for(int x=0; x<c1.aList.count; x++){
+                                         a1= c1.aList.accountList.get(x);
+                                        }
+          %>
+            <br> <br> <br> <br>
+            <h3> <%= c1.getFirstName()%> </h3>
+            <h3><%= c1.getLastName()%> </h3>
+            
+       <form action="accountLookup" method="get">
+                
+            <table>
+        <tr>
+            <td>Account Number</td>
+            <td><input type="text" name="accTb" value="<%=a1.getAccNo()%>"</td>
+        </tr><br>
+        <tr>
+            <td>Customer Id</td>
+            <td><input type="text" name="cId" value="<%=a1.getAccId()%>"</td>
+        </tr><br>
+        <tr>
+            <td>Account Type</td>
+            <td><input type="text" name="accType" value="<%=a1.getAcType()%>"</td>
+        </tr><br>
+        <tr>
+            <td>Account Balance</td>
+            <td><input type="text" name="accBal" value="<%=a1.getBalance()%>"</td>
+        </tr><br>
+        <tr>
+            <td><input type="submit" name="submitBtn" value="Submit"</td>
+            <td><input type="reset" name="resetBtn" value="Clear"</td>
+        </tr> 
+                
+    </table>
+            </form>
+            
+    </body>
+</html>

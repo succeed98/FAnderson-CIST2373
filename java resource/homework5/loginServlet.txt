@@ -1,0 +1,99 @@
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import static java.lang.System.out;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+/**
+ * FAREEDA ANDERSON
+ * Java III
+ * I promise I wrote this code myself.
+ */
+@WebServlet(urlPatterns = {"/loginServlet"})
+public class loginServlet extends HttpServlet {
+
+    
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException, SQLException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            
+            String id, pword;
+            id = request.getParameter("cusId");
+            pword = request.getParameter("password"); 
+            
+            System.out.println("testing server: " + id);
+            System.out.println("testing server: " + pword);
+            
+            customer c1;
+            c1 = new customer();
+            c1.selectDB(Integer.parseInt(id));
+            c1.display();
+            
+            String usrDbLog = pword;
+            String usrDbPass = c1.getPassword();
+            
+            HttpSession session;
+            session = request.getSession();
+            session.setAttribute("c1",c1);
+            
+          
+              if(usrDbLog.equals(usrDbPass)){
+                System.out.println("Valid Login!");
+                RequestDispatcher rs;
+                rs = request.getRequestDispatcher("/showAccount.jsp");
+                rs.forward(request, response);
+            }else{
+                System.out.println("Invalid Login!");
+                RequestDispatcher rs;
+                rs = request.getRequestDispatcher("/error.jsp");
+                rs.forward(request, response);
+            }   
+        }
+        catch(Exception e){
+            System.out.println("Servlet encountered an Error!");
+            System.out.println(e);
+        }
+                finally {
+            System.out.println("LookupServlet Ending...");
+            out.close();
+        }
+        
+    }
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(loginServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(loginServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+   
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }
+}

@@ -1,0 +1,36 @@
+
+import java.util.ArrayList;
+
+
+/**
+ 
+ * FAREEDA ANDERSON
+ * Java III
+ * I promise I wrote this code myself.
+ */
+public class accountList {
+    
+    public ArrayList<account> accountList = new ArrayList<>();
+    public int count = 0;
+    
+    public void addAccount(account acct) {
+    
+        accountList.add(acct);
+        count++;
+    }
+    
+    public void display() {
+    
+         for(int i=0; i<count;i++){
+            accountList.get(i).display();
+         }
+    }
+    
+    public static void main(String[]args){
+        accountList account1 = new accountList();
+        account1.addAccount(new account(90011,9011,"CHK",5000.00));
+        account1.addAccount(new account(90012,9009,"SAV",1000.00));
+        account1.display();
+    }
+    
+}

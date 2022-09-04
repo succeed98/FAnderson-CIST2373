@@ -1,0 +1,36 @@
+
+<!--
+    Fnu Helgah
+    Java III
+    Lab1. 6/8/2021
+    I wrote this code myself.
+-->
+<html>
+    <head>
+        <title>chattbank</title>
+        <script type="text/javascrpt">
+            </script>
+
+        <body style="background-image: url(images/chattbank.jpg);  background-repeat: no-repeat;  background-size: cover;">
+            <div id="bankId">
+                <h1 style="color:brown">Welcome to <b>ChattBank</b></h1>
+            <p style="color: blue;">Banking as you imagine it</p>
+            </div>
+            <br> <br> <br> <br>
+            <div id="loginId">
+                <input type="text" placeholder="Account Number"> 
+                <br> <br>
+                <input type="text" placeholder="Customer ID">
+                <br> <br>
+                <input type="text" placeholder="Account Type">
+                <br> <br>
+                <input type="number" placeholder="Balance">
+                <br> <br>
+                <button type="submit" onclick="">Look Up</button>
+                <button type="reset" onclick="">Clear</button>
+            </div>
+            
+            
+        </body>
+    </head>
+</html>

@@ -1,0 +1,167 @@
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+
+
+
+/**
+ * Fnu Helgah
+ * Java III
+ * I promise I wrote this code.
+ */
+public class account {
+    
+   private int accNo;
+   private int custId;
+   private String accType;
+   private double balance;
+  
+   public account(){
+   accNo = 00;
+   custId = 0;;
+   accType = "";
+   balance = 00.00;
+   }
+   public account(int accNo, int Id, String accType, double balance) {
+   
+   this.accNo = accNo;
+    this.custId = Id;
+   this.accType = accType;
+   this.balance = balance;
+   }
+   public int getAccNo(){
+       return accNo;
+   }
+   public int getId() {
+       return custId;
+   }
+   public String getAccType() {
+       return accType;
+   }
+   public double getBalance() {
+       return balance;
+   }
+   public void setAccNo(int accNo) {
+       this.accNo = accNo;
+   }
+   public void setCustId(int Id) {
+        this.custId = Id;
+   }
+   public void setAccType(String accType) {
+       this.accType = accType;
+   }
+   public void setBalance(double balance) {
+       this.balance = balance;
+   }
+   public void setId(int Id) {
+       this.custId = Id;
+   }
+   public void selectDB(int acctNo) {
+      accNo = acctNo;
+   
+        try{
+        
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\tabe-ebob\\Desktop\\chattatech\\fall20\\javaIII\\ChattBankMDB.mdb");
+           
+            Statement statement = con.createStatement();
+            
+          ResultSet rs = statement.executeQuery("Select * from Accounts where AcctNo = " + acctNo);
+				
+          rs.next();
+          accNo = rs.getInt(1);
+          custId = rs.getInt(2);
+          accType = rs.getString(3);
+          balance = rs.getDouble(4);
+          con.close();   
+        }
+        catch(Exception e) {
+            System.out.println(e);
+        }
+   
+   }
+   public void insertDB(int accNo, int custId, String accType, double balance) {
+       setAccNo(accNo);
+       setCustId(custId);
+       setAccType(accType);
+       setBalance(balance);
+       try {
+       
+           Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+           
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\tabe-ebob\\Desktop\\chattatech\\fall20\\javaIII\\ChattBankMDB.mdb");
+           
+            Statement statement = con.createStatement();
+            
+            String value;
+            value ="Insert into Accounts(AcctNo,Cid,Type,Balance) values("+getAccNo()+","+
+					"'" +getId() +"',"+
+                                        "'" +getAccType() +"',"+
+                                        "'" +getBalance()+"')";
+               System.out.println(value);
+                int check = statement.executeUpdate(value);
+               if(check == 1){
+                   System.out.println("value has been entered into database");
+                  
+               }else{
+                   System.out.println("Sorry could not insert value into database");
+                  
+               }
+               
+               con.close();
+           
+       }
+       catch(Exception e) {
+       
+           System.out.println(e);
+       }
+   }
+   public void deleteDB(int Id) {
+   
+       custId =Id;
+       try {
+       
+           Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+           
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\tabe-ebob\\Desktop\\chattatech\\fall20\\javaIII\\ChattBankMDB.mdb");
+           
+            Statement statement = con.createStatement();
+            
+            String value;
+            value = "delete * from Accounts where Cid = '"+getId()+"'";
+            
+          
+               int check = statement.executeUpdate(value);
+               if(check == 1){
+                   System.out.println("delete successful");
+                  
+               }else{
+                   System.out.println("Sorry value could not be deleted at the moment");
+                  
+               }
+               
+               con.close();
+       }
+       catch(Exception e) {
+       
+           System.out.println(e);
+       }
+   }
+   public void display(){
+       
+        System.out.println("Customer ID: "+custId);
+        System.out.println("Customer Account Number: "+accNo);
+        System.out.println("Customer Account Type: "+accType);
+        System.out.println("Customer Account Balance: "+balance);
+   }
+   public static void main(String[]args) {
+       account account1 = new account();
+       account1.selectDB(90007);
+       account1.deleteDB(3004);
+       account1.display();
+   }
+}

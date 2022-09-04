@@ -1,0 +1,46 @@
+
+<!-- saved from url=(0058)file:///C:/Users/Georgina/Downloads/Cliffbank%20logib.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Login page</title>
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+      <script type="text/javascript">
+			function validateTxt() {
+				var a;
+				a=document.DataForm.Txt.value;
+				if(a>=3000) {
+					alert("Numbers must be between 3000 and 3999");
+					document.DataForm.Txt.value="";
+					document.DataForm.Txt.focus();
+					}
+				if(isNaN(a))
+					alert("Only allow numbers in this textbox");
+				if(a<4000)
+					alert("Numbers must be between 3000 and 3999");
+				if(a=="")
+					alert("You must enter a Valid Customer ID and Password");
+            }
+		</script>
+
+    </head>    
+    
+    <body>
+        <center><h1> <mark>Login into your CliffsBank account</mark> </h1></center>
+        <form action="http://localhost:8080/ChattBank/LoginServletDB" method="post">
+            <br><br><input type="submit" value="Login"><input type="reset" value="Clear"><table>
+                <tbody><tr>
+                   <td>Customer ID: <input type="text" name="ID" onblur="validateTxt()"> </td>
+                </tr>    
+                   
+                <tr>
+                   <td>Password: <input type="password" name="pwdUser" id="pwdUser" value="" placeholder="Enter Password" td=""> </td></tr>    
+                   
+                
+                
+            </tbody></table>    
+        </form>
+    
+
+
+</body></html>

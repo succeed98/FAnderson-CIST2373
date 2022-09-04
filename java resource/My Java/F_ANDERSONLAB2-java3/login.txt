@@ -1,0 +1,31 @@
+<%-- 
+    Document   : login
+    Created on : September 1, 2021
+    Author     : FAREEDA ANDERSON
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>ChattBank</title>
+    </head>
+    <body style="background-image: url(chattbank.jpg);  background-repeat: no-repeat;  background-size: cover;">
+            <div id="bankId">
+                <h1 style="color:brown">Welcome to <b>ChattBank</b></h1>
+            <p style="color: blue;">Banking as you imagine it</p>
+            </div>
+            <br> <br> <br> <br>
+            
+            <form action="loginServlet">
+                <div id="loginId">
+                    <input name="cusId" type="text" placeholder="Customer ID"> 
+                    <br> <br>
+                    <input name="password" type="password" placeholder="password">
+                    <br> <br>
+                    <button type="submit">login</button>
+                </div>
+            </form>
+    </body>
+</html>

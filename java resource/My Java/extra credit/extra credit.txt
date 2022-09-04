@@ -1,0 +1,49 @@
+name: Fnu Helgah
+lab: extra credit
+date:6/15/2021
+
+
+
+<html lang="en"><head>
+      <title>HLe_Login</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+      <script type="text/javascript">
+function validateTxt() {
+var a;
+a=document.DataForm.Txt.value;
+if(a>=3000) {
+alert("Numbers must be between 3000 and 3999");
+document.DataForm.Txt.value="";
+document.DataForm.Txt.focus();
+}
+if(isNaN(a))
+alert("Only allow numbers in this textbox");
+if(a<4000)
+alert("Numbers must be between 3000 and 3999");
+if(a=="")
+alert("You must enter a Valid Customer ID and Password");
+            }
+</script>
+
+    </head>    
+    
+    <body>
+        <center><h1>Chattbank Login</h1></center>
+        <form name="DataForm" action="http://localhost:3000">
+            <br><br><input type="submit" value="Login"><input type="reset" value="Clear"><table>
+                <tbody><tr>
+                    <td>Customer ID:</td>
+                    <td><input type="text" name="ID" onblur="validateTxt()"></td>
+                </tr>    
+                   
+                <tr>
+                    <td>Password: <input type="text"></td>
+                </tr>    
+                   
+                
+                
+            </tbody></table>    
+        </form>
+    

@@ -1,0 +1,63 @@
+
+<!--
+    Fnu Helgah
+    Java III
+    Lab1. 6/8/2021
+    I wrote this code myself.
+-->
+<html>
+    
+    <head>
+        <title>chattbank</title>
+        <script type="text/javascript">
+            function login() {
+            var customerId = document.getElementById("cusId"); //get user input for customer Id
+            var pword = document.getElementById("password"); //get user input for password
+
+            if(customerId.value == " ".trim() ||password.value == " ".trim()) { //trim() does not accept spaces as input
+
+                alert("please enter Customer ID and password");
+                return false; //stops user from having access if customer Id and password are not entered
+            }
+            else{
+
+                true;
+            }
+
+            if (customerId.value >=3000 && customerId.value <= 4000) {
+
+                alert("Validation Successful!");
+                return true;
+
+        }
+            else {
+
+            }
+            if(isNaN(customerId)) {
+                alert("Enter Customer ID between 3000 and 4000 and not a string");
+                return false; //return false stops user from moving to next page if Id is not entered appropriately 
+
+         } 
+        }
+            
+        </script>
+
+        <body style="background-image: url(images/chattbank.jpg);  background-repeat: no-repeat;  background-size: cover;">
+            <div id="bankId">
+                <h1 style="color:brown">Welcome to <b>ChattBank</b></h1>
+            <p style="color: blue;">Banking as you imagine it</p>
+            </div>
+            <br> <br> <br> <br>
+            
+            <form onsubmit= "return login();" action= "accountLookUp.html">
+                <div id="loginId">
+                    <input id="cusId" type="text" placeholder="Customer ID"> 
+                    <br> <br>
+                    <input id="password" type="password" placeholder="password">
+                    <br> <br>
+                    <button type="submit">login</button>
+                </div>
+            </form> 
+        </body>
+    </head>
+</html>
