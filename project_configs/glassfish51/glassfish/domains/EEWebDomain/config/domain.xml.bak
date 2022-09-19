@@ -51,7 +51,6 @@
   </resources>
   <servers>
     <server config-ref="server-config" name="server">
-      <application-ref ref="ChattBank" virtual-servers="server"></application-ref>
       <resource-ref ref="jdbc/__TimerPool"></resource-ref>
       <resource-ref ref="jdbc/__default"></resource-ref>
       <resource-ref ref="jdbc/sample"></resource-ref>
@@ -444,16 +443,5 @@
     <secure-admin-principal dn="CN=Muhyideens-MBP-instance,OU=GlassFish,O=Oracle Corporation,L=Santa Clara,ST=California,C=US"></secure-admin-principal>
   </secure-admin>
   <clusters></clusters>
-  <applications>
-    <application context-root="/ChattBank" object-type="user" directory-deployed="true" name="ChattBank" location="file:/Users/muhyideenelias/Documents/fareeda/chapter_3/ChattBank/build/web/">
-      <property name="archiveType" value="war"></property>
-      <property name="appLocation" value="file:/Users/muhyideenelias/Documents/fareeda/chapter_3/ChattBank/build/web/"></property>
-      <property name="defaultAppName" value="web"></property>
-      <property name="keepSessions" value="true"></property>
-      <module name="ChattBank">
-        <engine sniffer="security"></engine>
-        <engine sniffer="web"></engine>
-      </module>
-    </application>
-  </applications>
+  <applications></applications>
 </domain>

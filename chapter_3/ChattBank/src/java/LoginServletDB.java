@@ -1,8 +1,8 @@
 /*
     Author     : Fareeda Anderson
     Programme  : Java III
-    Document   : login
-    Created on : 04-Sep-2022, 10:50:05
+    Document   : LoginServletDB
+    Created on : 04-Sep-2022, 11:50:05
     I Promise I wrote this code
 */
 import java.io.IOException;
@@ -25,9 +25,9 @@ public class LoginServletDB extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             
-            String connURL = "/Users/muhyideenelias/Documents/fareeda/project_configs/database/ChattBankMDB.mdb";
+            String connURL = "/Users/fareeda/Documents/fareeda/project_configs/database/ChattBankMDB.mdb";
             String validate="";
-            boolean st = false;
+            boolean userExist = false;
             
             try {
                 Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
@@ -43,11 +43,11 @@ public class LoginServletDB extends HttpServlet {
                 ps.setString(1, customerId);
                 ps.setString(2, password);
                 
-                ResultSet rs = ps.executeQuery();
+                ResultSet result = ps.executeQuery();
                 
-                st=rs.next();
+                userExist=result.next();
                 
-                validate = (st) ? ("Valid Login") : ("Invalid Login");
+                validate = (userExist) ? ("Valid Login") : ("Invalid Login");
             } 
             catch(ClassNotFoundException | SQLException sqlExcptn) {
                 System.out.println(sqlExcptn);
