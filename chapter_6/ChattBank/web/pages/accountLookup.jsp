@@ -107,11 +107,11 @@
                     <img class="img" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pngmart.com%2Ffiles%2F5%2FBank-PNG-Pic.png&f=1&nofb=1" alt='bank-logo'>
                     <h1>ChattBank Account Lookup</h1>
                 </nav>
-                <form class="card">
-                    <input name="account-number" type="text" Placeholder="Enter account number"/>
-                    <input name="Password" type="password" Placeholder="Enter your customer ID"/>
-                    <input name="type" type="email" Placeholder="Enter account type"/>
-                    <input name="Password" type="password" Placeholder="Enter your balance"/>
+                <form action="http://localhost:31328/ChattBank/AccountLookupServlet" method="post" class="card">
+                    <input name="accountNumber" type="text" Placeholder="Enter account number"/>
+                    <input name="password" type="password" Placeholder="Enter your customer ID"/>
+                    <input name="email" type="email" Placeholder="Enter account type"/>
+                    <input name="balance" type="password" Placeholder="Enter your balance"/>
                     <input type="submit" value="Lookup"/>
                     <input type="button" value="Clear" />
                 </form>

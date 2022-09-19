@@ -1,70 +1,59 @@
 /*
     Author     : Fareeda Anderson
     Programme  : Java III
-    Document   : login
-    Created on : 03-Sep-2022, 10:50:05
+    Document   : AccountLookupServlet
+    Created on : 19-Sep-2022, 9:20:05
     I Promise I wrote this code
 */
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpSession;
-import javax.naming.*;
-import javax.rmi.*;
-import Business.*;
+import Business.Account;
+import javax.servlet.RequestDispatcher;
 
-@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
-public class LoginServlet extends HttpServlet {
+@WebServlet(urlPatterns = {"/AccountLookupServlet"})
+public class AccountLookupServlet extends HttpServlet {
 
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            String accountNumber, password, email, balance;
             
-            System.out.println("LoginServlet Running...");
+            accountNumber = request.getParameter("accountNumber");
+            password = request.getParameter("password");
+            email = request.getParameter("email");
+            balance = request.getParameter("balance");
             
-            String customerId, password;
-            customerId =  request.getParameter("customerId");
-            password =  request.getParameter("password");
-            
-            System.out.println("CustomerID: " + customerId);
+            System.out.println("Account Number: " + accountNumber);
             System.out.println("Password: " + password);
+            System.out.println("Email: " + email);
+            System.out.println("Balance: " + balance);
             
-            Customer customer = new Customer();
-            customer.selectDB(customerId);
-            System.out.println("Customer First Name: " + customer.getCustFirstName());
+            Account account = new Account();
+            account.selectDB(accountNumber);
             
-            // Use the requestDispatcher to forward control onto an Error Page
-            // (“ErrorPage.jsp”), if the user login is not correct
-            
-            // Get password from the database andn check against the password
-            // the user enter in the HTML forms
-            if (password.equals(customer.getCustPassword())){
-                RequestDispatcher rd = request.getRequestDispatcher("/accountLookup.jsp");
-                rd.forward(request, response);
-                
-                // put the Customer object in the Session.  
+            if (accountNumber.equals(account.getAcctNo())){
+                System.out.println("Account exist...");
                 HttpSession session1;
                 session1 = request.getSession();
-                session1.setAttribute("customer", customer);
-
+                session1.setAttribute("account", account);
                 System.out.println("Customer added to session");
             } else {
                 RequestDispatcher rd = request.getRequestDispatcher("/ErrorPage.jsp");
                 rd.forward(request, response);
             }
 
-        }  finally {
-            System.out.println("LoginServlet  Finished...");
+        }finally {
+            System.out.println("AccountLookupServlet  Finished...");
         }
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
