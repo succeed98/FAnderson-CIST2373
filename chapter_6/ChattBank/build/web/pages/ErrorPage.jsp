@@ -10,9 +10,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Error Page</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+            }
+            h1 {
+                color: red;
+                font-size: 40px;
+            }
+        </style>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>User Credentials Does Not Exist</h1>
     </body>
 </html>

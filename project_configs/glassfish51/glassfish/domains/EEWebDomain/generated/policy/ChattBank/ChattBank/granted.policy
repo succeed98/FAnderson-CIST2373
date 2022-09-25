@@ -1,4 +1,4 @@
-/* AUTOMATICALLY GENERATED ON Sun Sep 11 07:09:53 GMT 2022*/
+/* AUTOMATICALLY GENERATED ON Thu Sep 22 22:10:39 GMT 2022*/
 /* DO NOT EDIT */
 
 grant {
@@ -9,8 +9,10 @@ grant {
 grant      principal * * {
   permission javax.security.jacc.WebRoleRefPermission "jsp", "**";
   permission javax.security.jacc.WebRoleRefPermission "", "**";
+  permission javax.security.jacc.WebRoleRefPermission "AccountLookupServlet", "**";
   permission javax.security.jacc.WebRoleRefPermission "LoginServletDB", "**";
   permission javax.security.jacc.WebRoleRefPermission "MyServlet", "**";
   permission javax.security.jacc.WebRoleRefPermission "default", "**";
+  permission javax.security.jacc.WebRoleRefPermission "LoginServlet", "**";
 };
 
