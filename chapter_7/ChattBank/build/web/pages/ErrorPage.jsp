@@ -5,6 +5,8 @@
     Created on : 19-Sep-2022, 09:08:32
     I Promise I wrote this code
 --%>
+
+<%@page import="Business.Customer"%>    
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -23,6 +25,9 @@
         </style>
     </head>
     <body>
-        <h1>User Credentials Does Not Exist</h1>
+        <%
+            Customer customer = (Customer)session.getAttribute("customer");
+        %>
+        <h1>Error Logging in for User with ID <%= customer.getCustId()%></h1>
     </body>
 </html>

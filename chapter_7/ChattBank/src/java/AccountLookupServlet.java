@@ -46,6 +46,8 @@ public class AccountLookupServlet extends HttpServlet {
                 session1 = request.getSession();
                 session1.setAttribute("account", account);
                 System.out.println("Customer added to session");
+                RequestDispatcher rd = request.getRequestDispatcher("/DisplayAccount.jsp");
+                rd.forward(request, response);
             } else {
                 RequestDispatcher rd = request.getRequestDispatcher("/ErrorPage.jsp");
                 rd.forward(request, response);
