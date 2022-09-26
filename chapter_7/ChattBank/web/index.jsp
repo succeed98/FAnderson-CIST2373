@@ -74,7 +74,7 @@
                 <h1>Welcome To ChattBank</h1>
             </div>
             <div class="nav-right">
-                <a href="./pages/login.jsp">Login</a>
+                <a href="./pages/Login.jsp">Login</a>
             </div>
         </header>
 

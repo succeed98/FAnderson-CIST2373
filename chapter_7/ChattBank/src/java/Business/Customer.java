@@ -127,7 +127,7 @@ public class Customer {
             setCustPassword(resultSet.getString("CustPassword"));
             setCustFirstName(resultSet.getString("CustFirstName"));
             setCustLastName(resultSet.getString("CustLastName"));
-            setCustAddress(resultSet.getString("CustAdress"));
+            setCustAddress(resultSet.getString("CustAddress"));
             setCustEmail(resultSet.getString("CustEmail"));
 
             conn.close();

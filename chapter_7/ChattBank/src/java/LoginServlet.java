@@ -38,19 +38,20 @@ public class LoginServlet extends HttpServlet {
             Customer customer = new Customer();
             customer.selectDB(customerId);
             System.out.println("Customer First Name: " + customer.getCustFirstName());
+            System.out.println("Customer Last Name: " + customer.getCustLastName());
          
             if (password.equals(customer.getCustPassword())){
-                RequestDispatcher rd = request.getRequestDispatcher("/accountLookup.jsp");
-                rd.forward(request, response);
                 
-                // put the Customer object in the Session.  
-                HttpSession session1;
-                session1 = request.getSession();
-                session1.setAttribute("customer", customer);
-
+                RequestDispatcher rd = request.getRequestDispatcher("/pages/AccountLookup.jsp");
+                rd.forward(request, response);
+//                // put the Customer object in the Session.  
+                HttpSession session;
+                session = request.getSession();
+                session.setAttribute("customer", customer);
+                
                 System.out.println("Customer added to session");
             } else {
-                RequestDispatcher rd = request.getRequestDispatcher("/ErrorPage.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("/pages/ErrorPage.jsp");
                 rd.forward(request, response);
             }
 

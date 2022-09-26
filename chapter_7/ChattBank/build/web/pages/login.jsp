@@ -1,7 +1,7 @@
 <%-- 
-    Author     : Fareeda Anderson
+    Author: Fareeda Anderson
     Programme  : Java III
-    Document   : login
+    Document: login
     Created on : 28-Aug-2022, 11:17:15
     I Promise I wrote this code
 --%>
@@ -121,7 +121,7 @@
                     <img class="img" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pngmart.com%2Ffiles%2F5%2FBank-PNG-Pic.png&f=1&nofb=1" alt='bank-logo'>
                     <h1>Chatt Bank Login</h1>
                 </nav>
-                <form action="http://localhost:31328/ChattBank/LoginServletDB" method="post" name="form" class="card">
+                <form action="http://localhost:31328/ChattBank/LoginServlet" method="post" name="form" class="card">
                     <input label="customer-id" type="text" name="customerId" class="input-click" id="customer-id" Placeholder="Enter your Customer ID"/>
                     <input label="Password" class="input-with-onclick" type="password" name="password" id="password" Placeholder="Enter your password" autocomplete="on"/>
                     <input type="submit" value="Login"/>

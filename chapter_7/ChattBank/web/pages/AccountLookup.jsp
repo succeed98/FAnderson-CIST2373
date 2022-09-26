@@ -1,7 +1,7 @@
 <%-- 
-    Author     : Fareeda Anderson
+    Author: Fareeda Anderson
     Programme  : Java III
-    Document   : login
+    Document: login
     Created on : 28-Aug-2022, 11:17:15
     I Promise I wrote this code
 --%>

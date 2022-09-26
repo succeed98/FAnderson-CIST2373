@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<!-- 
-    Author     : Fareeda Anderson
+<%-- 
+    Author: Fareeda Anderson
     Programme  : Java III
-    Document   : login
+    Document: login
     Created on : 28-Aug-2022, 11:17:15
     I Promise I wrote this code
--->
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Chatt Bank Account Lookup</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>ChattBank Login</title>
         <style> 
 
             * {
@@ -66,8 +67,22 @@
                 border-radius: 4px;
                 padding: 32px 48px;
             }
-            
+
+            .forgot-pass {
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+
+            .forgot-pass p {
+                font-size: 16px;
+                color: #2f445b;
+            }
+
             .input-container {
+                /*display: flex;*/
+                /*border: 1px solid blue;*/
                 width: 100%;
                 flex-direction: column;
                 gap: .7rem;
@@ -76,6 +91,7 @@
             input {
                 padding: 20px 24px;
                 width: 100%;
+                border-radius: 5px;
             }
 
             input::placeholder{
@@ -95,25 +111,27 @@
                 border: none;
             }
 
-            </style>
-        </head>
-        <body>
-            <main> 
+        </style>
+    </head>
+    <body>
+        <main> 
 
-                <div class="main-container">
-                    <nav class="nav"> 
-                        <img class="img" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pngmart.com%2Ffiles%2F5%2FBank-PNG-Pic.png&f=1&nofb=1" alt='bank-logo'>
-                        <h1>ChattBank Account Lookup</h1>
-                    </nav>
-                    <form class="card">
-                        <input name="account-number" type="text" Placeholder="Enter account number"/>
-                        <input name="Password" type="password" Placeholder="Enter your customer ID"/>
-                        <input name="type" type="email" Placeholder="Enter account type"/>
-                        <input name="Password" type="password" Placeholder="Enter your balance"/>
-                        <input type="submit" value="Lookup"/>
-                        <input type="button" value="Clear" />
-                    </form>
+            <div class="main-container">
+                <nav class="nav"> 
+                    <img class="img" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pngmart.com%2Ffiles%2F5%2FBank-PNG-Pic.png&f=1&nofb=1" alt='bank-logo'>
+                    <h1>Chatt Bank Login</h1>
+                </nav>
+                <form action="http://localhost:31328/ChattBank/LoginServlet" method="post" name="form" class="card">
+                    <input label="customer-id" type="text" name="customerId" class="input-click" id="customer-id" Placeholder="Enter your Customer ID"/>
+                    <input label="Password" class="input-with-onclick" type="password" name="password" id="password" Placeholder="Enter your password" autocomplete="on"/>
+                    <input type="submit" value="Login"/>
+                    <input type="button" value="Clear"/>
+                </form>
+                <div class="forgot-pass">
+                    <p>Forgot password?</p>
                 </div>
-            </main>
-        </body>
-    </html>
+            </div>
+        </main>
+
+    </body>
+</html>

@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/muhyideenelias/Documents/fareeda/chapter_6/ChattBank/src/java/LoginServlet.java</file>
-            <file>file:/Users/muhyideenelias/Documents/fareeda/chapter_6/ChattBank/web/pages/accountLookup.jsp</file>
-            <file>file:/Users/muhyideenelias/Documents/fareeda/chapter_6/ChattBank/src/java/Business/Account.java</file>
-            <file>file:/Users/muhyideenelias/Documents/fareeda/chapter_6/ChattBank/src/java/AccountLookupServlet.java</file>
-            <file>file:/Users/muhyideenelias/Documents/fareeda/chapter_6/ChattBank/web/pages/ErrorPage.jsp</file>
-            <file>file:/Users/muhyideenelias/Documents/fareeda/chapter_6/ChattBank/web/pages/login.jsp</file>
+            <file>file:/Users/muhyideenelias/Documents/fareeda/chapter_7/ChattBank/web/pages/Login.jsp</file>
+            <file>file:/Users/muhyideenelias/Documents/fareeda/chapter_7/ChattBank/src/java/LoginServlet.java</file>
+            <file>file:/Users/muhyideenelias/Documents/fareeda/chapter_7/ChattBank/web/index.jsp</file>
+            <file>file:/Users/muhyideenelias/Documents/fareeda/chapter_7/ChattBank/web/pages/AccountLookup.jsp</file>
         </group>
     </open-files>
 </project-private>
