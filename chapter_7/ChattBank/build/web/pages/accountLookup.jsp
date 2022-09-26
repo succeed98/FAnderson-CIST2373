@@ -109,9 +109,9 @@
                 </nav>
                 <form action="http://localhost:31328/ChattBank/AccountLookupServlet" method="post" class="card">
                     <input name="accountNumber" type="text" Placeholder="Enter account number"/>
-                    <input name="password" type="password" Placeholder="Enter your customer ID"/>
-                    <input name="email" type="email" Placeholder="Enter account type"/>
-                    <input name="balance" type="password" Placeholder="Enter your balance"/>
+                    <input name="password" type="text" Placeholder="Enter your customer ID"/>
+                    <input name="email" type="text" Placeholder="Enter account type"/>
+                    <input name="balance" type="text" Placeholder="Enter your balance"/>
                     <input type="submit" value="Lookup"/>
                     <input type="button" value="Clear" />
                 </form>

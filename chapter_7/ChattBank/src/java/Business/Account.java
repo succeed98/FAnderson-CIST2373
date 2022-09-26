@@ -88,7 +88,7 @@ public class Account {
             
             setCustId(resultSet.getString("Cid"));
             setType(resultSet.getString("Type"));
-            setBalance(resultSet.getString("Balanace"));
+            setBalance(resultSet.getString("Balance"));
             
             conn.close();
 

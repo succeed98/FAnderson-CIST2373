@@ -112,10 +112,10 @@
                     <h1>Display Account</h1>
                 </nav>
                 <div class="card">
-                    <input name="accountNumber" type="text" value="Account Number: <%= account.getAcctNo()%>"/>
-                    <input name="accountID" type="text" value="Customer ID: <%= account.getCustId()%>"/>
-                    <input name="accountType" type="text" value="Account Type: <%=account.getType()%>"/>
-                    <input name="balance" type="text" value="Account Balance: <%=account.getBalance()%>"/>
+                    <input name="accountNumber" type="text" readonly value="Account Number: <%= account.getAcctNo()%>"/>
+                    <input name="accountID" type="text" readonly value="Customer ID: <%= account.getCustId()%>"/>
+                    <input name="accountType" type="text" readonly value="Account Type: <%=account.getType()%>"/>
+                    <input name="balance" type="text" readonly value="Account Balance: <%=account.getBalance()%>"/>
                 </div>
             </div>
         </main>

@@ -42,14 +42,14 @@ public class AccountLookupServlet extends HttpServlet {
             
             if (accountNumber.equals(account.getAcctNo())){
                 System.out.println("Account exist...");
-                HttpSession session1;
-                session1 = request.getSession();
-                session1.setAttribute("account", account);
+                HttpSession session;
+                session = request.getSession();
+                session.setAttribute("account", account);
                 System.out.println("Customer added to session");
-                RequestDispatcher rd = request.getRequestDispatcher("/DisplayAccount.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("/pages/DisplayAccount.jsp");
                 rd.forward(request, response);
             } else {
-                RequestDispatcher rd = request.getRequestDispatcher("/ErrorPage.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("/pages/ErrorPage.jsp");
                 rd.forward(request, response);
             }
 
