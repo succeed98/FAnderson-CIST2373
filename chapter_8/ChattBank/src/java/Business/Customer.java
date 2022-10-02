@@ -108,6 +108,7 @@ public class Customer {
 
     // ++++++ class member functions +++++++
     public void selectDB(String customerId) {
+        System.out.println("In Customer.selectDB");
         setCustId(customerId);
 
         try {
@@ -122,13 +123,17 @@ public class Customer {
             System.out.println("LOG : " + query);
 
             ResultSet resultSet = statement.executeQuery(query);
-            resultSet.next();
-
-            setCustPassword(resultSet.getString("CustPassword"));
-            setCustFirstName(resultSet.getString("CustFirstName"));
-            setCustLastName(resultSet.getString("CustLastName"));
-            setCustAddress(resultSet.getString("CustAddress"));
-            setCustEmail(resultSet.getString("CustEmail"));
+            
+            if (!resultSet.next() || resultSet == null){
+                System.out.println("LOG: resultSet is empty");
+            } else {
+                
+                setCustPassword(resultSet.getString("CustPassword"));
+                setCustFirstName(resultSet.getString("CustFirstName"));
+                setCustLastName(resultSet.getString("CustLastName"));
+                setCustAddress(resultSet.getString("CustAddress"));
+                setCustEmail(resultSet.getString("CustEmail"));
+            }
 
             conn.close();
             
@@ -204,26 +209,31 @@ public class Customer {
 
     private void getAccounts() {
         try {
+            System.out.println("In Customer.getAccounts");
             String connURL = "jdbc:ucanaccess:///Users/muhyideenelias/Documents/fareeda/project_configs/database/ChattBankMDB.mdb";
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
             Connection conn = DriverManager.getConnection(connURL);
             System.out.println("Database connection is working");
 
             Statement statement = conn.createStatement();
-            String query = "Select acctNo from Accounts where Cid='" + getCustId() + "'";
+            String query = "Select * from Accounts where Cid='" + getCustId() + "'";
             System.out.println("LOG : " + query);
             
             ResultSet resultSet = statement.executeQuery(query);
             resultSet.next();
             
-            Account a1;
+            Account account;
             String an;
             
-            while (resultSet.next()) {
-                an = resultSet.getString(1);
-                a1 = new Account();
-                aList.addAccount(a1);
-            }
+            do {
+                an = resultSet.getString("AcctNo");
+                account = new Account();
+                account.selectDB(an);
+                System.out.println("string: " + an);
+                aList.addAccount(account);
+            }while(resultSet.next());
+            
+
 
             conn.close();
 

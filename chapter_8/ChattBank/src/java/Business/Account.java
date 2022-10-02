@@ -73,6 +73,7 @@ public class Account {
         setAcctNo(acctNo);
 
         try {
+            System.out.println("LOG : " + "In Account.selecctDB");
             String connURL = "jdbc:ucanaccess:///Users/muhyideenelias/Documents/fareeda/project_configs/database/ChattBankMDB.mdb";
 
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
