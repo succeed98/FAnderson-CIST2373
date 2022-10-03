@@ -214,6 +214,9 @@
                             <%}%>
                         </table>
                     </c:if>
+                    <c:if test="${customer == null}">
+                        <h1>No Account related to <%=customer.getCustId()%></h1>
+                    </c:if>    
                 </div>
             </div>
         </main>
