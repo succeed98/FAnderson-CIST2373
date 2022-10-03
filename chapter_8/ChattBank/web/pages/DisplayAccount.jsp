@@ -104,27 +104,51 @@
                     <h1>Display Account</h1>
                 </nav>
                 <div class="card">
-                     
-                    <% if (accountArray != null){ %>
-                    
-                        <div class="output-container">
-                            <input name="accountNumber" type="text" readonly value="Customer ID: <%= customer.getCustId()%>"/>
-                            <input name="accountType" type="text" readonly value="Customer First Name:  <%= customer.getCustFirstName()%>"/>
-                            <input name="accountBalance" type="text" readonly value="Customer Last Name:  <%= customer.getCustLastName()%>"/>
-                            <input name="accountBalance" type="text" readonly value="Customer Email:  <%= customer.getCustEmail()%>"/>
-                        </div>    
+                    <c:if condition="${customer != null}">
+                        <table>
+                            <tr>
+                                <td>
+                                    First Name:
+                                </td>
+                                <td>
+                                    ${customer.getCustFirstName()}
+                                </td>
+                            </tr>
                             
-                        <% for(int i = 0; i < aList.counter; i++) {%>
-                        <div class="output-container">
-                            <input name="accountNumber" type="text" readonly value="Account Number: <%= accountArray[i].getAcctNo()%>"/>
-                            <input name="accountType" type="text" readonly value="Account Type: <%= accountArray[i].getType()%>"/>
-                            <input name="accountBalance" type="text" readonly value="Account Balance: $<%= accountArray[i].getBalance()%>"/>
-                            </div>    
-                        <%}%>
-                    <%}%>
+                            <tr>
+                                <td>
+                                    Last Name:
+                                </td>
+                                <td>
+                                    ${customer.getCustLastName()}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Address:
+                                </td>
+                                <td>
+                                    ${customer.getCustAddress()}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Email:
+                                </td>
+                                <td>
+                                    ${customer.getCustEmail()}
+                                </td>
+                            </tr>
+                        </table>
+                    </c:if>
                     
+<!--                    <c:if condition="${aList == null}">
+                        <h1>No Results Found</h1>
+                    </c:if>   -->
                 </div>
             </div>
         </main>
     </body>
 </html>
+
+

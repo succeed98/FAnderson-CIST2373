@@ -88,7 +88,7 @@ public class Customer {
 
     // custEmail
     public void setCustEmail(String custEmail) {
-        this.custAddress = custEmail;
+        this.custEmail = custEmail;
     }
 
     public String getCustEmail() {
@@ -124,17 +124,17 @@ public class Customer {
 
             ResultSet resultSet = statement.executeQuery(query);
             
-            if (!resultSet.next() || resultSet == null){
-                System.out.println("LOG: resultSet is empty");
-            } else {
-                
+            if (resultSet.next() || resultSet != null){
                 setCustPassword(resultSet.getString("CustPassword"));
                 setCustFirstName(resultSet.getString("CustFirstName"));
                 setCustLastName(resultSet.getString("CustLastName"));
                 setCustAddress(resultSet.getString("CustAddress"));
                 setCustEmail(resultSet.getString("CustEmail"));
+                
+            } else {
+                System.out.println("LOG: resultSet is empty");
             }
-
+             System.out.println("$$$$ customer email" + getCustEmail());
             conn.close();
             
             getAccounts();
