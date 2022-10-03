@@ -2,16 +2,18 @@
     Author     : Fareeda Anderson
     Programme  : Java III
     Document   : DisplayAccount.jsp
-    Created on : 25-Sep-2022, 10:20:05
+    Created on : 03-Oct-2022, 07:20:05
     I Promise I wrote this code
 */
 
+<%@page import="Business.Customer"%>
+<%@page import="Business.AccountList"%>  
 <%@page import="Business.Account"%>  
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Chatt Bank Account Lookup</title>
+        <title>ChattBank Display Account</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style> 
@@ -70,10 +72,11 @@
                 padding: 32px 48px;
             }
 
-            .input-container {
+            .output-container {
                 width: 100%;
                 flex-direction: column;
                 gap: .7rem;
+                 
             }
 
             input {
@@ -85,24 +88,13 @@
                 font-size: 16px;
             }
 
-            .submit-button {
-                width: 100%;
-
-            }
-
-            .submit-button button {
-                padding: 20px 24px;
-                width: 100%;
-                background-color: #095fc3;
-                color: white;
-                border: none;
-            }
-
         </style>
     </head>
     <body>
          <%
-            Account account = (Account)session.getAttribute("account");
+            Customer customer = (Customer)session.getAttribute("customer");
+            AccountList aList  = customer.aList;
+            Account accountArray [] = aList.getAccountArray();
         %>
         <main> 
 
@@ -112,10 +104,25 @@
                     <h1>Display Account</h1>
                 </nav>
                 <div class="card">
-                    <input name="accountNumber" type="text" readonly value="Account Number: <%= account.getAcctNo()%>"/>
-                    <input name="accountID" type="text" readonly value="Customer ID: <%= account.getCustId()%>"/>
-                    <input name="accountType" type="text" readonly value="Account Type: <%=account.getType()%>"/>
-                    <input name="balance" type="text" readonly value="Account Balance: <%=account.getBalance()%>"/>
+                     
+                    <% if (accountArray != null){ %>
+                    
+                        <div class="output-container">
+                            <input name="accountNumber" type="text" readonly value="Customer ID: <%= customer.getCustId()%>"/>
+                            <input name="accountType" type="text" readonly value="Customer First Name:  <%= customer.getCustFirstName()%>"/>
+                            <input name="accountBalance" type="text" readonly value="Customer Last Name:  <%= customer.getCustLastName()%>"/>
+                            <input name="accountBalance" type="text" readonly value="Customer Email:  <%= customer.getCustEmail()%>"/>
+                        </div>    
+                            
+                        <% for(int i = 0; i < aList.counter; i++) {%>
+                        <div class="output-container">
+                            <input name="accountNumber" type="text" readonly value="Account Number: <%= accountArray[i].getAcctNo()%>"/>
+                            <input name="accountType" type="text" readonly value="Account Type: <%= accountArray[i].getType()%>"/>
+                            <input name="accountBalance" type="text" readonly value="Account Balance: $<%= accountArray[i].getBalance()%>"/>
+                            </div>    
+                        <%}%>
+                    <%}%>
+                    
                 </div>
             </div>
         </main>

@@ -63,6 +63,7 @@ public class Account {
     }
     
     public void display(){
+        System.out.println("LOG: In Account.display()");
         System.out.println("Account Number: " + getAcctNo());
         System.out.println("Customer ID: " + getCustId());
         System.out.println("Account Type: " + getType());
@@ -73,7 +74,7 @@ public class Account {
         setAcctNo(acctNo);
 
         try {
-            System.out.println("LOG : " + "In Account.selecctDB");
+            System.out.println("\nLOG : In Account.selecctDB");
             String connURL = "jdbc:ucanaccess:///Users/muhyideenelias/Documents/fareeda/project_configs/database/ChattBankMDB.mdb";
 
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");

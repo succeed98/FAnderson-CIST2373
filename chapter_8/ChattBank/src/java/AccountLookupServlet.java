@@ -39,20 +39,20 @@ public class AccountLookupServlet extends HttpServlet {
             
             Account account = new Account();
             account.selectDB(accountNumber);
-            
+            RequestDispatcher rd;
             if (accountNumber.equals(account.getAcctNo())){
                 System.out.println("Account exist...");
                 HttpSession session;
                 session = request.getSession();
                 session.setAttribute("account", account);
                 System.out.println("Customer added to session");
-                RequestDispatcher rd = request.getRequestDispatcher("/pages/DisplayAccount.jsp");
-                rd.forward(request, response);
+                rd = request.getRequestDispatcher("/pages/DisplayAccount.jsp");
+                
             } else {
-                RequestDispatcher rd = request.getRequestDispatcher("/pages/ErrorPage.jsp");
+                rd = request.getRequestDispatcher("/pages/ErrorPage.jsp");
                 rd.forward(request, response);
             }
-
+            rd.forward(request, response);
         }finally {
             System.out.println("AccountLookupServlet  Finished...");
         }

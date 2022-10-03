@@ -1,7 +1,7 @@
 /*
     Author     : Fareeda Anderson
     Programme  : Java III
-    Document   : FailedLoginServlet
+    Document   : LoginServlet
     Created on : 03-Sep-2022, 10:50:05
     I Promise I wrote this code
 */
@@ -17,7 +17,8 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpSession;
 import Business.*;
 
-public class FailedLoginServlet extends HttpServlet {
+@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
+public class LoginServlet extends HttpServlet {
 
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -36,35 +37,27 @@ public class FailedLoginServlet extends HttpServlet {
             
             Customer customer = new Customer();
             customer.selectDB(customerId);
-            System.out.println("Customer First Name: " + customer.getCustFirstName());
-            System.out.println("Customer Last Name: " + customer.getCustLastName());
-            
-            System.out.println("############ an error occured before redirection: " + out.checkError());
-            
-            String errorPage  = "/pages/ErroPage.jsp";
-            String displayAccount = "/pages/DisplayAccount.jsp";
-            
-            String onSuccess = (password.equals(customer.getCustPassword())) ? displayAccount : errorPage;
-            System.out.println("$$$$ an error occured before redirection: " + out.checkError());
-            RequestDispatcher rd = request.getRequestDispatcher(onSuccess);
-            System.out.println("****** an error occured before redirection: " + out.checkError());
 
-            rd.forward(request, response);
+         
+            if (password.equals(customer.getCustPassword())){
+                
+                
 
+                HttpSession session;
+                session = request.getSession();
+                session.setAttribute("customer", customer);
+                
+                RequestDispatcher rd = request.getRequestDispatcher("/pages/DisplayAccount.jsp");
+                rd.forward(request, response);
+                
+                System.out.println("Customer added to session");
+            } else {
+                RequestDispatcher rd = request.getRequestDispatcher("/pages/ErrorPage.jsp");
+                rd.forward(request, response);
+            }
             
-//            if (password.equals(customer.getCustPassword())){
-//               RequestDispatcher rd = request.getRequestDispatcher("/pages/DisplayAccount.jsp");
-//               rd.forward(request, response);
-//               HttpSession session;
-//               session = request.getSession();
-//               session.setAttribute("customer", customer);
-//               System.out.println("Customer added to session");
-           // } else {
-//                rd = request.getRequestDispatcher("/pages/ErrorPage.jsp"); 
-//
-//            }
-            
-        }  
+            System.out.println("\n LOG: LoginServlet Done!");
+        } 
         
     }
 

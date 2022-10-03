@@ -108,7 +108,7 @@ public class Customer {
 
     // ++++++ class member functions +++++++
     public void selectDB(String customerId) {
-        System.out.println("In Customer.selectDB");
+        System.out.println("\nLOG: In Customer.selectDB");
         setCustId(customerId);
 
         try {
@@ -116,7 +116,7 @@ public class Customer {
 
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
             Connection conn = DriverManager.getConnection(connURL);
-            System.out.println("Database connection successfull");
+            System.out.println("\nLOG: Database connection successfull");
 
             Statement statement = conn.createStatement();
             String query = "SELECT * FROM Customers WHERE CustID='" + getCustId() + "'";
@@ -141,7 +141,7 @@ public class Customer {
             
         } catch (ClassNotFoundException | SQLException sqlExcptn) {
             System.out.println(sqlExcptn);
-            System.out.println("LOG : Database connection not working");
+            System.out.println("\nLOG: Database connection not working");
         }
 
     }
@@ -194,22 +194,22 @@ public class Customer {
 
             Statement statement = conn.createStatement();
             String query = "Delete from Customers where CustID='" + getCustId() + "'";
-            System.out.println("LOG : " + query);
+            System.out.println("\nLOG : " + query);
             int querySuccess = statement.executeUpdate(query);
 
-            System.out.println("LOG : " + (querySuccess == 1 ? "Delete Successful" : "Delete Failed"));
+            System.out.println("\nLOG : " + (querySuccess == 1 ? "Delete Successful" : "Delete Failed"));
 
             conn.close();
 
         } catch (ClassNotFoundException | SQLException sqlExcptn) {
             System.out.println(sqlExcptn);
-            System.out.println("LOG : Database connection failed!!");
+            System.out.println("\nLOG : Database connection failed!!");
         }
     }
 
     private void getAccounts() {
         try {
-            System.out.println("In Customer.getAccounts");
+            System.out.println("\nLOG: In Customer.getAccounts");
             String connURL = "jdbc:ucanaccess:///Users/muhyideenelias/Documents/fareeda/project_configs/database/ChattBankMDB.mdb";
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
             Connection conn = DriverManager.getConnection(connURL);
@@ -229,13 +229,14 @@ public class Customer {
                 an = resultSet.getString("AcctNo");
                 account = new Account();
                 account.selectDB(an);
-                System.out.println("string: " + an);
                 aList.addAccount(account);
             }while(resultSet.next());
             
-
-
             conn.close();
+            
+            System.out.println("\nLOG: List of account associated with customer_ID: " + getCustId());
+            aList.displayAccountList();
+            System.out.println("\nLOG: Customer.getAccount Done");
 
         } catch (ClassNotFoundException | SQLException sqlExcptn) {
             System.out.println(sqlExcptn);
