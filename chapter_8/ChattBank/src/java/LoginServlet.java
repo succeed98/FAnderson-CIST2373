@@ -54,6 +54,7 @@ public class LoginServlet extends HttpServlet {
             } else {
                 RequestDispatcher rd = request.getRequestDispatcher("/pages/ErrorPage.jsp");
                 rd.forward(request, response);
+                System.out.println("! Wrong Credentials, redirecting to ErrorPage.jsp");
             }
             
             System.out.println("\n LOG: LoginServlet Done!");
