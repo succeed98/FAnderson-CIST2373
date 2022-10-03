@@ -135,6 +135,14 @@
                         <table class="output-container">
                             <tr>
                                 <td>
+                                    Customer ID:
+                                </td>
+                                <td>
+                                    ${customer.getCustId()}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
                                     First Name:
                                 </td>
                                 <td>
