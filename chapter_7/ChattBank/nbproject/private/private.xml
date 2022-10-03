@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/muhyideenelias/Documents/fareeda/chapter_7/ChattBank/src/java/AccountLookupServlet.java</file>
+            <file>file:/Users/muhyideenelias/Documents/fareeda/chapter_7/ChattBank/web/pages/Login.jsp</file>
             <file>file:/Users/muhyideenelias/Documents/fareeda/chapter_7/ChattBank/web/pages/DisplayAccount.jsp</file>
+            <file>file:/Users/muhyideenelias/Documents/fareeda/chapter_7/ChattBank/src/java/LoginServlet.java</file>
             <file>file:/Users/muhyideenelias/Documents/fareeda/chapter_7/ChattBank/src/java/Business/Account.java</file>
+            <file>file:/Users/muhyideenelias/Documents/fareeda/chapter_7/ChattBank/src/java/AccountLookupServlet.java</file>
+            <file>file:/Users/muhyideenelias/Documents/fareeda/chapter_7/ChattBank/web/index.jsp</file>
             <file>file:/Users/muhyideenelias/Documents/fareeda/chapter_7/ChattBank/web/pages/AccountLookup.jsp</file>
         </group>
     </open-files>

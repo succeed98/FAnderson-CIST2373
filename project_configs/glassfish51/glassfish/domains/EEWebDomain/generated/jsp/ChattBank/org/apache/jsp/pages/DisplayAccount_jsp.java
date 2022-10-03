@@ -3,6 +3,8 @@ package org.apache.jsp.pages;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import Business.Customer;
+import Business.AccountList;
 import Business.Account;
 
 public final class DisplayAccount_jsp extends org.apache.jasper.runtime.HttpJspBase
@@ -12,10 +14,20 @@ public final class DisplayAccount_jsp extends org.apache.jasper.runtime.HttpJspB
 
   private static java.util.List<String> _jspx_dependants;
 
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_if_test;
+
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
   public java.util.List<String> getDependants() {
     return _jspx_dependants;
+  }
+
+  public void _jspInit() {
+    _jspx_tagPool_c_if_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+  }
+
+  public void _jspDestroy() {
+    _jspx_tagPool_c_if_test.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -43,20 +55,23 @@ public final class DisplayAccount_jsp extends org.apache.jasper.runtime.HttpJspB
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("\n");
       out.write("/*\n");
       out.write("    Author     : Fareeda Anderson\n");
       out.write("    Programme  : Java III\n");
       out.write("    Document   : DisplayAccount.jsp\n");
-      out.write("    Created on : 25-Sep-2022, 10:20:05\n");
+      out.write("    Created on : 03-Oct-2022, 07:20:05\n");
       out.write("    I Promise I wrote this code\n");
       out.write("*/\n");
       out.write("\n");
+      out.write("\n");
+      out.write("  \n");
       out.write("  \n");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
-      out.write("        <title>Chatt Bank Account Lookup</title>\n");
+      out.write("        <title>ChattBank Display Account</title>\n");
       out.write("        <meta charset=\"UTF-8\">\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
       out.write("        <style> \n");
@@ -114,12 +129,38 @@ public final class DisplayAccount_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                border-radius: 4px;\n");
       out.write("                padding: 32px 48px;\n");
       out.write("            }\n");
+      out.write("            \n");
+      out.write("            table{\n");
+      out.write("                table-layout: fixed;\n");
+      out.write("                width: 100%;\n");
+      out.write("                border-collapse: collapse;\n");
+      out.write("                border: 3px solid #dedede;\n");
+      out.write("            }\n");
+      out.write("            \n");
+      out.write("            td {\n");
+      out.write("                text-align: left;\n");
+      out.write("                padding: 5px 10px;\n");
+      out.write("            }\n");
+      out.write("            \n");
+      out.write("            tr:nth-child(even) {\n");
+      out.write("                background-color: #406b9e;\n");
+      out.write("            }\n");
+      out.write("            \n");
+      out.write("            .break td{\n");
+      out.write("                background-color: #dedede;\n");
+      out.write("            }\n");
+      out.write("            \n");
+      out.write("            .cust-info-header {\n");
+      out.write("                padding-left: 30%;\n");
+      out.write("            }\n");
+      out.write("            \n");
       out.write("\n");
-      out.write("            .input-container {\n");
+      out.write("/*            .output-container {\n");
       out.write("                width: 100%;\n");
       out.write("                flex-direction: column;\n");
       out.write("                gap: .7rem;\n");
-      out.write("            }\n");
+      out.write("                 \n");
+      out.write("            }*/\n");
       out.write("\n");
       out.write("            input {\n");
       out.write("                padding: 20px 24px;\n");
@@ -130,25 +171,14 @@ public final class DisplayAccount_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                font-size: 16px;\n");
       out.write("            }\n");
       out.write("\n");
-      out.write("            .submit-button {\n");
-      out.write("                width: 100%;\n");
-      out.write("\n");
-      out.write("            }\n");
-      out.write("\n");
-      out.write("            .submit-button button {\n");
-      out.write("                padding: 20px 24px;\n");
-      out.write("                width: 100%;\n");
-      out.write("                background-color: #095fc3;\n");
-      out.write("                color: white;\n");
-      out.write("                border: none;\n");
-      out.write("            }\n");
-      out.write("\n");
       out.write("        </style>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("         ");
 
-            Account account = (Account)session.getAttribute("account");
+            Customer customer = (Customer)session.getAttribute("customer");
+            AccountList aList  = customer.aList;
+            Account accountArray [] = aList.getAccountArray();
         
       out.write("\n");
       out.write("        <main> \n");
@@ -159,23 +189,166 @@ public final class DisplayAccount_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                    <h1>Display Account</h1>\n");
       out.write("                </nav>\n");
       out.write("                <div class=\"card\">\n");
-      out.write("                    <input name=\"accountNumber\" type=\"text\" readonly value=\"Account Number: ");
-      out.print( account.getAcctNo());
-      out.write("\"/>\n");
-      out.write("                    <input name=\"accountID\" type=\"text\" readonly value=\"Customer ID: ");
-      out.print( account.getCustId());
-      out.write("\"/>\n");
-      out.write("                    <input name=\"accountType\" type=\"text\" readonly value=\"Account Type: ");
-      out.print(account.getType());
-      out.write("\"/>\n");
-      out.write("                    <input name=\"balance\" type=\"text\" readonly value=\"Account Balance: ");
-      out.print(account.getBalance());
-      out.write("\"/>\n");
+      out.write("                    ");
+      //  c:if
+      org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+      _jspx_th_c_if_0.setPageContext(_jspx_page_context);
+      _jspx_th_c_if_0.setParent(null);
+      _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${customer != null}", boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+      int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
+      if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\n");
+          out.write("                        <h3 class=\"cust-info-header\"> Customer Information </h3>\n");
+          out.write("                        <table class=\"output-container\">\n");
+          out.write("                            <tr>\n");
+          out.write("                                <td>\n");
+          out.write("                                    Customer ID:\n");
+          out.write("                                </td>\n");
+          out.write("                                <td>\n");
+          out.write("                                    ");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${customer.getCustId()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\n");
+          out.write("                                </td>\n");
+          out.write("                            </tr>\n");
+          out.write("                            <tr>\n");
+          out.write("                                <td>\n");
+          out.write("                                    First Name:\n");
+          out.write("                                </td>\n");
+          out.write("                                <td>\n");
+          out.write("                                    ");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${customer.getCustFirstName()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\n");
+          out.write("                                </td>\n");
+          out.write("                            </tr>\n");
+          out.write("                            \n");
+          out.write("                            <tr>\n");
+          out.write("                                <td>\n");
+          out.write("                                    Last Name:\n");
+          out.write("                                </td>\n");
+          out.write("                                <td>\n");
+          out.write("                                    ");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${customer.getCustLastName()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\n");
+          out.write("                                </td>\n");
+          out.write("                            </tr>\n");
+          out.write("                            <tr>\n");
+          out.write("                                <td>\n");
+          out.write("                                    Address:\n");
+          out.write("                                </td>\n");
+          out.write("                                <td>\n");
+          out.write("                                    ");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${customer.getCustAddress()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\n");
+          out.write("                                </td>\n");
+          out.write("                            </tr>\n");
+          out.write("                            <tr>\n");
+          out.write("                                <td>\n");
+          out.write("                                    Email:\n");
+          out.write("                                </td>\n");
+          out.write("                                <td>\n");
+          out.write("                                    ");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${customer.getCustEmail()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\n");
+          out.write("                                </td>\n");
+          out.write("                            </tr>\n");
+          out.write("                        </table>\n");
+          out.write("                        \n");
+          out.write("                        <h3 class=\"cust-info-header\"> Account Information </h3>\n");
+          out.write("                        <table>\n");
+          out.write("                            ");
+ for(int i = 0; i < aList.counter; i++) {
+          out.write("\n");
+          out.write("                                <tr>\n");
+          out.write("                                    <td>\n");
+          out.write("                                        Account #:\n");
+          out.write("                                    </td>\n");
+          out.write("                                    <td>\n");
+          out.write("                                        ");
+          out.print( accountArray[i].getAcctNo());
+          out.write("\n");
+          out.write("                                    </td>\n");
+          out.write("                                </tr>\n");
+          out.write("                                \n");
+          out.write("                                <tr>\n");
+          out.write("                                    <td>\n");
+          out.write("                                        Account Type:\n");
+          out.write("                                    </td>\n");
+          out.write("                                    <td>\n");
+          out.write("                                        ");
+          out.print( accountArray[i].getAcctNo());
+          out.write("\n");
+          out.write("                                    </td>\n");
+          out.write("                                </tr>\n");
+          out.write("                                \n");
+          out.write("                                <tr>\n");
+          out.write("                                    <td>\n");
+          out.write("                                        Account Balance:\n");
+          out.write("                                    </td>\n");
+          out.write("                                    <td>\n");
+          out.write("                                        ");
+          out.print( accountArray[i].getBalance());
+          out.write("\n");
+          out.write("                                    </td>\n");
+          out.write("                                </tr>\n");
+          out.write("                                ");
+if(i != aList.counter - 1){
+          out.write("\n");
+          out.write("                                    <tr class=\"break\">\n");
+          out.write("                                        <td></td>\n");
+          out.write("                                        <td></td>\n");
+          out.write("                                    </tr>\n");
+          out.write("                                ");
+}
+          out.write("\n");
+          out.write("                            ");
+}
+          out.write("\n");
+          out.write("                        </table>\n");
+          out.write("                    ");
+          int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_if_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+        return;
+      }
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+      out.write("\n");
+      out.write("                    ");
+      //  c:if
+      org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_1 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+      _jspx_th_c_if_1.setPageContext(_jspx_page_context);
+      _jspx_th_c_if_1.setParent(null);
+      _jspx_th_c_if_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${customer == null}", boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+      int _jspx_eval_c_if_1 = _jspx_th_c_if_1.doStartTag();
+      if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\n");
+          out.write("                        <h1>No Account related to ");
+          out.print(customer.getCustId());
+          out.write("</h1>\n");
+          out.write("                    ");
+          int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_if_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
+        return;
+      }
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
+      out.write("    \n");
       out.write("                </div>\n");
       out.write("            </div>\n");
       out.write("        </main>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
+      out.write("\n");
+      out.write("\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

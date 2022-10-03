@@ -466,8 +466,8 @@
   </secure-admin>
   <clusters></clusters>
   <applications>
-    <application context-root="/ChattBank" object-type="user" name="ChattBank" directory-deployed="true" location="file:/Users/muhyideenelias/Documents/fareeda/chapter_7/ChattBank/build/web/">
-      <property name="appLocation" value="file:/Users/muhyideenelias/Documents/fareeda/chapter_7/ChattBank/build/web/"></property>
+    <application context-root="/ChattBank" object-type="user" name="ChattBank" directory-deployed="true" location="file:/Users/muhyideenelias/Documents/fareeda/chapter_8/ChattBank/build/web/">
+      <property name="appLocation" value="file:/Users/muhyideenelias/Documents/fareeda/chapter_8/ChattBank/build/web/"></property>
       <property name="archiveType" value="war"></property>
       <property name="defaultAppName" value="web"></property>
       <module name="ChattBank">
