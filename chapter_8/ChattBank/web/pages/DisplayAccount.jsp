@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 /*
     Author     : Fareeda Anderson
     Programme  : Java III
@@ -71,13 +72,38 @@
                 border-radius: 4px;
                 padding: 32px 48px;
             }
+            
+            table{
+                table-layout: fixed;
+                width: 100%;
+                border-collapse: collapse;
+                border: 3px solid #dedede;
+            }
+            
+            td {
+                text-align: left;
+                padding: 5px 10px;
+            }
+            
+            tr:nth-child(even) {
+                background-color: #406b9e;
+            }
+            
+            .break td{
+                background-color: #dedede;
+            }
+            
+            .cust-info-header {
+                padding-left: 30%;
+            }
+            
 
-            .output-container {
+/*            .output-container {
                 width: 100%;
                 flex-direction: column;
                 gap: .7rem;
                  
-            }
+            }*/
 
             input {
                 padding: 20px 24px;
@@ -104,8 +130,9 @@
                     <h1>Display Account</h1>
                 </nav>
                 <div class="card">
-                    <c:if condition="${customer != null}">
-                        <table>
+                    <c:if test="${customer != null}">
+                        <h3 class="cust-info-header"> Customer Information </h3>
+                        <table class="output-container">
                             <tr>
                                 <td>
                                     First Name:
@@ -140,11 +167,45 @@
                                 </td>
                             </tr>
                         </table>
+                        
+                        <h3 class="cust-info-header"> Account Information </h3>
+                        <table>
+                            <% for(int i = 0; i < aList.counter; i++) {%>
+                                <tr>
+                                    <td>
+                                        Account #:
+                                    </td>
+                                    <td>
+                                        <%= accountArray[i].getAcctNo()%>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        Account Type:
+                                    </td>
+                                    <td>
+                                        <%= accountArray[i].getAcctNo()%>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        Account Balance:
+                                    </td>
+                                    <td>
+                                        <%= accountArray[i].getBalance()%>
+                                    </td>
+                                </tr>
+                                <%if(i != aList.counter - 1){%>
+                                    <tr class="break">
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                <%}%>
+                            <%}%>
+                        </table>
                     </c:if>
-                    
-<!--                    <c:if condition="${aList == null}">
-                        <h1>No Results Found</h1>
-                    </c:if>   -->
                 </div>
             </div>
         </main>
