@@ -21,23 +21,24 @@
               }
             }
           </script>
-        <title>JSP Page</title>
+        <title>Register</title>
     </head>
     <body>
         <section class="w-full border-4 p-4 font-['Open Sans,sans-serif'] border-y-white-200">
             <div class="w-full flex items-center justify-between">
                 <div>
-                    <h1 class="text-[#48487f] text-3xl font-['Libre Baskerville,serif']">Faris Dental</h1>
+                    <a href="../index.jsp"<h1 class="text-[#1967d2] hover:text-[#1967d2] text-3xl font-['Libre Baskerville,serif'] cursor-pointer">Fareeda's Dental Centre</h1></a>
                 </div>
                 <div>
-                    <ul class="text-[#48487f] flex gap-6 text-xl">
-                        <li>Sign In</li>
-                        <li>Sign Up</li>
-                        <li>Call Now</li>
-                        <li>Get Directions</li>
+                    <ul class="text-[#1967d2] flex gap-6 text-xl cursor-pointer">
+                        <a href="../pages/logIn.jsp"><li class="hover:text-[#48487f]">Log In</li></a>
+                        <a href="../pages/register.jsp"><li class="hover:text-[#48487f]">Register</li></a>
+                        <li class="hover:text-[#48487f]">Call Now</li>
+                        <li class="hover:text-[#48487f]">Get Directions</li>
                     </ul>
                 </div>
             </div>
         </section>
     </body>
 </html>
+
