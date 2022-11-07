@@ -63,7 +63,9 @@
   <servers>
     <server config-ref="server-config" name="server">
       <application-ref ref="__admingui" virtual-servers="__asadmin"></application-ref>
+      <application-ref ref="Dentist" virtual-servers="server"></application-ref>
       <application-ref ref="ChattBank" virtual-servers="server"></application-ref>
+      <application-ref ref="DentalCare" virtual-servers="server"></application-ref>
       <resource-ref ref="jdbc/__TimerPool"></resource-ref>
       <resource-ref ref="jdbc/__default"></resource-ref>
       <resource-ref ref="jdbc/sample"></resource-ref>
@@ -466,11 +468,29 @@
   </secure-admin>
   <clusters></clusters>
   <applications>
-    <application context-root="/ChattBank" object-type="user" name="ChattBank" directory-deployed="true" location="file:/Users/muhyideenelias/Documents/fareeda/chapter_8/ChattBank/build/web/">
+    <application context-root="/Dentist" object-type="user" name="Dentist" directory-deployed="true" location="file:/Users/muhyideenelias/Documents/fareeda/Dentist/build/web/">
+      <property name="appLocation" value="file:/Users/muhyideenelias/Documents/fareeda/Dentist/build/web/"></property>
+      <property name="archiveType" value="war"></property>
+      <property name="defaultAppName" value="web"></property>
+      <module name="Dentist">
+        <engine sniffer="security"></engine>
+        <engine sniffer="web"></engine>
+      </module>
+    </application>
+    <application context-root="/build" object-type="user" directory-deployed="true" name="ChattBank" location="file:/Users/muhyideenelias/Documents/fareeda/chapter_8/ChattBank/build/web/">
       <property name="appLocation" value="file:/Users/muhyideenelias/Documents/fareeda/chapter_8/ChattBank/build/web/"></property>
       <property name="archiveType" value="war"></property>
       <property name="defaultAppName" value="web"></property>
       <module name="ChattBank">
+        <engine sniffer="security"></engine>
+        <engine sniffer="web"></engine>
+      </module>
+    </application>
+    <application context-root="/DentalCare" object-type="user" name="DentalCare" directory-deployed="true" location="file:/Users/muhyideenelias/Documents/fareeda/DentalCare/build/web/">
+      <property name="appLocation" value="file:/Users/muhyideenelias/Documents/fareeda/DentalCare/build/web/"></property>
+      <property name="archiveType" value="war"></property>
+      <property name="defaultAppName" value="web"></property>
+      <module name="DentalCare">
         <engine sniffer="security"></engine>
         <engine sniffer="web"></engine>
       </module>
