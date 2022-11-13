@@ -18,11 +18,8 @@
           <div class="container px-6 py-12 h-full">
             <div class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
               <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
-                <img
-                  src="https://i.ebayimg.com/images/g/xPwAAOSwzMFe09jt/s-l400.jpg"
-                  class="w-full"
-                  alt="Phone image"
-                />
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipground.com%2Fimages%2Fcartoon-tooth-clipart-6.jpg&f=1&nofb=1&ipt=2f79236994fc46546c8d90f44da9c80d75e4fbf6efa86359754e4c252b9d8973&ipo=images" class="relative w-full" alt="wath illustration" loading="lazy" width="320" height="280">
+
               </div>
               <div class="md:w-8/12 lg:w-5/12 lg:ml-20 flex flex-col gap-16">
                   <div class="text-center mb-10">
