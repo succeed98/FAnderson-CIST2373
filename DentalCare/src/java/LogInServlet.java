@@ -41,27 +41,38 @@ public class LogInServlet extends HttpServlet {
             String email, passwd;
             email =  request.getParameter("email");
             passwd =  request.getParameter("passwd");
+            String dentistOrNot = request.getParameter("dentistOrNot");
             
+            System.out.println("bool: " + dentistOrNot);
             System.out.println("CustomerID: " + email);
             System.out.println("Password: " + passwd);
             
-            Patient patient = new Patient();
-            patient.selectPatient(email);
-            
-            if (passwd.equals(patient.getPasswd())){
-                HttpSession session;
-                session = request.getSession();
-                session.setAttribute("patient", patient);
+            if(dentistOrNot == null){
+                Patient patient = new Patient();
+                patient.selectPatient(email);
+                if (passwd.equals(patient.getPasswd())){
+                    HttpSession session;
+                    session = request.getSession();
+                    session.setAttribute("patient", patient);
+
+                    RequestDispatcher rd = request.getRequestDispatcher("/pages/patient/home.jsp");
+                    rd.forward(request, response);
+
+                    System.out.println("Customer added to session");
+                }else {
+                    RequestDispatcher rd = request.getRequestDispatcher("/pages/ErrorPage.jsp");
+                    rd.forward(request, response);
+                    System.out.println("! Wrong Credentials, redirecting to ErrorPage.jsp");
+                }
                 
-                RequestDispatcher rd = request.getRequestDispatcher("/pages/patient/home.jsp");
-                rd.forward(request, response);
+            } else {
                 
-                System.out.println("Customer added to session");
-            }else {
-                RequestDispatcher rd = request.getRequestDispatcher("/pages/ErrorPage.jsp");
-                rd.forward(request, response);
-                System.out.println("! Wrong Credentials, redirecting to ErrorPage.jsp");
+                
             }
+            
+            
+            
+            
         }
     }
 
