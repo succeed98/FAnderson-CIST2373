@@ -53,7 +53,7 @@ public class LogInServlet extends HttpServlet {
                 session = request.getSession();
                 session.setAttribute("patient", patient);
                 
-                RequestDispatcher rd = request.getRequestDispatcher("/pages/dentist/home.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("/pages/patient/home.jsp");
                 rd.forward(request, response);
                 
                 System.out.println("Customer added to session");
