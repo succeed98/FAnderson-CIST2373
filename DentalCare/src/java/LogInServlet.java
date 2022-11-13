@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Patient.*;
+import Dentist.*;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpSession;
 
@@ -43,10 +44,6 @@ public class LogInServlet extends HttpServlet {
             passwd =  request.getParameter("passwd");
             String dentistOrNot = request.getParameter("dentistOrNot");
             
-            System.out.println("bool: " + dentistOrNot);
-            System.out.println("CustomerID: " + email);
-            System.out.println("Password: " + passwd);
-            
             if(dentistOrNot == null){
                 Patient patient = new Patient();
                 patient.selectPatient(email);
@@ -58,21 +55,31 @@ public class LogInServlet extends HttpServlet {
                     RequestDispatcher rd = request.getRequestDispatcher("/pages/patient/home.jsp");
                     rd.forward(request, response);
 
-                    System.out.println("Customer added to session");
+                    System.out.println("Patient added to session");
                 }else {
                     RequestDispatcher rd = request.getRequestDispatcher("/pages/ErrorPage.jsp");
                     rd.forward(request, response);
                     System.out.println("! Wrong Credentials, redirecting to ErrorPage.jsp");
                 }
                 
-            } else {
-                
-                
-            }
-            
-            
-            
-            
+            } else {             
+                Dentist dentist = new Dentist();
+                dentist.selectDentist(email);
+                if (passwd.equals(dentist.getPasswd())){
+                    HttpSession session;
+                    session = request.getSession();
+                    session.setAttribute("dentist", dentist);
+
+                    RequestDispatcher rd = request.getRequestDispatcher("/pages/dentist/home.jsp");
+                    rd.forward(request, response);
+
+                    System.out.println("Dentist added to session");
+                }else {
+                    RequestDispatcher rd = request.getRequestDispatcher("/pages/ErrorPage.jsp");
+                    rd.forward(request, response);
+                    System.out.println("! Wrong Credentials, redirecting to ErrorPage.jsp");
+                }
+            }     
         }
     }
 
