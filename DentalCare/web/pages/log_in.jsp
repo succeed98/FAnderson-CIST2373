@@ -26,13 +26,14 @@
                     <h3 class="text-[#1967d2] text-3xl font-['Libre Baskerville,serif'] mx-4 mb-0 font-bold">Sign In</h3>
                     <p>Enter your information to sign in</p>
                   </div>
-                <form>
+                <form action="http://localhost:31328/DentalCare/LogInServlet" method="post" name="form">
                   <!-- Email input -->
                   <div class="mb-6">
                     <input
                       type="text"
                       class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                       placeholder="Email address"
+                      name="email"
                     />
                   </div>
 
@@ -42,6 +43,7 @@
                       type="password"
                       class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                       placeholder="Password"
+                      name="passwd"
                     />
                   </div>
 
@@ -66,15 +68,8 @@
 
                   <!-- Submit button -->
                   <div class="w-full px-3 mb-5">
-                        <button class="block w-full max-w-xs mx-auto bg-[#1967d2] hover:bg-[#48487f] focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">SIGN IN</button>
+                      <input type="submit" value="SIGN IN" class="block w-full max-w-xs mx-auto bg-[#1967d2] hover:bg-[#48487f] focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold" />
                   </div>
-
-<!--                  <div
-                    class="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5"
-                  >
-                    <p class="text-center font-semibold mx-4 mb-0">OR</p>
-                  </div>-->
-
                 </form>
               </div>
             </div>
