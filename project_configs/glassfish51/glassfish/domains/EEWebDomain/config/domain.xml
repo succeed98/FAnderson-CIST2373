@@ -486,7 +486,7 @@
         <engine sniffer="web"></engine>
       </module>
     </application>
-    <application context-root="/DentalCare" object-type="user" directory-deployed="true" name="DentalCare" location="file:/Users/muhyideenelias/Documents/fareeda/DentalCare/build/web/">
+    <application context-root="/DentalCare" object-type="user" name="DentalCare" directory-deployed="true" location="file:/Users/muhyideenelias/Documents/fareeda/DentalCare/build/web/">
       <property name="archiveType" value="war"></property>
       <property name="appLocation" value="file:/Users/muhyideenelias/Documents/fareeda/DentalCare/build/web/"></property>
       <property name="defaultAppName" value="web"></property>

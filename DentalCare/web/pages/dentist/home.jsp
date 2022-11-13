@@ -58,7 +58,7 @@
                 </div>
                 <div class="pt-12 pb-8 flex items-center justify-center">
                     <button class="bg-green-700 hover:bg-green-1000 text-white font-bold py-2 px-4 rounded-full">
-                        Get In Touch
+                        Update Information
                     </button> 
                 </div>
             </div>

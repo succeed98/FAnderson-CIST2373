@@ -111,7 +111,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </div>\n");
       out.write("                <div class=\"pt-12 pb-8 flex items-center justify-center\">\n");
       out.write("                    <button class=\"bg-green-700 hover:bg-green-1000 text-white font-bold py-2 px-4 rounded-full\">\n");
-      out.write("                        Get In Touch\n");
+      out.write("                        Update Information\n");
       out.write("                    </button> \n");
       out.write("                </div>\n");
       out.write("            </div>\n");

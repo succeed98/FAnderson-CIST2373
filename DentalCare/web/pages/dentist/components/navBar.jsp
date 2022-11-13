@@ -41,19 +41,21 @@
                     </div>
                     <div class="navmenu hidden w-full flex-wrap justify-end items-center mb-16 space-y-8 p-6 border border-gray-100 rounded-3xl shadow-2xl shadow-gray-300/20 bg-white dark:bg-gray-800 lg:space-y-0 lg:p-0 lg:m-0 lg:flex md:flex-nowrap lg:bg-transparent lg:w-7/12 lg:shadow-none dark:shadow-none dark:border-gray-700 lg:border-0">
                         <div class="text-gray-600 dark:text-gray-300 lg:pr-4">
-                            <ul class="space-y-6 tracking-wide font-medium text-base lg:text-sm lg:flex lg:space-y-0">
-                                <li>
-                                    <a href="/DentalCare/index.jsp" class="block md:px-4 transition hover:text-primary dark:hover:text-primaryLight">
-                                        <span>View Upcoming Appointment</span>
+                            <ul class="space-y-6 space-x-4 tracking-wide font-medium text-base lg:text-sm lg:flex lg:space-y-0">
+                                <li class="w-full space-y-2 border-primary/10 dark:border-gray-700 flex flex-col -ml-1 sm:flex-row lg:space-y-0 md:w-max lg:border-l">
+                                    <a href="/DentalCare/pages/dentist/home.jsp" class="relative flex h-9 ml-auto items-center justify-center sm:px-6 before:absolute before:inset-0 before:rounded-full before:bg-sky-600 dark:before:bg-sky-400 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
+                                        <span class="relative text-sm font-semibold text-white dark:text-gray-900">Profile</span>
+                                    </a>
+                                </li>
+                                <li class="w-full space-y-2 border-primary/10 dark:border-gray-700 flex flex-col -ml-1 sm:flex-row lg:space-y-0 md:w-max lg:border-l">
+                                    <a href="/DentalCare/pages/dentist/viewAppointment.jsp" class="relative flex h-9 ml-auto items-center justify-center sm:px-6 before:absolute before:inset-0 before:rounded-full before:bg-sky-600 dark:before:bg-sky-400 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
+                                        <span class="relative text-sm font-semibold text-white dark:text-gray-900">Appointment</span>
                                     </a>
                                 </li>
                             </ul>
                         </div>
     
                         <div class="w-full space-y-2 border-primary/10 dark:border-gray-700 flex flex-col -ml-1 sm:flex-row lg:space-y-0 md:w-max lg:border-l">
-<!--                            <a href="/DentalCare/pages/register.jsp" class="relative flex h-9 ml-auto items-center justify-center sm:px-6 before:absolute before:inset-0 before:rounded-full focus:before:bg-sky-600/10 dark:focus:before:bg-sky-400/10 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
-                                <span class="relative text-sm font-semibold text-primary dark:text-primaryLight">Sign Up</span>                    
-                            </a>-->
                             <a href="/DentalCare/pages/log_in.jsp" class="relative flex h-9 ml-auto items-center justify-center sm:px-6 before:absolute before:inset-0 before:rounded-full before:bg-sky-600 dark:before:bg-sky-400 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
                                 <span class="relative text-sm font-semibold text-white dark:text-gray-900">Logout</span>                    
                             </a>
