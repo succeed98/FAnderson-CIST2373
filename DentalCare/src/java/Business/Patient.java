@@ -129,8 +129,9 @@ public class Patient {
             } 
             System.out.println(getLastName());
             conn.close();
+            System.out.println("---> Exiting selectPatient <---");
+            getAppointment();
             
-//            getAccounts();
             
         } catch (ClassNotFoundException | SQLException sqlExcptn) {
             System.out.println(sqlExcptn);
@@ -140,6 +141,7 @@ public class Patient {
     }
     
      private void getAppointment() {
+         System.out.println("---> getAppointment() was called <---");
         try {
             String connURL = "jdbc:ucanaccess:///Users/muhyideenelias/Documents/fareeda/project_configs/database/DentistOfficeACCDB.accdb";
 
@@ -149,20 +151,25 @@ public class Patient {
             
             Statement statement = conn.createStatement();
             
-            String query = "Select * from Appointments left join Procedures on Appointment.procCode = Procedures.procCode where patId='" + getPatId() + "'";
+            String query = "SELECT * FROM Appointments";
+            System.out.println("--->" + query + "<---");
+// join Procedures on Appointment.procCode = Procedures.procCode where patId='" + getPatId() + "'";
             
-            ResultSet resultSet = statement.executeQuery(query);
-            resultSet.next();
+            ResultSet rs = statement.executeQuery(query);
+//            resultSet.next();
             
-            Patient patient;
-            String an;
-            
-            do {
-                an = resultSet.getString("AcctNo");
-                appointments = new Appointments();
-                appointments.selectDB(an);
-                aList.addAccount(applointment);
-            }while(resultSet.next());
+//            Patient patient;
+//            String an;
+            rs.absolute(3);
+            System.out.println(rs.getString(1));
+    //            System.out.println(resultSet.);
+//            
+//            do {
+//                an = resultSet.getString("AcctNo");
+//                appointments = new Appointments();
+//                appointments.selectDB(an);
+//                aList.addAccount(applointment);
+//            }while(resultSet.next());
             
             conn.close();
         } catch (ClassNotFoundException | SQLException sqlExcptn) {

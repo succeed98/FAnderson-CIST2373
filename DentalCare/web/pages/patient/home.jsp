@@ -4,7 +4,7 @@
     Author     : muhyideenelias
 --%>
 
-<%@page import="Patient.Patient"%>    
+<%@page import="Business.Patient"%>    
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

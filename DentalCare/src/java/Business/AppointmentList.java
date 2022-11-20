@@ -10,18 +10,32 @@ package Business;
  * @author muhyideenelias
  */
 public class AppointmentList {
-    public int counter;
-    public Patient appointmentArray[] = new Patient[20];
+    public int dentistCounter;
+    public int patientCounter;
     
-    public Patient [] getAppoint () {
-        System.out.println("\nLOG: AccountLIst array member called!");
-        return this.appointmentArray;
+    public Patient patientAppointmentArray[] = new Patient[20];
+    public Dentist dentistAppointmentArray[] = new Dentist[20];
+    
+    public Patient [] getPatientAppointment () {
+        System.out.println("---> patient appointment array member called <---");
+        return this.patientAppointmentArray;
     }
     
-    public void addAppointment(Patient account){
-        System.out.println("\nLOG: Called AccountList addAccount");
-        appointmentArray[counter] = account;
-        counter++;
+    public Dentist [] getDentistAppointment () {
+        System.out.println("---> Dentist appointment array member called <---");
+        return this.dentistAppointmentArray;
+    }
+    
+    public void addPatientAppointment(Patient appointment){
+        System.out.println("---> Add patient appointment to the patient array <----");
+        patientAppointmentArray[patientCounter] = appointment;
+        patientCounter++;
+    }
+    
+     public void addDentistAppointment(Dentist appointment){
+        System.out.println("---> Add dentist appointment to the patient array <----");
+        dentistAppointmentArray[dentistCounter] = appointment;
+        dentistCounter++;
     }
     
 //    public void displayAccountList(){
@@ -31,8 +45,8 @@ public class AppointmentList {
 //        }
 //    }
     
-    @Override
-    public String toString() {
-        return "I have a length of: " + counter;
-    }
+//    @Override
+//    public String toString() {
+//        return "I have a length of: " + counter;
+//    }
 }

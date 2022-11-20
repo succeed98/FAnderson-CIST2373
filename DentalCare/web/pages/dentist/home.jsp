@@ -4,7 +4,7 @@
     Author     : muhyideenelias
 --%>
 
-<%@page import="Dentist.Dentist"%>    
+<%@page import="Business.Dentist"%>    
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
