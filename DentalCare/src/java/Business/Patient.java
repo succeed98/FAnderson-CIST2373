@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Patient;
+package Business;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -138,4 +138,36 @@ public class Patient {
         }
    
     }
+    
+     private void getAppointment() {
+        try {
+            String connURL = "jdbc:ucanaccess:///Users/muhyideenelias/Documents/fareeda/project_configs/database/DentistOfficeACCDB.accdb";
+
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection conn = DriverManager.getConnection(connURL);
+            System.out.println("---> Database connection successfull <---");
+            
+            Statement statement = conn.createStatement();
+            
+            String query = "Select * from Appointments left join Procedures on Appointment.procCode = Procedures.procCode where patId='" + getPatId() + "'";
+            
+            ResultSet resultSet = statement.executeQuery(query);
+            resultSet.next();
+            
+            Patient patient;
+            String an;
+            
+            do {
+                an = resultSet.getString("AcctNo");
+                appointments = new Appointments();
+                appointments.selectDB(an);
+                aList.addAccount(applointment);
+            }while(resultSet.next());
+            
+            conn.close();
+        } catch (ClassNotFoundException | SQLException sqlExcptn) {
+            System.out.println(sqlExcptn);
+            System.out.println("---> Database connection not working <---");
+        }
+     }
 }
