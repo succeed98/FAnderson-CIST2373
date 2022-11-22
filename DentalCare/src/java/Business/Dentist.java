@@ -89,6 +89,15 @@ public class Dentist {
         this.email = email;
     }
     
+    public void display() {
+        System.out.println("Dentist ID: " + this.getId());
+        System.out.println("Dentist Password: " + this.getPasswd());
+        System.out.println("Dentist First Name: " + this.getFirstName());
+        System.out.println("Dentist Last Name: " + this.getLastName());
+        System.out.println("Dentist Office: " + this.getOffice());
+        System.out.println("Dentist Email: " + this.getEmail());
+    }
+    
     public void selectDentist(String email){
         System.out.println("--> selectDentist (method) <---");
         setEmail(email);

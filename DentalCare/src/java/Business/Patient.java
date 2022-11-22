@@ -17,6 +17,7 @@ import java.sql.Statement;
  */
 public class Patient {
     private String patId, passwd, firstName, lastName, addr, email, insCo;
+    public ProcedureList procedures = new ProcedureList();
     
     public Patient(){
         patId = "";
@@ -99,6 +100,18 @@ public class Patient {
         this.insCo = insCo;
     }
     
+    public void display() {
+        System.out.println("Patient ID: " + getPatId());
+        System.out.println("Patient Password: " + getPasswd());
+        System.out.println("Patient First Name: " + getFirstName());
+        System.out.println("Patient Last Name: " + getLastName());
+        System.out.println("Patient Address: " + getAddr());
+        System.out.println("Patient Email: " + getEmail());
+        System.out.println("Patient Insurance Company: " + getInsCo());
+
+//        aList.displayAccountList();
+    }
+    
     public void selectPatient(String email){
         System.out.println("--> selectPatient (method) <---");
         setEmail(email);
@@ -130,7 +143,8 @@ public class Patient {
             System.out.println(getLastName());
             conn.close();
             System.out.println("---> Exiting selectPatient <---");
-            getAppointment();
+            this.getPatientProcdures();
+            this.procedures.displayProceduresList();
             
             
         } catch (ClassNotFoundException | SQLException sqlExcptn) {
@@ -140,8 +154,8 @@ public class Patient {
    
     }
     
-     private void getAppointment() {
-         System.out.println("---> getAppointment() was called <---");
+     private void getPatientProcdures() {
+         System.out.println("---> getPatientProcedures() was called <---");
         try {
             String connURL = "jdbc:ucanaccess:///Users/muhyideenelias/Documents/fareeda/project_configs/database/DentistOfficeACCDB.accdb";
 
@@ -151,27 +165,24 @@ public class Patient {
             
             Statement statement = conn.createStatement();
             
-            String query = "SELECT * FROM Appointments";
+            String query = "SELECT * FROM Appointments WHERE patId='" + getPatId() + "'";
             System.out.println("--->" + query + "<---");
-// join Procedures on Appointment.procCode = Procedures.procCode where patId='" + getPatId() + "'";
             
-            ResultSet rs = statement.executeQuery(query);
-//            resultSet.next();
+            ResultSet resultSet = statement.executeQuery(query);
+            resultSet.next();
+
+            Procedure procedure;
+            String an;
             
-//            Patient patient;
-//            String an;
-            rs.absolute(3);
-            System.out.println(rs.getString(1));
-    //            System.out.println(resultSet.);
-//            
-//            do {
-//                an = resultSet.getString("AcctNo");
-//                appointments = new Appointments();
-//                appointments.selectDB(an);
-//                aList.addAccount(applointment);
-//            }while(resultSet.next());
+            do {
+                an = resultSet.getString("procCode");
+                procedure = new Procedure();
+                procedure.selectPatientProcedure(an);
+                procedures.addProcedure(procedure);
+            }while(resultSet.next());
             
             conn.close();
+            System.out.println("---> getPatientProcdures was closed <---");
         } catch (ClassNotFoundException | SQLException sqlExcptn) {
             System.out.println(sqlExcptn);
             System.out.println("---> Database connection not working <---");
