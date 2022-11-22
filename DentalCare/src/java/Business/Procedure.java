@@ -120,7 +120,7 @@ public class Procedure {
         return this.procName;
     }
     
-    public String getAptDatetime(){
+    public String getAptDateTime(){
         return this.aptDateTime;
     }
     
@@ -175,7 +175,7 @@ public class Procedure {
         System.out.println("Procedure Name: " + this.getProcName());
         System.out.println("Procedure Description: " + this.getProcDesc());
         System.out.println("Procedure Cost: " +  this.getCost());
-        System.out.println("Appointment Time: " + this.getAptDatetime());
+        System.out.println("Appointment Time: " + this.getAptDateTime());
         
         // Dentist Info
         System.out.println("Dentist First Name: " + this.getDentistFirstName());
