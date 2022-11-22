@@ -169,17 +169,17 @@ public class Patient {
             System.out.println("--->" + query + "<---");
             
             ResultSet resultSet = statement.executeQuery(query);
-            resultSet.next();
+            
 
             Procedure procedure;
             String an;
             
-            do {
+            while(resultSet.next()) {
                 an = resultSet.getString("procCode");
                 procedure = new Procedure();
                 procedure.selectPatientProcedure(an);
                 procedures.addProcedure(procedure);
-            }while(resultSet.next());
+            }
             
             conn.close();
             System.out.println("---> getPatientProcdures was closed <---");

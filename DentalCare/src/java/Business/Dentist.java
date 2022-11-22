@@ -18,6 +18,7 @@ import java.sql.Statement;
 public class Dentist {
         
     private String id, passwd, firstName, lastName, email, office;
+    public ProcedureList procedures = new ProcedureList();
     
     public Dentist(){
         id = "";
@@ -125,7 +126,9 @@ public class Dentist {
                 setEmail(resultSet.getString("email"));
                 
             } 
-            System.out.println(getLastName());
+            
+            this.getDentistProcedures();
+            System.out.println("--> selectDentist was closed <---");
             conn.close();
             
             
@@ -135,4 +138,39 @@ public class Dentist {
         }
    
     }
+    
+    private void getDentistProcedures() {
+         System.out.println("---> getDentistProcedures() was called <---");
+        try {
+            String connURL = "jdbc:ucanaccess:///Users/muhyideenelias/Documents/fareeda/project_configs/database/DentistOfficeACCDB.accdb";
+
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection conn = DriverManager.getConnection(connURL);
+            System.out.println("---> Database connection successfull <---");
+            
+            Statement statement = conn.createStatement();
+            
+            String query = "SELECT * FROM Appointments WHERE dentId='" + getId() + "'";
+            System.out.println("--->" + query + "<---");
+            
+            ResultSet resultSet = statement.executeQuery(query);
+
+            Procedure procedure;
+            String an;
+            
+            while(resultSet.next()) {
+                an = resultSet.getString("procCode");
+                procedure = new Procedure();
+                procedure.selectDentistProcedure(an);
+                procedures.addProcedure(procedure);
+                procedure.display();
+            }
+            
+            conn.close();
+            System.out.println("---> getDentistProcedures was closed <---");
+        } catch (ClassNotFoundException | SQLException sqlExcptn) {
+            System.out.println(sqlExcptn);
+            System.out.println("---> Database connection not working <---");
+        }
+     }
 }

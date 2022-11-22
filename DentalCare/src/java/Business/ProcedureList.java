@@ -17,13 +17,13 @@ public class ProcedureList {
     
     
     public Procedure [] getProcedure () {
-        System.out.println("---> patient appointment array member called <---");
+        System.out.println("---> getProcedure array was called <---");
         return this.procedureArray;
     }
    
     
     public void addProcedure(Procedure procedure){
-        System.out.println("---> Add patient appointment to the patient array <----");
+        System.out.println("---> addProcedure array was called <----");
         procedureArray[counter] = procedure;
         counter++;
     }
@@ -31,10 +31,12 @@ public class ProcedureList {
     
     
     public void displayProceduresList(){
+        System.out.println("displayProcedureList was called");
         for(int singleProcedure = 0; singleProcedure < counter; singleProcedure++){
            procedureArray[singleProcedure].display();
             System.out.println("\n");
         }
+        System.out.println("displayProcedureList was closed");
     }
     
     @Override

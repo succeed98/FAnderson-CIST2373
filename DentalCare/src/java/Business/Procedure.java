@@ -16,19 +16,26 @@ import java.sql.Statement;
  * @author muhyideenelias
  */
 public class Procedure {
-    String procCode, procName, procDesc, cost, aptDateTime, patId, dentId;
+    String procCode, procName, procDesc, cost, aptDateTime, patId, dentId, dentistFirstName, dentistLastName, dentistOffice, patientFirstName, patientLastName, patientEmail;
     
     public Procedure(){
         this.procCode = "";
         this.procName = "";
         this.procDesc = "";
         this.cost = "";
-        aptDateTime = "";
-        patId = "";
-        dentId = "";     
+        this.aptDateTime = "";
+        this.patId = "";
+        this.dentId = "";     
+        this.dentistFirstName = "";
+        this.dentistLastName = "";
+        this.dentistOffice = "";
+        this.patientFirstName = "";
+        this.patientLastName = "";
+        this.patientEmail = "";
+        
     }
     
-    public Procedure(String procCode, String procName, String procDesc, String cost, String aptDateTime, String patId, String dentId){
+    public Procedure(String procCode, String procName, String procDesc, String cost, String aptDateTime, String patId, String dentId, String dentistFirstName, String dentistLastName, String dentistOffice, String patientFirstName, String patientLastName, String patientEmail){
         this.procCode = procCode;
         this.procName = procName;
         this.procDesc = procDesc;
@@ -36,6 +43,16 @@ public class Procedure {
         this.aptDateTime = aptDateTime;
         this.patId = patId;
         this.dentId = dentId;
+        
+        // for dentist
+        this.dentistFirstName = dentistFirstName;
+        this.dentistLastName = dentistLastName;
+        this.dentistOffice = dentistOffice;
+        
+        // for patient
+        this.patientFirstName = patientFirstName;
+        this.patientLastName = patientLastName;
+        this.patientEmail = patientEmail;
     }
     
     public void setProcCode(String procCode) {
@@ -59,12 +76,41 @@ public class Procedure {
     }
     
     public void setPatId(String patId){
-        this.procDesc = patId;
+        this.patId = patId;
     }
     
     public void setDentId(String dentId){
         this.dentId = dentId;
     }
+    
+    // set dentist info
+    public void setDentistFirstName(String dentistFirstName){
+        this.dentistFirstName = dentistFirstName;
+    }
+    
+    public void setDentistLastName(String dentistLastName){
+        this.dentistLastName = dentistLastName;
+    }
+    
+    public void setDentistOffice(String dentistOffice){
+        this.dentistOffice = dentistOffice;
+    }
+    
+    // set patient info
+    public void setPatientFirstName(String patientFirstName){
+        this.patientFirstName = patientFirstName;
+    }
+    
+    public void setPatientLastName(String patientLastName) {
+        this.patientLastName = patientLastName;
+    }
+    
+    public void setPatientEmail(String patientEmail) {
+        this.patientEmail = patientEmail;
+    }
+    
+    
+    // Getters
     
     public String getProcCode(){
         return this.procCode;       
@@ -94,6 +140,32 @@ public class Procedure {
         return this.cost;
     }
     
+    // Dentist info
+    public String getDentistFirstName(){
+        return this.dentistFirstName;
+    }
+    
+    public String getDentistLastName(){
+        return this.dentistLastName;
+    }
+    
+    public String getDentistOffice(){
+        return this.dentistOffice;
+    }
+    
+    // patient info
+    public String getPatientFirstName(){
+        return this.patientFirstName;
+    }
+    
+    public String getPatientLastName(){
+        return this.patientLastName;
+    }
+    
+    public String getPatientEmail(){
+        return this.patientEmail;
+    }
+    
     
     public void display() {
         System.out.println("--->Start of Appointment Display Method <---");
@@ -104,6 +176,16 @@ public class Procedure {
         System.out.println("Procedure Description: " + this.getProcDesc());
         System.out.println("Procedure Cost: " +  this.getCost());
         System.out.println("Appointment Time: " + this.getAptDatetime());
+        
+        // Dentist Info
+        System.out.println("Dentist First Name: " + this.getDentistFirstName());
+        System.out.println("Dentist Last Name: " + this.getDentistLastName());
+        System.out.println("Dentist office: " + this.getDentistOffice());
+        
+        // Patient info
+        System.out.println("Patient First Name: " + this.getPatientFirstName());
+        System.out.println("Patient Last Name: " + this.getPatientLastName());
+        System.out.println("Patient Email: " + this.getPatientEmail());
         System.out.println("---> End of Appointment Display Method <---");
     }
     
@@ -119,16 +201,67 @@ public class Procedure {
             
             Statement statement = conn.createStatement();
             
-            String query = "SELECT * FROM Procedures WHERE procCode='" + this.getProcCode()+ "'";
+            String query = "SELECT * FROM Procedures JOIN Appointments ON Procedures.procCode = Appointments.procCode JOIN Dentists ON Appointments.dentId = Dentists.id WHERE procCode='" + this.getProcCode()+ "'";
             System.out.println("--->" + query + "<---");
             
             ResultSet resultSet = statement.executeQuery(query);
             resultSet.next();
-
+           
+           setPatId(resultSet.getString("patId"));
+           setDentId(resultSet.getString("dentId"));
            setProcName(resultSet.getString("procName"));
            setProcDesc(resultSet.getString("procDesc"));
            setCost(resultSet.getString("cost"));
+           setAptDatetime(resultSet.getString("apptDateTime"));
+           setDentistFirstName(resultSet.getString("firstName"));
+           setDentistLastName(resultSet.getString("lastName"));
+           setDentistOffice(resultSet.getString("office"));
             
+           
+            
+            
+            conn.close();
+        } catch (ClassNotFoundException | SQLException sqlExcptn) {
+            System.out.println(sqlExcptn);
+            System.out.println("---> Database connection not working <---");
+        }
+     
+    }
+    
+    public  void selectDentistProcedure(String procCode) {
+        System.out.println("---> selectDentistProcedure was called <---");
+
+        this.setProcCode(procCode);
+        try {
+            String connURL = "jdbc:ucanaccess:///Users/muhyideenelias/Documents/fareeda/project_configs/database/DentistOfficeACCDB.accdb";
+
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection conn = DriverManager.getConnection(connURL);
+            System.out.println("---> Database connection successfull <---");
+            
+            Statement statement = conn.createStatement();
+            
+            String query = "SELECT * FROM Procedures JOIN Appointments ON Procedures.procCode = Appointments.procCode JOIN Patients ON Appointments.patId = Patients.patId WHERE procCode='" + this.getProcCode()+ "'";
+            System.out.println("--->" + query + "<---");
+            
+            ResultSet resultSet = statement.executeQuery(query);
+            
+           
+           while(resultSet.next()){
+               setPatId(resultSet.getString("patId"));
+               setDentId(resultSet.getString("dentId"));
+               setProcName(resultSet.getString("procName"));
+               setProcDesc(resultSet.getString("procDesc"));
+               setCost(resultSet.getString("cost"));
+               setAptDatetime(resultSet.getString("apptDateTime"));
+               setPatientFirstName(resultSet.getString("firstName"));
+               setPatientLastName(resultSet.getString("lastName"));
+               setPatientEmail(resultSet.getString("email"));
+           }
+            
+           
+           System.out.println("---> selectDentistProcedure was closed <---");
+
             conn.close();
         } catch (ClassNotFoundException | SQLException sqlExcptn) {
             System.out.println(sqlExcptn);
