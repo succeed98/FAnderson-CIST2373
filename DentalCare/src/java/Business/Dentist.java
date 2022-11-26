@@ -7,9 +7,11 @@ package Business;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import org.hsqldb.jdbc.JDBCConnection;
 
 /**
  *
@@ -139,6 +141,57 @@ public class Dentist {
    
     }
     
+    public void UpdateDentist(String firstName, String lastName, String email, String office) {
+        
+        System.out.println("--> UpdateDentist (method) <---");
+        setEmail(email);
+        
+        try {
+            String connURL = "jdbc:ucanaccess:///Users/muhyideenelias/Documents/fareeda/project_configs/database/DentistOfficeACCDB.accdb";
+
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection conn = DriverManager.getConnection(connURL);
+            System.out.println("---> Database connection successfull <---");
+            
+            String UPDATE_QUERY = "UPDATE Dentists SET firstName=?, lastName=?, email=?, office=? WHERE email=?";
+            
+            PreparedStatement ps = conn.prepareStatement(UPDATE_QUERY);
+            
+            System.out.println("--->" + UPDATE_QUERY + "<---");
+            int result;
+            
+            ps.setString(1, firstName);
+            ps.setString(2, lastName);
+            ps.setString(3, email);
+            ps.setString(4, office);
+            ps.setString(5, this.getEmail());
+            
+            ps.toString();
+            
+            result = ps.executeUpdate();
+            if(result == 0) System.out.println("Records not updated");
+            else System.out.println("Records updated successfully");
+                
+            
+            setFirstName(firstName);
+            setLastName(lastName);
+            setOffice(office);
+            setEmail(email);
+            
+            this.display();
+           
+            System.out.println("--> UpdateDentist was closed <---");
+            conn.close();
+            
+            
+        } catch (ClassNotFoundException | SQLException sqlExcptn) {
+            System.out.println(sqlExcptn);
+            System.out.println("---> Database connection not working <---");
+        }
+   
+        
+    }
+    
     private void getDentistProcedures() {
          System.out.println("---> getDentistProcedures() was called <---");
         try {
@@ -172,5 +225,5 @@ public class Dentist {
             System.out.println(sqlExcptn);
             System.out.println("---> Database connection not working <---");
         }
-     }
+    }
 }

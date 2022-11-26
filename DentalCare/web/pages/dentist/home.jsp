@@ -19,7 +19,7 @@
     <% Dentist dentist = (Dentist)session.getAttribute("dentist");%>
     
     <div class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
-        <form action="http://localhost:31328/ChattBank/LoginServlet" method="post" name="form" class="w-full lg:w-4/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-65 mx-6 lg:mx-0">
+        <form action="http://localhost:31328/DentalCare/DentistHomeServlet" method="post" name="form" class="w-full lg:w-4/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-65 mx-6 lg:mx-0">
             <div class="p-4 md:p-12 text-center lg:text-left">		
                 <h1 class="text-3xl font-bold pt-8 lg:pt-0">Update Your Information </h1>
                 <div class="flex -mx-3">
@@ -27,14 +27,14 @@
                         <label for="" class="text-xs font-semibold px-1">First name</label>
                         <div class="flex">
                             <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="<%= dentist.getFirstName()%>">
+                            <input type="text" name="firstName" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="<%= dentist.getFirstName()%>">
                         </div>
                     </div>
                     <div class="w-1/2 px-3 mb-5">
                         <label for="" class="text-xs font-semibold px-1">Last name</label>
                         <div class="flex">
                             <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="<%= dentist.getLastName()%>">
+                            <input type="text" name="lastName" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="<%= dentist.getLastName()%>">
                         </div>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                         <label for="" class="text-xs font-semibold px-1">Email</label>
                         <div class="flex">
                             <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
-                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="<%= dentist.getEmail()%>">
+                            <input type="text" name="email" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="<%= dentist.getEmail()%>">
                         </div>
                     </div>
                 </div>
@@ -52,14 +52,14 @@
                         <label for="" class="text-xs font-semibold px-1">Office</label>
                         <div class="flex">
                             <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
-                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="<%= dentist.getOffice()%>">
+                            <input type="text" name="office" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="<%= dentist.getOffice()%>">
                         </div>
                     </div>
                 </div>
                 <div class="pt-12 pb-8 flex items-center justify-center">
-                    <button class="bg-green-700 hover:bg-green-1000 text-white font-bold py-2 px-4 rounded-full">
-                        Update Information
-                    </button> 
+                    <input type="submit" value="Update Information" class="bg-green-700 hover:bg-green-1000 text-white font-bold py-2 px-4 rounded-full" />
+                        
+                   
                 </div>
             </div>
         </form>

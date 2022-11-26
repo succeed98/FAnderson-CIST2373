@@ -64,7 +64,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("    \n");
       out.write("    <div class=\"max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0\">\n");
-      out.write("        <form action=\"http://localhost:31328/ChattBank/LoginServlet\" method=\"post\" name=\"form\" class=\"w-full lg:w-4/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-65 mx-6 lg:mx-0\">\n");
+      out.write("        <form action=\"http://localhost:31328/DentalCare/DentistHomeServlet\" method=\"post\" name=\"form\" class=\"w-full lg:w-4/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-65 mx-6 lg:mx-0\">\n");
       out.write("            <div class=\"p-4 md:p-12 text-center lg:text-left\">\t\t\n");
       out.write("                <h1 class=\"text-3xl font-bold pt-8 lg:pt-0\">Update Your Information </h1>\n");
       out.write("                <div class=\"flex -mx-3\">\n");
@@ -72,7 +72,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <label for=\"\" class=\"text-xs font-semibold px-1\">First name</label>\n");
       out.write("                        <div class=\"flex\">\n");
       out.write("                            <div class=\"w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center\"><i class=\"mdi mdi-account-outline text-gray-400 text-lg\"></i></div>\n");
-      out.write("                            <input type=\"text\" class=\"w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500\" placeholder=\"");
+      out.write("                            <input type=\"text\" name=\"firstName\" class=\"w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500\" placeholder=\"");
       out.print( dentist.getFirstName());
       out.write("\">\n");
       out.write("                        </div>\n");
@@ -81,7 +81,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <label for=\"\" class=\"text-xs font-semibold px-1\">Last name</label>\n");
       out.write("                        <div class=\"flex\">\n");
       out.write("                            <div class=\"w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center\"><i class=\"mdi mdi-account-outline text-gray-400 text-lg\"></i></div>\n");
-      out.write("                            <input type=\"text\" class=\"w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500\" placeholder=\"");
+      out.write("                            <input type=\"text\" name=\"lastName\" class=\"w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500\" placeholder=\"");
       out.print( dentist.getLastName());
       out.write("\">\n");
       out.write("                        </div>\n");
@@ -92,7 +92,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <label for=\"\" class=\"text-xs font-semibold px-1\">Email</label>\n");
       out.write("                        <div class=\"flex\">\n");
       out.write("                            <div class=\"w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center\"><i class=\"mdi mdi-email-outline text-gray-400 text-lg\"></i></div>\n");
-      out.write("                            <input type=\"text\" class=\"w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500\" placeholder=\"");
+      out.write("                            <input type=\"text\" name=\"email\" class=\"w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500\" placeholder=\"");
       out.print( dentist.getEmail());
       out.write("\">\n");
       out.write("                        </div>\n");
@@ -103,16 +103,16 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <label for=\"\" class=\"text-xs font-semibold px-1\">Office</label>\n");
       out.write("                        <div class=\"flex\">\n");
       out.write("                            <div class=\"w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center\"><i class=\"mdi mdi-email-outline text-gray-400 text-lg\"></i></div>\n");
-      out.write("                            <input type=\"text\" class=\"w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500\" placeholder=\"");
+      out.write("                            <input type=\"text\" name=\"office\" class=\"w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500\" placeholder=\"");
       out.print( dentist.getOffice());
       out.write("\">\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
       out.write("                </div>\n");
       out.write("                <div class=\"pt-12 pb-8 flex items-center justify-center\">\n");
-      out.write("                    <button class=\"bg-green-700 hover:bg-green-1000 text-white font-bold py-2 px-4 rounded-full\">\n");
-      out.write("                        Update Information\n");
-      out.write("                    </button> \n");
+      out.write("                    <input type=\"submit\" value=\"Update Information\" class=\"bg-green-700 hover:bg-green-1000 text-white font-bold py-2 px-4 rounded-full\" />\n");
+      out.write("                        \n");
+      out.write("                   \n");
       out.write("                </div>\n");
       out.write("            </div>\n");
       out.write("        </form>\n");
