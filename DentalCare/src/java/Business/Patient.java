@@ -20,6 +20,9 @@ public class Patient {
     private String patId, passwd, firstName, lastName, addr, email, insCo;
     public ProcedureList procedures = new ProcedureList();
     
+    /** 
+     * default patient constructor
+     */
     public Patient(){
         patId = "";
         passwd = "";
@@ -30,6 +33,16 @@ public class Patient {
         insCo = "";       
     }
     
+    /**
+     * Patient parameterised constructor takes parameters below
+     * @param patId
+     * @param passwd
+     * @param firstName
+     * @param lastName
+     * @param addr
+     * @param email
+     * @param insCo 
+     */
     public Patient(String patId, String passwd, String firstName, String lastName, String addr, String email, String insCo ) {
         this.patId = patId;
         this.passwd = passwd;
@@ -42,30 +55,58 @@ public class Patient {
     
     // all patients attributes getter methods
     
+    /**
+     * 
+     * @return patient id
+     */
     public String getPatId(){
         return this.patId;
     }
     
+    /**
+     * 
+     * @return patient password
+     */
     public String getPasswd(){
         return this.passwd;
     }
     
+    /**
+     * 
+     * @return  patient first name
+     */
     public String getFirstName(){
         return this.firstName;
     }
     
+    /** 
+     * 
+     * @return patient last name
+     */
     public String getLastName(){
         return this.lastName;
     }
     
+    /**
+     * 
+     * @return patient address
+     */
     public String getAddr(){
         return this.addr;
     }
     
+    /**
+     * 
+     * @return patient email
+     */
     public String getEmail(){
         return this.email;
     }
     
+    /**
+     * 
+     * @return patient insurance company
+     */
     public String getInsCo(){
         return this.insCo;
     }
@@ -73,34 +114,65 @@ public class Patient {
     
     // all patients setter attributes methods
     
+    /**
+     * 
+     * @param patId 
+     */
     public void setPatId(String patId){
         this.patId = patId;
     }
     
+    /**
+     * 
+     * @param passwd 
+     */
     public void setPasswd(String passwd){
         this.passwd = passwd;
     }
     
+    /**
+     * 
+     * @param firstName 
+     */
     public void setFirstName(String firstName){
         this.firstName = firstName;
     }
     
+    /**
+     * 
+     * @param lastName 
+     */
     public void setLastName(String lastName){
         this.lastName = lastName;
     }
     
+    /** 
+     * 
+     * @param addr 
+     */
     public void setAddr(String addr){
         this.addr = addr;
     }
     
+    /**
+     * 
+     * @param email 
+     */
     public void setEmail(String email){
         this.email = email;
     }
     
+    /**
+     * 
+     * @param insCo 
+     */
     public void setInsCo(String insCo){
         this.insCo = insCo;
     }
     
+    /**
+     * displays all patient object attributes
+     */
     public void display() {
         System.out.println("Patient ID: " + getPatId());
         System.out.println("Patient Password: " + getPasswd());
@@ -112,7 +184,15 @@ public class Patient {
 
     }
     
-    
+    /**
+     * Insert a new patient record
+     * @param passwd
+     * @param firstName
+     * @param lastName
+     * @param addr
+     * @param email
+     * @param insCo 
+     */
     public void insertPatient(String passwd, String firstName, String lastName, String addr, String email, String insCo){
         System.out.println("--> insertPatient was called <---");
         try {
@@ -168,6 +248,10 @@ public class Patient {
    
     }
     
+    /**
+     * Select patient base on email passed as argument
+     * @param email 
+     */
     public void selectPatient(String email){
         System.out.println("--> selectPatient was called <---");
         setEmail(email);
@@ -210,7 +294,15 @@ public class Patient {
    
     }
     
-    
+    /**
+     * Update a patient record with the parameters below
+     * @param patId
+     * @param firstName
+     * @param lastName
+     * @param email
+     * @param address
+     * @param insCo 
+     */
     public void UpdatePatient(String patId, String firstName, String lastName, String email, String address, String insCo ) {
         
         System.out.println("--> UpdatePatient was called <---");
@@ -267,7 +359,9 @@ public class Patient {
         
     }
     
-    
+    /**
+     * get all patient procedures
+     */
      private void getPatientProcdures() {
          System.out.println("---> getPatientProcedures() was called <---");
         try {
@@ -303,6 +397,10 @@ public class Patient {
         }
      }
      
+    /**
+     * generates a random number from the range 200 to 800.
+     * @return random integer
+     */
     private int getRandomNumber() {
         return (int) ((Math.random() * (800 - 200)) + 200);
     }

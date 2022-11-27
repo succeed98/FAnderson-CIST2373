@@ -37,20 +37,20 @@ public class LogInServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            System.out.println("---> LoginServlet Running... <---");
+            System.out.println("---> LoginServlet was called <---");
             
             String email, passwd;
             email =  request.getParameter("email");
             passwd =  request.getParameter("passwd");
             String dentistOrNot = request.getParameter("dentistOrNot");
             
-            if(dentistOrNot == null){
+            if(dentistOrNot == null){ // checks to see if dentist checkbox was ticked or ot
                 Patient patient = new Patient();
                 patient.selectPatient(email);
-                if (passwd.equals(patient.getPasswd())){
+                if (passwd.equals(patient.getPasswd())){ // compares the input password with the fetched password from database
                     HttpSession session;
-                    session = request.getSession();
-                    session.setAttribute("patient", patient);
+                    session = request.getSession(); // get current session
+                    session.setAttribute("patient", patient); // set new patient object to session
 
                     RequestDispatcher rd = request.getRequestDispatcher("/pages/patient/home.jsp");
                     rd.forward(request, response);
@@ -63,9 +63,9 @@ public class LogInServlet extends HttpServlet {
                 }
                 
             } else {             
-                Dentist dentist = new Dentist();
-                dentist.selectDentist(email);
-                if (passwd.equals(dentist.getPasswd())){
+                Dentist dentist = new Dentist(); // creates new dentist object
+                dentist.selectDentist(email); // base on email, selects record with such email
+                if (passwd.equals(dentist.getPasswd())){ // compares the input password with the fetched password from database
                     HttpSession session;
                     session = request.getSession();
                     session.setAttribute("dentist", dentist);

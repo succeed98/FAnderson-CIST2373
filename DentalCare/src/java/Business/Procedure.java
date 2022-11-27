@@ -19,6 +19,9 @@ import java.sql.Statement;
 public class Procedure {
     String procCode, procName, procDesc, cost, aptDateTime, patId, dentId, dentistFirstName, dentistLastName, dentistOffice, dentistEmail, patientFirstName, patientLastName, patientEmail;
     
+    /**
+     * A default constructor
+     */
     public Procedure(){
         this.procCode = "";
         this.procName = "";
@@ -36,6 +39,23 @@ public class Procedure {
         
     }
     
+    /**
+     * Constructor with the parameters below
+     * @param procCode
+     * @param procName
+     * @param procDesc
+     * @param cost
+     * @param aptDateTime
+     * @param patId
+     * @param dentId
+     * @param dentistFirstName
+     * @param dentistLastName
+     * @param dentistOffice
+     * @param dentistEmail
+     * @param patientFirstName
+     * @param patientLastName
+     * @param patientEmail 
+     */
     public Procedure(String procCode, String procName, String procDesc, String cost, String aptDateTime, String patId, String dentId, String dentistFirstName, String dentistLastName, String dentistOffice, String dentistEmail, String patientFirstName, String patientLastName, String patientEmail){
         this.procCode = procCode;
         this.procName = procName;
@@ -57,60 +77,118 @@ public class Procedure {
         this.patientEmail = patientEmail;
     }
     
+    /**
+     * 
+     * @param procCode 
+     */
     public void setProcCode(String procCode) {
         this.procCode = procCode;
     }
     
+    /**
+     * 
+     * @param procName 
+     */
     public void setProcName(String procName){
         this.procName = procName;
     }
     
+    /**
+     * 
+     * @param procDesc 
+     */
     public void setProcDesc(String procDesc){
         this.procDesc = procDesc;
     }
     
+    /**
+     * 
+     * @param cost 
+     */
     public void setCost(String cost){
         this.cost = cost;
     }
     
+    /**
+     * 
+     * @param aptDateTime 
+     */
     public void setAptDatetime(String aptDateTime){
         this.aptDateTime = aptDateTime;
     }
     
+    /**
+     * 
+     * @param patId 
+     */
     public void setPatId(String patId){
         this.patId = patId;
     }
     
+    /**
+     * 
+     * @param dentId 
+     */
     public void setDentId(String dentId){
         this.dentId = dentId;
     }
     
     // set dentist info
+    
+    /**
+     * 
+     * @param dentistFirstName 
+     */
     public void setDentistFirstName(String dentistFirstName){
         this.dentistFirstName = dentistFirstName;
     }
     
+    /**
+     * 
+     * @param dentistLastName 
+     */
     public void setDentistLastName(String dentistLastName){
         this.dentistLastName = dentistLastName;
     }
     
+    /**
+     * 
+     * @param dentistOffice 
+     */
     public void setDentistOffice(String dentistOffice){
         this.dentistOffice = dentistOffice;
     }
     
+    /**
+     * 
+     * @param dentistEmail 
+     */
     public void setDentistEmail(String dentistEmail){
         this.dentistEmail = dentistEmail;
     }
     
+    
     // set patient info
+    /**
+     * 
+     * @param patientFirstName 
+     */
     public void setPatientFirstName(String patientFirstName){
         this.patientFirstName = patientFirstName;
     }
     
+    /**
+     * 
+     * @param patientLastName 
+     */
     public void setPatientLastName(String patientLastName) {
         this.patientLastName = patientLastName;
     }
     
+    /**
+     * 
+     * @param patientEmail 
+     */
     public void setPatientEmail(String patientEmail) {
         this.patientEmail = patientEmail;
     }
@@ -118,65 +196,124 @@ public class Procedure {
     
     // Getters
     
+    /**
+     * 
+     * @return procCode
+     */
     public String getProcCode(){
         return this.procCode;       
     }
     
+    /**
+     * 
+     * @return procName
+     */
     public String getProcName(){
         return this.procName;
     }
     
+    /**
+     * 
+     * @return apttDateTime
+     */
     public String getAptDateTime(){
         return this.aptDateTime;
     }
     
+    /**
+     * 
+     * @return patId
+     */
     public String getPatId(){
         return this.patId;
     }
     
+    /**
+     * 
+     * @return dentId
+     */
     public String getDentId(){
         return this.dentId;
     }
     
+    /**
+     * 
+     * @return procDesc
+     */
     public String getProcDesc(){
         return this.procDesc;
     }
     
+    /** 
+     * 
+     * @return cost
+     */
     public String getCost(){
         return this.cost;
     }
     
     // Dentist info
+    
+    /**
+     * 
+     * @return dentist first name
+     */
     public String getDentistFirstName(){
         return this.dentistFirstName;
     }
     
+    /** 
+     * 
+     * @return dentist last name
+     */
     public String getDentistLastName(){
         return this.dentistLastName;
     }
     
+    /**
+     * 
+     * @return dentist office
+     */
     public String getDentistOffice(){
         return this.dentistOffice;
     }
     
-     public String getDentistEmail(){
+    /**
+     * 
+     * @return  dentist email
+     */
+    public String getDentistEmail(){
         return this.dentistEmail;
     }
     
     // patient info
+    /**
+     * 
+     * @return patient first Name
+     */
     public String getPatientFirstName(){
         return this.patientFirstName;
     }
     
+    /**
+     * 
+     * @return patient last name 
+     */
     public String getPatientLastName(){
         return this.patientLastName;
     }
     
+    /**
+     * 
+     * @return patient email
+     */
     public String getPatientEmail(){
         return this.patientEmail;
     }
     
-    
+    /**
+     * displays all procedure attributes
+     */
     public void display() {
         System.out.println("--->Start of Appointment Display Method <---");
         System.out.println("Patient ID: " + this.getPatId());
@@ -199,6 +336,10 @@ public class Procedure {
         System.out.println("---> End of Appointment Display Method <---");
     }
     
+    /**
+     * Takes procCode and select all patients procedures
+     * @param procCode 
+     */
     public  void selectPatientProcedure(String procCode) {
         this.setProcCode(procCode);
         System.out.println("---> getAppointment() was called <---");
@@ -239,6 +380,10 @@ public class Procedure {
      
     }
     
+    /**
+     * Takes procCode and selects all dentist procedures
+     * @param procCode 
+     */
     public  void selectDentistProcedure(String procCode) {
         System.out.println("---> selectDentistProcedure was called <---");
 
@@ -281,7 +426,13 @@ public class Procedure {
      
     }
     
-    
+    /**
+     * Inserts new procedure with the parameters below
+     * @param procCode
+     * @param procName
+     * @param procDesc
+     * @param cost 
+     */
     public void insertProcedure(String procCode, String procName, String procDesc, String cost){
         System.out.println("--> insertProcedure was called <---");
          try {

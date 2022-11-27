@@ -14,14 +14,18 @@ import java.sql.Statement;
 import org.hsqldb.jdbc.JDBCConnection;
 
 /**
- *
+ * Dentist class representing a dentist with all minimal attributes of a dentist.
+ * 
  * @author muhyideenelias
  */
 public class Dentist {
-        
+    
     private String id, passwd, firstName, lastName, email, office;
     public ProcedureList procedures = new ProcedureList();
     
+    /**
+     * Dentist default constructor
+     */
     public Dentist(){
         id = "";
         passwd = "";
@@ -31,6 +35,15 @@ public class Dentist {
         office = "";       
     }
     
+    /**
+     * Dentist second constructor
+     * @param id
+     * @param passwd
+     * @param firstName
+     * @param lastName
+     * @param email
+     * @param office 
+     */
     public Dentist(String id, String passwd, String firstName, String lastName, String email, String office ) {
         this.id = id;
         this.passwd = passwd;
@@ -42,56 +55,108 @@ public class Dentist {
     
     // all Dentist getter attributes methods
     
+    /**
+     * 
+     * @return id of the dentist
+     */
     public String getId(){
         return this.id;
     }
     
+    /**
+     * 
+     * @return password of the dentist
+     */
     public String getPasswd(){
         return this.passwd;
     }
     
+    /**
+     * 
+     * @return first name of dentist
+     */
     public String getFirstName(){
         return this.firstName;
     }
     
+    /**
+     * 
+     * @return last name of dentist
+     */
     public String getLastName(){
         return this.lastName;
     }
     
+    
+    /**
+     * 
+     * @return office number of dentist
+     */
     public String getOffice(){
         return this.office;
     }
     
+    /** 
+     * 
+     * @return email of dentist
+     */ 
     public String getEmail(){
         return this.email;
     }
     
     // all Dentist setter attributes methods
     
+    /**
+     * 
+     * @param id 
+     */
     public void setId(String id){
         this.id = id;
     }
     
+    /**
+     * 
+     * @param passwd 
+     */
     public void setPasswd(String passwd){
         this.passwd = passwd;
     }
     
+    /**
+     * 
+     * @param firstName 
+     */
     public void setFirstName(String firstName){
         this.firstName = firstName;
     }
     
+    /**
+     * 
+     * @param lastName 
+     */
     public void setLastName(String lastName){
         this.lastName = lastName;
     }
     
+    /**
+     * 
+     * @param office 
+     */
     public void setOffice(String office){
         this.office = office;
     }
     
+    /**
+     * 
+     * @param email 
+     */
     public void setEmail(String email){
         this.email = email;
     }
     
+    /**
+     * displays method displays all attributes of a dentist
+     */
     public void display() {
         System.out.println("Dentist ID: " + this.getId());
         System.out.println("Dentist Password: " + this.getPasswd());
@@ -101,6 +166,10 @@ public class Dentist {
         System.out.println("Dentist Email: " + this.getEmail());
     }
     
+    /**
+     * Select a dentist using the dentist email
+     * @param email 
+     */
     public void selectDentist(String email){
         System.out.println("--> selectDentist (method) <---");
         setEmail(email);
@@ -141,6 +210,14 @@ public class Dentist {
    
     }
     
+    /**
+     * update dentist attributes
+     * @param id
+     * @param firstName
+     * @param lastName
+     * @param email
+     * @param office 
+     */
     public void UpdateDentist(String id, String firstName, String lastName, String email, String office) {
         
         System.out.println("--> UpdateDentist (method) <---");
@@ -195,6 +272,9 @@ public class Dentist {
         
     }
     
+    /**
+     * get all dentist procedures 
+     */
     private void getDentistProcedures() {
          System.out.println("---> getDentistProcedures() was called <---");
         try {

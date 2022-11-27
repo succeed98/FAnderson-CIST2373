@@ -13,6 +13,11 @@ import java.sql.SQLException;
 /**
  *
  * @author muhyideenelias
+ * The Appointment Class handles appointment details. 
+ * it is mainly a many to many relationship between Dentist class and Procedure class, 
+ * Patient class and Procedure class.
+ * This class has two constructors. First constructor overrides the default constructor, 
+ * and the second takes params: procCode, apptDateTime, patId and dentId.
  */
 public class Appointment {
     
@@ -66,6 +71,13 @@ public class Appointment {
         return this.dentId;
     }
     
+    
+    /**
+     * Update the patient appointment with the params given
+     * @return void
+     * @param procCode
+     * @param apptDateTime 
+     */
     public void UpdateDentistAppointment(String procCode, String apptDateTime) {
         
         System.out.println("--> UpdateDentistAppointment was called <---");
@@ -118,6 +130,15 @@ public class Appointment {
         
     }
     
+    /**
+     * Inserts a new patient appointment
+     * @return  void
+     * @param apptDateTime
+     * @param patId
+     * @param dentId
+     * @param procCode 
+     */
+    
     public void insertAppointment(String apptDateTime, String patId, String dentId, String procCode){
         System.out.println("--> insertAppointment was called <---");
          try {
@@ -127,11 +148,11 @@ public class Appointment {
             Connection conn = DriverManager.getConnection(connURL);
             System.out.println("---> Database connection successfull <---");
             
-            String UPDATE_QUERY = "INSERT INTO Appointments (apptDateTime, patId, dentId, procCode) VALUES(?, ?, ?, ?)";
+            String QUERY = "INSERT INTO Appointments (apptDateTime, patId, dentId, procCode) VALUES(?, ?, ?, ?)";
             
-            PreparedStatement ps = conn.prepareStatement(UPDATE_QUERY);
+            PreparedStatement ps = conn.prepareStatement(QUERY);
             
-            System.out.println("--->" + UPDATE_QUERY + "<---");
+            System.out.println("--->" + QUERY + "<---");
             int result;
             
             ps.setString(1, apptDateTime);
