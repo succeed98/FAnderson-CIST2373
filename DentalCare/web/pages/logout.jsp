@@ -14,7 +14,7 @@
     <body>
         <%
             session.invalidate();
-            response.sendRedirect("../pages/index.jsp");
+            response.sendRedirect("../index.jsp");
         %>
     </body>
 </html>

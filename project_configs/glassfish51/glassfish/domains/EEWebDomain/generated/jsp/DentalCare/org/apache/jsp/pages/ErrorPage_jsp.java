@@ -3,8 +3,9 @@ package org.apache.jsp.pages;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import Patient.Patient;
 
-public final class logout_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class ErrorPage_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -44,20 +45,33 @@ public final class logout_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\n");
       out.write("\n");
+      out.write("    \n");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Logout Page</title>\n");
+      out.write("        <title>Error Page</title>\n");
+      out.write("        <style>\n");
+      out.write("            body {\n");
+      out.write("                display: flex;\n");
+      out.write("                justify-content: center;\n");
+      out.write("            }\n");
+      out.write("            h1 {\n");
+      out.write("                color: red;\n");
+      out.write("                font-size: 40px;\n");
+      out.write("            }\n");
+      out.write("        </style>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        ");
 
-            session.invalidate();
-            response.sendRedirect("../index.jsp");
+            Patient patient = (Patient)session.getAttribute("patient");
         
       out.write("\n");
+      out.write("        <h1>Error Logging in for User with ID ");
+      out.print( patient.getLastName());
+      out.write("</h1>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

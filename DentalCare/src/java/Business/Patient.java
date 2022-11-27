@@ -7,6 +7,7 @@ package Business;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -153,6 +154,64 @@ public class Patient {
         }
    
     }
+    
+    
+    public void UpdatePatient(String patId, String firstName, String lastName, String email, String address, String insCo ) {
+        
+        System.out.println("--> UpdatePatient was called <---");
+        
+        
+        try {
+            String connURL = "jdbc:ucanaccess:///Users/muhyideenelias/Documents/fareeda/project_configs/database/DentistOfficeACCDB.accdb";
+
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection conn = DriverManager.getConnection(connURL);
+            System.out.println("---> Database connection successfull <---");
+            
+            String UPDATE_QUERY = "UPDATE Patients SET firstName=?, lastName=?, addr=?, email=?, insCo=? WHERE patId=?";
+            
+            PreparedStatement ps = conn.prepareStatement(UPDATE_QUERY);
+            
+            System.out.println("--->" + UPDATE_QUERY + "<---");
+            int result;
+            
+            ps.setString(1, firstName);
+            ps.setString(2, lastName);
+            ps.setString(3, address);
+            ps.setString(4, email);
+            ps.setString(5, insCo);
+            ps.setString(6, patId);
+            
+            ps.toString();
+            
+            result = ps.executeUpdate();
+            if(result == 0){
+                System.out.println("Result:---> " + result);
+                System.out.println("Records not updated");
+                
+            } else System.out.println("Records updated successfully");
+                
+            setPatId(patId);
+            setFirstName(firstName);
+            setLastName(lastName);
+            setAddr(address);
+            setInsCo(insCo);
+            setEmail(email);
+            
+            this.display();
+           
+            System.out.println("--> UpdatePatient was closed <---");
+            conn.close();
+            
+            
+        } catch (ClassNotFoundException | SQLException sqlExcptn) {
+            System.out.println(sqlExcptn);
+            System.out.println("---> Database connection not working <---");
+        }
+   
+        
+    }
+    
     
      private void getPatientProcdures() {
          System.out.println("---> getPatientProcedures() was called <---");

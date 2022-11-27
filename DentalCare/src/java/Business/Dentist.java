@@ -141,7 +141,7 @@ public class Dentist {
    
     }
     
-    public void UpdateDentist(String firstName, String lastName, String email, String office) {
+    public void UpdateDentist(String id, String firstName, String lastName, String email, String office) {
         
         System.out.println("--> UpdateDentist (method) <---");
         setEmail(email);
@@ -153,7 +153,7 @@ public class Dentist {
             Connection conn = DriverManager.getConnection(connURL);
             System.out.println("---> Database connection successfull <---");
             
-            String UPDATE_QUERY = "UPDATE Dentists SET firstName=?, lastName=?, email=?, office=? WHERE email=?";
+            String UPDATE_QUERY = "UPDATE Dentists SET firstName=?, lastName=?, email=?, office=? WHERE id=?";
             
             PreparedStatement ps = conn.prepareStatement(UPDATE_QUERY);
             
@@ -164,13 +164,16 @@ public class Dentist {
             ps.setString(2, lastName);
             ps.setString(3, email);
             ps.setString(4, office);
-            ps.setString(5, this.getEmail());
+            ps.setString(5, id);
             
             ps.toString();
             
             result = ps.executeUpdate();
-            if(result == 0) System.out.println("Records not updated");
-            else System.out.println("Records updated successfully");
+            if(result == 0){
+                System.out.println("Result:---> " + result);
+                System.out.println("Records not updated");
+                
+            } else System.out.println("Records updated successfully");
                 
             
             setFirstName(firstName);
