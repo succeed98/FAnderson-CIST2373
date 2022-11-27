@@ -17,12 +17,15 @@ import java.sql.SQLException;
  * it is mainly a many to many relationship between Dentist class and Procedure class, 
  * Patient class and Procedure class.
  * This class has two constructors. First constructor overrides the default constructor, 
- * and the second takes params: procCode, apptDateTime, patId and dentId.
+ * and the second takes parameters: procCode, apptDateTime, patId and dentId.
  */
 public class Appointment {
     
     private String procCode, apptDatetime, patId, dentId;
     
+    /**
+     * Default constructor sets all attributes to empty string
+     */
     public Appointment () {
         this.procCode = "";
         this.apptDatetime = "";
@@ -30,43 +33,80 @@ public class Appointment {
         this.patId = "";
     }
     
+    /**
+     * Parameterised constructor
+     * @param procCode
+     * @param apptDateTime
+     * @param patId
+     * @param dentId 
+     */
     public Appointment(String procCode, String apptDateTime, String patId, String dentId){
         this.procCode = procCode;
         this.apptDatetime = apptDateTime;
         this.patId = patId;
     }
     
+    /**
+     * 
+     * @param procCode 
+     */
     public void setProcCode(String procCode) {
         this.procCode = procCode;
     }
     
+    /**
+     * 
+     * @param aptDatetime 
+     */
     public void setAptDateTime(String aptDatetime) {
         this.apptDatetime = aptDatetime;
     }
     
+    /**
+     * 
+     * @param patId 
+     */
     public void setPatId(String patId) {
         this.patId = patId;
     }
     
+    /**
+     * 
+     * @param dentId 
+     */
     public void setDentId(String dentId) {
         this.dentId = dentId;
     }
     
     
-    
+    /**
+     * 
+     * @return procCode
+     */
     public String getProcCode() {
         return this.procCode;
     }
     
+    /** 
+     * 
+     * @return aptDateTime
+     */
     public String getAptDateTime(){
         return this.apptDatetime;
     }
     
-    
+    /** 
+     * 
+     * @return patId
+     */
     public String getPatId() {
         return this.patId;
     }
     
+    /**
+     * 
+     * @return dentId
+     */
     public String getDentId(){
         return this.dentId;
     }
