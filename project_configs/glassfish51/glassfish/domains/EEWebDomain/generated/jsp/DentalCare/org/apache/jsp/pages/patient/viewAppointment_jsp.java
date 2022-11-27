@@ -1,4 +1,4 @@
-package org.apache.jsp.pages.dentist;
+package org.apache.jsp.pages.patient;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -51,13 +51,13 @@ public final class viewAppointment_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Appointment Page</title>\n");
+      out.write("        <title>View Appointment Page</title>\n");
       out.write("    </head>\n");
       out.write("    <body class=\"font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover\" style=\"background-image:url('http://www.clipartbest.com/cliparts/4Tb/4zp/4Tb4zp8Tg.jpeg');\">\n");
       out.write("        ");
 
-            Dentist dentist = (Dentist)session.getAttribute("dentist");
-            ProcedureList procedures  = dentist.procedures;
+            Patient patient = (Patient)session.getAttribute("patient");
+            ProcedureList procedures  = patient.procedures;
             Procedure procedureArray [] = procedures.getProcedure();
         
       out.write("\n");
@@ -76,10 +76,10 @@ public final class viewAppointment_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                              #\n");
       out.write("                            </th>\n");
       out.write("                            <th scope=\"col\" class=\"text-xl font-medium text-gray-900 px-6 py-4 text-left\">\n");
-      out.write("                             Patient Name\n");
+      out.write("                             Dentist Name\n");
       out.write("                            </th>\n");
       out.write("                            <th scope=\"col\" class=\"text-xl font-medium text-gray-900 px-6 py-4 text-left\">\n");
-      out.write("                              Email\n");
+      out.write("                              Dentist Email\n");
       out.write("                            </th>\n");
       out.write("                            <th scope=\"col\" class=\"text-xl font-medium text-gray-900 px-6 py-4 text-left\">\n");
       out.write("                              Code\n");
@@ -108,12 +108,12 @@ public final class viewAppointment_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("</td>\n");
       out.write("                              <td class=\"text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap\">\n");
       out.write("                                ");
-      out.print( procedureArray[i].getPatientFirstName() + " " + procedureArray[i].getPatientLastName());
+      out.print( procedureArray[i].getDentistFirstName() + " " + procedureArray[i].getDentistLastName());
       out.write("\n");
       out.write("                              </td>\n");
       out.write("                              <td class=\"text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap\">\n");
       out.write("                                ");
-      out.print( procedureArray[i].getPatientEmail() );
+      out.print( procedureArray[i].getDentistEmail() );
       out.write("\n");
       out.write("                              </td>\n");
       out.write("                              <td class=\"text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap\">\n");

@@ -16,7 +16,7 @@ import java.sql.Statement;
  * @author muhyideenelias
  */
 public class Procedure {
-    String procCode, procName, procDesc, cost, aptDateTime, patId, dentId, dentistFirstName, dentistLastName, dentistOffice, patientFirstName, patientLastName, patientEmail;
+    String procCode, procName, procDesc, cost, aptDateTime, patId, dentId, dentistFirstName, dentistLastName, dentistOffice, dentistEmail, patientFirstName, patientLastName, patientEmail;
     
     public Procedure(){
         this.procCode = "";
@@ -35,7 +35,7 @@ public class Procedure {
         
     }
     
-    public Procedure(String procCode, String procName, String procDesc, String cost, String aptDateTime, String patId, String dentId, String dentistFirstName, String dentistLastName, String dentistOffice, String patientFirstName, String patientLastName, String patientEmail){
+    public Procedure(String procCode, String procName, String procDesc, String cost, String aptDateTime, String patId, String dentId, String dentistFirstName, String dentistLastName, String dentistOffice, String dentistEmail, String patientFirstName, String patientLastName, String patientEmail){
         this.procCode = procCode;
         this.procName = procName;
         this.procDesc = procDesc;
@@ -48,6 +48,7 @@ public class Procedure {
         this.dentistFirstName = dentistFirstName;
         this.dentistLastName = dentistLastName;
         this.dentistOffice = dentistOffice;
+        this.dentistEmail = dentistEmail;
         
         // for patient
         this.patientFirstName = patientFirstName;
@@ -94,6 +95,10 @@ public class Procedure {
     
     public void setDentistOffice(String dentistOffice){
         this.dentistOffice = dentistOffice;
+    }
+    
+    public void setDentistEmail(String dentistEmail){
+        this.dentistEmail = dentistEmail;
     }
     
     // set patient info
@@ -151,6 +156,10 @@ public class Procedure {
     
     public String getDentistOffice(){
         return this.dentistOffice;
+    }
+    
+     public String getDentistEmail(){
+        return this.dentistEmail;
     }
     
     // patient info
@@ -216,6 +225,7 @@ public class Procedure {
            setDentistFirstName(resultSet.getString("firstName"));
            setDentistLastName(resultSet.getString("lastName"));
            setDentistOffice(resultSet.getString("office"));
+           setDentistEmail(resultSet.getString("email"));
             
            
             
