@@ -110,12 +110,11 @@ public class Patient {
         System.out.println("Patient Email: " + getEmail());
         System.out.println("Patient Insurance Company: " + getInsCo());
 
-//        aList.displayAccountList();
     }
     
     
     public void insertPatient(String passwd, String firstName, String lastName, String addr, String email, String insCo){
-        System.out.println("--> selectPatient was called <---");
+        System.out.println("--> insertPatient was called <---");
         try {
             String connURL = "jdbc:ucanaccess:///Users/muhyideenelias/Documents/fareeda/project_configs/database/DentistOfficeACCDB.accdb";
 
@@ -123,7 +122,7 @@ public class Patient {
             Connection conn = DriverManager.getConnection(connURL);
             System.out.println("---> Database connection successfull <---");
             
-            String UPDATE_QUERY = "INSERT INTO Patients (patId, passwd, firstName, lastName, addr, email, insCo) VALUES(?, ?, ?, ?, ?, ?)";
+            String UPDATE_QUERY = "INSERT INTO Patients (patId, passwd, firstName, lastName, addr, email, insCo) VALUES(?, ?, ?, ?, ?, ?, ?)";
             
             PreparedStatement ps = conn.prepareStatement(UPDATE_QUERY);
             
@@ -158,7 +157,7 @@ public class Patient {
             
             this.display();
            
-            System.out.println("--> selectPatient was closed <---");
+            System.out.println("--> insertPatient was closed <---");
             conn.close();
             
             
@@ -170,7 +169,7 @@ public class Patient {
     }
     
     public void selectPatient(String email){
-        System.out.println("--> insertPatient was called <---");
+        System.out.println("--> selectPatient was called <---");
         setEmail(email);
         
         try {
@@ -199,7 +198,7 @@ public class Patient {
             } 
             System.out.println(getLastName());
             conn.close();
-            System.out.println("---> Exiting selectPatient <---");
+            System.out.println("---> selectPatient was closed <---");
             this.getPatientProcdures();
             this.procedures.displayProceduresList();
             

@@ -57,7 +57,7 @@ public class AddAppointmentServlet extends HttpServlet {
             RequestDispatcher rd = request.getRequestDispatcher("/pages/patient/addAppointment.jsp");
             rd.forward(request, response);
             
-                    System.out.println("--> AddAppointmentServlet was closed <---");
+            System.out.println("--> AddAppointmentServlet was closed <---");
 
             
         }
