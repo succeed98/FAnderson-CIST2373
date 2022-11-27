@@ -53,7 +53,7 @@ public class AddAppointmentServlet extends HttpServlet {
             appointment.insertAppointment(apptDateTime, patId, dentId, procCode); // insert records to create new appointment
             
             Procedure procedure = new Procedure();
-            procedure.insertProcedure(procCode, procCode, procDesc, cost); // insert records to creat new procedures
+            procedure.insertProcedure(procCode, procName, procDesc, cost); // insert records to creat new procedures
             
             RequestDispatcher rd = request.getRequestDispatcher("/pages/patient/viewAppointment.jsp"); // redirects to viewAppointment.jsp
             rd.forward(request, response);

@@ -35,6 +35,7 @@ public class RegisterServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             String firstName, lastName, addr, insCo, email, passwd;
             
+            // get needed parameters from request 
             firstName = request.getParameter("firstName");
             lastName = request.getParameter("lastName");
             addr = request.getParameter("addr");
@@ -45,8 +46,8 @@ public class RegisterServlet extends HttpServlet {
             System.out.println(firstName + " " + lastName + " " + addr + " " + insCo + " " + email + " " + passwd);
             
             
-            Patient patient = new Patient();
-            patient.insertPatient(passwd, firstName, lastName, addr, email, insCo);
+            Patient patient = new Patient(); // creates new patient object
+            patient.insertPatient(passwd, firstName, lastName, addr, email, insCo); // inserts new patient into database
             RequestDispatcher rd = request.getRequestDispatcher("/pages/log_in.jsp");
             rd.forward(request, response);
             
