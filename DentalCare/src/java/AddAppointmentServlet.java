@@ -24,7 +24,7 @@ public class AddAppointmentServlet extends HttpServlet {
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
-     *
+     * Gets values from AddAppointmet.jsp and creates new appointments and procedures
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
@@ -38,6 +38,7 @@ public class AddAppointmentServlet extends HttpServlet {
             
             String dentId, patId,procName, procCode, apptDateTime, procDesc, cost;
             
+            // get all fields from request parameter
             dentId = request.getParameter("dentId");
             patId = request.getParameter("patId");
             apptDateTime = request.getParameter("apptDateTime");
@@ -49,12 +50,12 @@ public class AddAppointmentServlet extends HttpServlet {
             System.out.println(dentId + " " + patId + " " + procCode + " " + apptDateTime + " " + procName + " " + procDesc  + " $" + cost);
             
             Appointment appointment = new Appointment();
-            appointment.insertAppointment(apptDateTime, patId, dentId, procCode);
+            appointment.insertAppointment(apptDateTime, patId, dentId, procCode); // insert records to create new appointment
             
             Procedure procedure = new Procedure();
-            procedure.insertProcedure(procCode, procCode, procDesc, cost);
+            procedure.insertProcedure(procCode, procCode, procDesc, cost); // insert records to creat new procedures
             
-            RequestDispatcher rd = request.getRequestDispatcher("/pages/patient/viewAppointment.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("/pages/patient/viewAppointment.jsp"); // redirects to viewAppointment.jsp
             rd.forward(request, response);
             
             System.out.println("--> AddAppointmentServlet was closed <---");

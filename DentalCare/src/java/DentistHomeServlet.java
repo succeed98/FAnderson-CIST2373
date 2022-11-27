@@ -35,6 +35,7 @@ public class DentistHomeServlet extends HttpServlet {
         System.out.println("---> DentistHomeServlet was called <---");
         try (PrintWriter out = response.getWriter()) {
             
+            // get request parameters
             String id, firstName, lastName, email, office;
             id = request.getParameter("id");
             firstName =  request.getParameter("firstName");
@@ -43,8 +44,8 @@ public class DentistHomeServlet extends HttpServlet {
             office = request.getParameter("office");
             System.out.println(id + " " + firstName + " " + lastName + " "+ email + " "  + office);
             
-            Dentist dentist = new Dentist();
-            dentist.UpdateDentist(id, firstName, lastName, email, office);
+            Dentist dentist = new Dentist(); // create a new denttist object
+            dentist.UpdateDentist(id, firstName, lastName, email, office); // updates dentist with new fields
             RequestDispatcher rd = request.getRequestDispatcher("/pages/dentist/home.jsp");
             rd.forward(request, response);
             
