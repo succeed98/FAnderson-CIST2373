@@ -54,7 +54,7 @@ public class AddAppointmentServlet extends HttpServlet {
             Procedure procedure = new Procedure();
             procedure.insertProcedure(procCode, procCode, procDesc, cost);
             
-            RequestDispatcher rd = request.getRequestDispatcher("/pages/patient/addAppointment.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("/pages/patient/viewAppointment.jsp");
             rd.forward(request, response);
             
             System.out.println("--> AddAppointmentServlet was closed <---");
