@@ -30,7 +30,7 @@
             <div class="xl:container m-auto px-6 md:px-12 lg:px-6">
                 <div class="flex flex-wrap items-center justify-between gap-6 md:py-3 md:gap-0 lg:py-5">
                     <div class="w-full items-center flex justify-between lg:w-auto">
-                        <a class="flex gap-4 items-center" href="#" aria-label="logo">
+                        <a class="flex gap-4 items-center" href="/DentalCare/pages/dentist/home.jsp" aria-label="logo">
                             <img class="h-12 w-12" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipground.com%2Fimages%2Fcartoon-tooth-clipart-6.jpg&f=1&nofb=1&ipt=2f79236994fc46546c8d90f44da9c80d75e4fbf6efa86359754e4c252b9d8973&ipo=images"  alt="logo" loading="lazy" >
                             <h4 class=" font-black text-blue-900 text-2xl  text-center  dark:text-white relative text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300">Farees Dental Care </h4>
                         </a>

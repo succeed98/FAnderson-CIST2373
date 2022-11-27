@@ -6,7 +6,6 @@
     I Promise I wrote this code
 --%>
 
-<%@page import="Patient.Patient"%>    
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,14 +19,11 @@
             }
             h1 {
                 color: red;
-                font-size: 40px;
+                font-size: 30px;
             }
         </style>
     </head>
     <body>
-        <%
-            Patient patient = (Patient)session.getAttribute("patient");
-        %>
-        <h1>Error Logging in for User with ID <%= patient.getLastName()%></h1>
+        <h1>Either You Forgot To Tick The Check-box As Dentist or A Client Tried Logging In As a Dentist Or Probably Wrong Credentials</h1>
     </body>
 </html>

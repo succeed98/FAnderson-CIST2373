@@ -1,4 +1,4 @@
-/* AUTOMATICALLY GENERATED ON Sun Nov 27 09:49:35 GMT 2022*/
+/* AUTOMATICALLY GENERATED ON Sun Nov 27 15:24:53 GMT 2022*/
 /* DO NOT EDIT */
 
 grant {
@@ -13,6 +13,7 @@ grant      principal * * {
   permission javax.security.jacc.WebRoleRefPermission "LogInServlet", "**";
   permission javax.security.jacc.WebRoleRefPermission "PatientHomeServlet", "**";
   permission javax.security.jacc.WebRoleRefPermission "UpdateDentistAppointmentServlet", "**";
+  permission javax.security.jacc.WebRoleRefPermission "AddAppointmentServlet", "**";
   permission javax.security.jacc.WebRoleRefPermission "default", "**";
 };
 

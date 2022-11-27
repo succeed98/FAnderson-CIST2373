@@ -70,7 +70,7 @@ public final class navBar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <div class=\"xl:container m-auto px-6 md:px-12 lg:px-6\">\n");
       out.write("                <div class=\"flex flex-wrap items-center justify-between gap-6 md:py-3 md:gap-0 lg:py-5\">\n");
       out.write("                    <div class=\"w-full items-center flex justify-between lg:w-auto\">\n");
-      out.write("                        <a class=\"flex gap-4 items-center\" href=\"#\" aria-label=\"logo\">\n");
+      out.write("                        <a class=\"flex gap-4 items-center\" href=\"/DentalCare/pages/patient/home.jsp\" aria-label=\"logo\">\n");
       out.write("                            <img class=\"h-12 w-12\" src=\"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipground.com%2Fimages%2Fcartoon-tooth-clipart-6.jpg&f=1&nofb=1&ipt=2f79236994fc46546c8d90f44da9c80d75e4fbf6efa86359754e4c252b9d8973&ipo=images\"  alt=\"logo\" loading=\"lazy\" >\n");
       out.write("                            <h4 class=\" font-black text-blue-900 text-2xl  text-center  dark:text-white relative text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300\">Farees Dental Care </h4>\n");
       out.write("                        </a>\n");
@@ -88,7 +88,7 @@ public final class navBar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    </a>\n");
       out.write("                                </li>\n");
       out.write("                                <li>\n");
-      out.write("                                    <a href=\"#\" class=\"block md:px-4 transition hover:text-primary dark:hover:text-primaryLight\">\n");
+      out.write("                                    <a href=\"/DentalCare/pages/patient/addAppointment.jsp\" class=\"block md:px-4 transition hover:text-primary dark:hover:text-primaryLight\">\n");
       out.write("                                        <span>Add Appointment</span>\n");
       out.write("                                    </a>\n");
       out.write("                                </li>\n");

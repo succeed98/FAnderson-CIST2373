@@ -7,6 +7,7 @@ package Business;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -278,6 +279,56 @@ public class Procedure {
             System.out.println("---> Database connection not working <---");
         }
      
+    }
+    
+    
+    public void insertProcedure(String procCode, String procName, String procDesc, String cost){
+        System.out.println("--> insertProcedure was called <---");
+         try {
+            String connURL = "jdbc:ucanaccess:///Users/muhyideenelias/Documents/fareeda/project_configs/database/DentistOfficeACCDB.accdb";
+
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection conn = DriverManager.getConnection(connURL);
+            System.out.println("---> Database connection successfull <---");
+            
+            String UPDATE_QUERY = "INSERT INTO Procedures (procCode, procName, procDesc, cost) VALUES(?, ?, ?, ?)";
+            
+            PreparedStatement ps = conn.prepareStatement(UPDATE_QUERY);
+            
+            System.out.println("--->" + UPDATE_QUERY + "<---");
+            int result;
+            
+            ps.setString(1, procCode);
+            ps.setString(2, procName);
+            ps.setString(3, procDesc);
+            ps.setString(4, cost);
+            
+            
+            ps.toString();
+            
+            result = ps.executeUpdate();
+            if(result == 0){
+                System.out.println("Result:---> " + result);
+                System.out.println("Records not updated");
+                
+            } else{
+                
+                System.out.println("Records updated successfully");
+                
+            }
+            
+            
+            
+           
+            System.out.println("--> insertProcedure was closed <---");
+            conn.close();
+            
+            
+        } catch (ClassNotFoundException | SQLException sqlExcptn) {
+            System.out.println(sqlExcptn);
+            System.out.println("---> Database connection not working <---");
+        }
+
     }
     
 }
