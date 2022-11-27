@@ -84,12 +84,12 @@ public final class navBar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            <ul class=\"space-y-6 tracking-wide font-medium text-base lg:text-sm lg:flex lg:space-y-0\">\n");
       out.write("                                <li>\n");
       out.write("                                    <a href=\"/DentalCare/pages/patient/viewAppointment.jsp\" class=\"block md:px-4 transition hover:text-primary dark:hover:text-primaryLight\">\n");
-      out.write("                                        <span>Add/View Appointment</span>\n");
+      out.write("                                        <span>Change/View Appointment</span>\n");
       out.write("                                    </a>\n");
       out.write("                                </li>\n");
       out.write("                                <li>\n");
       out.write("                                    <a href=\"#\" class=\"block md:px-4 transition hover:text-primary dark:hover:text-primaryLight\">\n");
-      out.write("                                        <span>Change Appointment</span>\n");
+      out.write("                                        <span>Add Appointment</span>\n");
       out.write("                                    </a>\n");
       out.write("                                </li>\n");
       out.write("                               \n");

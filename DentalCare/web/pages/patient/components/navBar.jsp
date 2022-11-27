@@ -44,12 +44,12 @@
                             <ul class="space-y-6 tracking-wide font-medium text-base lg:text-sm lg:flex lg:space-y-0">
                                 <li>
                                     <a href="/DentalCare/pages/patient/viewAppointment.jsp" class="block md:px-4 transition hover:text-primary dark:hover:text-primaryLight">
-                                        <span>Add/View Appointment</span>
+                                        <span>Change/View Appointment</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" class="block md:px-4 transition hover:text-primary dark:hover:text-primaryLight">
-                                        <span>Change Appointment</span>
+                                        <span>Add Appointment</span>
                                     </a>
                                 </li>
                                
