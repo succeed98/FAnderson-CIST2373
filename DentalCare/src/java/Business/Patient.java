@@ -113,8 +113,64 @@ public class Patient {
 //        aList.displayAccountList();
     }
     
+    
+    public void insertPatient(String passwd, String firstName, String lastName, String addr, String email, String insCo){
+        System.out.println("--> selectPatient was called <---");
+        try {
+            String connURL = "jdbc:ucanaccess:///Users/muhyideenelias/Documents/fareeda/project_configs/database/DentistOfficeACCDB.accdb";
+
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection conn = DriverManager.getConnection(connURL);
+            System.out.println("---> Database connection successfull <---");
+            
+            String UPDATE_QUERY = "INSERT INTO Patients (patId, passwd, firstName, lastName, addr, email, insCo) VALUES(?, ?, ?, ?, ?, ?)";
+            
+            PreparedStatement ps = conn.prepareStatement(UPDATE_QUERY);
+            
+            System.out.println("--->" + UPDATE_QUERY + "<---");
+            int result;
+            
+            setPatId("A" + String.valueOf(getRandomNumber()));
+            
+            ps.setString(1, getPatId());
+            ps.setString(2, passwd);
+            ps.setString(3, firstName);
+            ps.setString(4, lastName);
+            ps.setString(5, addr);
+            ps.setString(6, email);
+            ps.setString(7, insCo);
+            
+            ps.toString();
+            
+            result = ps.executeUpdate();
+            if(result == 0){
+                System.out.println("Result:---> " + result);
+                System.out.println("Records not updated");
+                
+            } else System.out.println("Records updated successfully");
+                
+            
+            setFirstName(firstName);
+            setLastName(lastName);
+            setAddr(addr);
+            setInsCo(insCo);
+            setEmail(email);
+            
+            this.display();
+           
+            System.out.println("--> selectPatient was closed <---");
+            conn.close();
+            
+            
+        } catch (ClassNotFoundException | SQLException sqlExcptn) {
+            System.out.println(sqlExcptn);
+            System.out.println("---> Database connection not working <---");
+        }
+   
+    }
+    
     public void selectPatient(String email){
-        System.out.println("--> selectPatient (method) <---");
+        System.out.println("--> insertPatient was called <---");
         setEmail(email);
         
         try {
@@ -247,4 +303,8 @@ public class Patient {
             System.out.println("---> Database connection not working <---");
         }
      }
+     
+    private int getRandomNumber() {
+        return (int) ((Math.random() * (800 - 200)) + 200);
+    }
 }
