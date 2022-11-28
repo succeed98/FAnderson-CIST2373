@@ -4,7 +4,9 @@
     Author     : muhyideenelias
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="Business.*"%>    
+<%@page import="java.util.*"%>   
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -108,6 +110,7 @@
                                   <option value="D202">Susan Cassidy</option>
                                   <option value="D203">Jerry York</option>
                                   <option value="D204">Wayne Pettersen</option>
+
                             </select>
                             </div>
                         </div>

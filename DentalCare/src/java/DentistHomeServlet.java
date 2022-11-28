@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Business.*;
+import javax.servlet.http.HttpSession;
 /**
  *
  * @author muhyideenelias
@@ -46,6 +47,12 @@ public class DentistHomeServlet extends HttpServlet {
             
             Dentist dentist = new Dentist(); // create a new denttist object
             dentist.UpdateDentist(id, firstName, lastName, email, office); // updates dentist with new fields
+            
+            dentist.selectDentist(email);
+            HttpSession session;
+            session = request.getSession();
+            session.setAttribute("dentist", dentist);
+
             RequestDispatcher rd = request.getRequestDispatcher("/pages/dentist/home.jsp");
             rd.forward(request, response);
             

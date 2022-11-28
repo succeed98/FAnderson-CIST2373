@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"Business","l":"Appointment"},{"p":"Business","l":"Dentist"},{"p":"Business","l":"Patient"},{"p":"Business","l":"Procedure"},{"p":"Business","l":"ProcedureList"}];updateSearchResults();

@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Business.Appointment;
+import Business.Patient;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -35,14 +37,21 @@ public class UpdateDentistAppointmentServlet extends HttpServlet {
         System.out.println("---> UpdateDentistAppointmentServlet was called <---");
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String procCode, apptDateTime;
-            procCode = request.getParameter("procCode");
-            apptDateTime = request.getParameter("apptDateTime");
             
-            System.out.println(procCode + " " + apptDateTime);
+            String procCode = request.getParameter("procCode");
+            String apptDateTime = request.getParameter("apptDateTime");
+            String patientEmail = request.getParameter("email");
+            
+            System.out.println(patientEmail + " " +procCode + " " + apptDateTime);
             
             Appointment appointment = new Appointment();
             appointment.UpdateDentistAppointment(procCode, apptDateTime);
+            
+            Patient patient = new Patient();
+            patient.selectPatient(patientEmail);
+            HttpSession session;
+            session = request.getSession(); // get current session
+            session.setAttribute("patient", patient); // set new patient object to session
             
             RequestDispatcher rd = request.getRequestDispatcher("/pages/patient/viewAppointment.jsp");
             rd.forward(request, response);

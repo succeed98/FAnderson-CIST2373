@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpSession;
-
+import java.util.*;
 /**
  *
  * @author muhyideenelias
@@ -51,7 +51,13 @@ public class LogInServlet extends HttpServlet {
                     HttpSession session;
                     session = request.getSession(); // get current session
                     session.setAttribute("patient", patient); // set new patient object to session
-
+                    
+                    
+                    Dentist dentist = new Dentist(); // creates new dentist object
+                    Hashtable allDentist = new Hashtable(dentist.selectAllDentist()); // creates a hashtable
+//                    allDentist = dentist.selectAllDentist(); // gets all dentist with name and id
+                    session.setAttribute("allDentist", allDentist); // set session object of hashtable
+                    
                     RequestDispatcher rd = request.getRequestDispatcher("/pages/patient/home.jsp");
                     rd.forward(request, response);
 

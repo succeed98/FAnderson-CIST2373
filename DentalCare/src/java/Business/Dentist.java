@@ -11,7 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import org.hsqldb.jdbc.JDBCConnection;
+import java.util.*;
 
 /**
  * Dentist class representing a dentist with all minimal attributes of a dentist.
@@ -166,12 +166,52 @@ public class Dentist {
         System.out.println("Dentist Email: " + this.getEmail());
     }
     
+    
+    /**
+     * 
+     * @return a Hashtable of dentist with id and full name;
+     */
+    public Hashtable selectAllDentist(){
+        System.out.println("--> selectAllDentist was called <---");
+        Hashtable allDentist = new Hashtable();
+        
+        try {
+            String connURL = "jdbc:ucanaccess:///Users/muhyideenelias/Documents/fareeda/project_configs/database/DentistOfficeACCDB.accdb";
+
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection conn = DriverManager.getConnection(connURL);
+            System.out.println("---> Database connection successfull <---");
+
+            Statement statement = conn.createStatement();
+            String query = "SELECT * FROM Dentists"; 
+            System.out.println("--->" + query + "<---");
+            
+
+            ResultSet resultSet = statement.executeQuery(query);
+            
+            while(resultSet.next()){ 
+                allDentist.put(resultSet.getString("id"), (resultSet.getString("firstName") + " " + resultSet.getString("lastName")));
+            } 
+            
+            
+            System.out.println("--> selectAllDentist was closed <---");
+            conn.close();
+            
+            
+        } catch (ClassNotFoundException | SQLException sqlExcptn) {
+            System.out.println(sqlExcptn);
+            System.out.println("---> Database connection not working <---");
+        }
+        
+        return allDentist;
+    }
+    
     /**
      * Select a dentist using the dentist email
      * @param email 
      */
     public void selectDentist(String email){
-        System.out.println("--> selectDentist (method) <---");
+        System.out.println("--> selectDentist was called <---");
         setEmail(email);
         
         try {

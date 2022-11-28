@@ -38,13 +38,13 @@
                               Dentist Email
                             </th>
                             <th scope="col" class="text-xl font-medium text-gray-900 px-6 py-4 text-left">
-                              Code
+                              Procedure Code
                             </th>
                             <th scope="col" class="text-xl font-medium text-gray-900 px-6 py-4 text-left">
                               Date
                             </th>
                             <th scope="col" class="text-xl font-medium text-gray-900 px-6 py-4 text-left">
-                              Procedure
+                              Procedure Name
                             </th>
                             <th scope="col" class="text-xl font-medium text-gray-900 px-6 py-4 text-left">
                               Description
@@ -57,6 +57,8 @@
                         <tbody>
                           <% for(int i = 0; i < procedures.counter; i++) {%>
                             <form action="http://localhost:31328/DentalCare/UpdateDentistAppointmentServlet" method="post" name="form" class="w-full">
+                                <input type="text" name="email" value="<%= patient.getEmail() %>"  class="hidden" placeholder="<%= procedureArray[i].getAptDateTime() %>">
+
                                 <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
                                   <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= i + 1%></td>
                                   <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
@@ -67,7 +69,7 @@
                                   </td>
                                   <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                     <%= procedureArray[i].getProcCode() %>
-                                    <input type="text" name="procCode" value="<%= procedureArray[i].getProcCode() %>" class="hidden">
+                                     <input type="text" name="procCode"  value="<%= procedureArray[i].getProcCode() %>" class="hidden">
                                   </td>
                                   <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                     <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
@@ -80,7 +82,7 @@
                                       <%= procedureArray[i].getProcDesc() %>
                                   </td>
                                   <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                      <%= procedureArray[i].getCost() %>
+                                      $<%= procedureArray[i].getCost() %>
                                   </td>
                                   <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                       <button class="bg-red-400 text-gray-900 hover:bg-green-1000  font-bold py-2 px-4 rounded-full">

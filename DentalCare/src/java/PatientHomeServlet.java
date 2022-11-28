@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -47,6 +48,11 @@ public class PatientHomeServlet extends HttpServlet {
             
             Patient patient = new Patient();
             patient.UpdatePatient(patId, firstName, lastName, email, address, insCo);
+            patient.selectPatient(email);
+            HttpSession session;
+            session = request.getSession(); // get current session
+            session.setAttribute("patient", patient); // set new patient object to session
+            
             RequestDispatcher rd = request.getRequestDispatcher("/pages/patient/home.jsp");
             rd.forward(request, response);
             System.out.println("---> PatientHomeServlet was closed <---");
