@@ -84,6 +84,11 @@ public final class addAppointment_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                    <div class=\"flex -mx-3\">\n");
       out.write("                        <div class=\"w-1/2 px-3 mb-5 hidden\">\n");
       out.write("                            <label for=\"\" class=\"text-xs font-semibold px-1\"></label>\n");
+      out.write("                            <div class=\"flex hidden\">\n");
+      out.write("                                <input type=\"text\" name=\"email\" value=\"");
+      out.print( patient.getEmail() );
+      out.write("\">\n");
+      out.write("                            </div>\n");
       out.write("                            <div class=\"flex\">\n");
       out.write("                                <div class=\"w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center\"><i class=\"mdi mdi-account-outline text-gray-400 text-lg\"></i></div>\n");
       out.write("                                <input type=\"textarea\" name=\"patId\" value=\"");

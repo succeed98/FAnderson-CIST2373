@@ -2787,3 +2787,522 @@ Caused by: org.hsqldb.HsqlException: integrity constraint violation: unique cons
 [2022-11-30T07:02:27.016+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=132 _ThreadName=Thread-8] [timeMillis: 1669791747016] [levelValue: 800] [[
   ---> getProcedure array was called <---]]
 
+[2022-11-30T07:05:47.041+0000] [glassfish 5.0] [INFO] [NCLS-CORE-00092] [javax.enterprise.system.core] [tid: _ThreadID=159 _ThreadName=Thread-43] [timeMillis: 1669791947041] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2022-11-30T07:05:47.050+0000] [glassfish 5.0] [INFO] [NCLS-BOOTSTRAP-00028] [javax.enterprise.bootstrap] [tid: _ThreadID=159 _ThreadName=Thread-43] [timeMillis: 1669791947050] [levelValue: 800] [[
+  Unregistered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@12a160c2 from service registry.]]
+
+[2022-11-30T07:05:47.050+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=159 _ThreadName=Thread-8] [timeMillis: 1669791947050] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2022-11-30T07:05:47.053+0000] [glassfish 5.0] [INFO] [NCLS-JMX-00002] [javax.enterprise.system.jmx] [tid: _ThreadID=159 _ThreadName=Thread-43] [timeMillis: 1669791947053] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2022-11-30T07:05:47.053+0000] [glassfish 5.0] [INFO] [NCLS-JMX-00001] [javax.enterprise.system.jmx] [tid: _ThreadID=159 _ThreadName=Thread-43] [timeMillis: 1669791947053] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2022-11-30T07:05:47.111+0000] [glassfish 5.0] [WARNING] [] [javax.enterprise.web.util] [tid: _ThreadID=165 _ThreadName=RunLevelControllerThread-1669791947074] [timeMillis: 1669791947111] [levelValue: 900] [[
+  The web application [/DentalCare] registered the JDBC driver [net.ucanaccess.jdbc.UcanaccessDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.]]
+
+[2022-11-30T07:05:47.112+0000] [glassfish 5.0] [WARNING] [] [javax.enterprise.web.util] [tid: _ThreadID=165 _ThreadName=RunLevelControllerThread-1669791947074] [timeMillis: 1669791947112] [levelValue: 900] [[
+  The web application [/DentalCare] registered the JDBC driver [org.hsqldb.jdbc.JDBCDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.]]
+
+[2022-11-30T07:05:47.112+0000] [glassfish 5.0] [SEVERE] [] [javax.enterprise.web.util] [tid: _ThreadID=165 _ThreadName=RunLevelControllerThread-1669791947074] [timeMillis: 1669791947112] [levelValue: 1000] [[
+  The web application [/DentalCare] created a ThreadLocal with key of type [java.lang.ThreadLocal] (value [java.lang.ThreadLocal@6749e0c7]) and a value of type [net.ucanaccess.jdbc.Context] (value [net.ucanaccess.jdbc.Context@505cb130]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2022-11-30T07:05:47.112+0000] [glassfish 5.0] [SEVERE] [] [javax.enterprise.web.util] [tid: _ThreadID=165 _ThreadName=RunLevelControllerThread-1669791947074] [timeMillis: 1669791947112] [levelValue: 1000] [[
+  The web application [/DentalCare] created a ThreadLocal with key of type [java.lang.ThreadLocal] (value [java.lang.ThreadLocal@6749e0c7]) and a value of type [net.ucanaccess.jdbc.Context] (value [net.ucanaccess.jdbc.Context@212662b7]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2022-11-30T07:05:47.138+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=166 _ThreadName=Thread-8] [timeMillis: 1669791947138] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool]]]
+
+[2022-11-30T07:06:05.206+0000] [glassfish 5.0] [INFO] [NCLS-LOGGING-00009] [javax.enterprise.logging] [tid: _ThreadID=30 _ThreadName=RunLevelControllerThread-1669791965133] [timeMillis: 1669791965206] [levelValue: 800] [[
+  Running GlassFish Version: GlassFish Server Open Source Edition  5.0.1  (build 5)]]
+
+[2022-11-30T07:06:05.207+0000] [glassfish 5.0] [INFO] [NCLS-LOGGING-00010] [javax.enterprise.logging] [tid: _ThreadID=30 _ThreadName=RunLevelControllerThread-1669791965133] [timeMillis: 1669791965207] [levelValue: 800] [[
+  Server log file is using Formatter class: com.sun.enterprise.server.logging.ODLLogFormatter]]
+
+[2022-11-30T07:06:05.285+0000] [glassfish 5.0] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=31 _ThreadName=RunLevelControllerThread-1669791965137] [timeMillis: 1669791965285] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2022-11-30T07:06:05.287+0000] [glassfish 5.0] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=31 _ThreadName=RunLevelControllerThread-1669791965137] [timeMillis: 1669791965287] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2022-11-30T07:06:05.291+0000] [glassfish 5.0] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=31 _ThreadName=RunLevelControllerThread-1669791965137] [timeMillis: 1669791965291] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2022-11-30T07:06:05.519+0000] [glassfish 5.0] [INFO] [SEC-SVCS-00100] [javax.enterprise.security.services] [tid: _ThreadID=32 _ThreadName=RunLevelControllerThread-1669791965137] [timeMillis: 1669791965519] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2022-11-30T07:06:05.560+0000] [glassfish 5.0] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=32 _ThreadName=RunLevelControllerThread-1669791965137] [timeMillis: 1669791965560] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2022-11-30T07:06:05.572+0000] [glassfish 5.0] [INFO] [jts.startup_msg] [javax.enterprise.system.core.transaction.com.sun.jts.CosTransactions] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791965572] [levelValue: 800] [[
+  JTS5014: Recoverable JTS instance, serverId = [100]]]
+
+[2022-11-30T07:06:05.658+0000] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=31 _ThreadName=RunLevelControllerThread-1669791965137] [timeMillis: 1669791965658] [levelValue: 800] [[
+  Grizzly Framework 2.4.3 started in: 28ms - bound to [/0.0.0.0:31328]]]
+
+[2022-11-30T07:06:05.675+0000] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=31 _ThreadName=RunLevelControllerThread-1669791965137] [timeMillis: 1669791965675] [levelValue: 800] [[
+  Grizzly Framework 2.4.3 started in: 1ms - bound to [/0.0.0.0:31329]]]
+
+[2022-11-30T07:06:05.679+0000] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=31 _ThreadName=RunLevelControllerThread-1669791965137] [timeMillis: 1669791965679] [levelValue: 800] [[
+  Grizzly Framework 2.4.3 started in: 0ms - bound to [/0.0.0.0:31296]]]
+
+[2022-11-30T07:06:05.711+0000] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=30 _ThreadName=RunLevelControllerThread-1669791965133] [timeMillis: 1669791965711] [levelValue: 800] [[
+  Grizzly Framework 2.4.3 started in: 1ms - bound to [/0.0.0.0:31285]]]
+
+[2022-11-30T07:06:05.839+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791965839] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:06.050+0000] [glassfish 5.0] [INFO] [NCLS-SECURITY-01002] [javax.enterprise.system.core.security] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791966050] [levelValue: 800] [[
+  Java security manager is disabled.]]
+
+[2022-11-30T07:06:06.050+0000] [glassfish 5.0] [INFO] [NCLS-SECURITY-01010] [javax.enterprise.system.core.security] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791966050] [levelValue: 800] [[
+  Entering Security Startup Service.]]
+
+[2022-11-30T07:06:06.054+0000] [glassfish 5.0] [INFO] [NCLS-SECURITY-01143] [javax.enterprise.system.core.security] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791966054] [levelValue: 800] [[
+  Loading policy provider com.sun.enterprise.security.provider.PolicyWrapper.]]
+
+[2022-11-30T07:06:06.078+0000] [glassfish 5.0] [INFO] [NCLS-SECURITY-01011] [javax.enterprise.system.core.security] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791966078] [levelValue: 800] [[
+  Security Service(s) started successfully.]]
+
+[2022-11-30T07:06:06.263+0000] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791966263] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:31328]]
+
+[2022-11-30T07:06:06.269+0000] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791966269] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:31329]]
+
+[2022-11-30T07:06:06.271+0000] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791966271] [levelValue: 800] [[
+  Created HTTP listener admin-listener on host/port 0.0.0.0:31296]]
+
+[2022-11-30T07:06:06.292+0000] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791966292] [levelValue: 800] [[
+  Created virtual server server]]
+
+[2022-11-30T07:06:06.295+0000] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791966295] [levelValue: 800] [[
+  Created virtual server __asadmin]]
+
+[2022-11-30T07:06:06.490+0000] [glassfish 5.0] [INFO] [AS-WEB-CORE-00306] [javax.enterprise.web.core] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791966490] [levelValue: 800] [[
+  Setting JAAS app name glassfish-web]]
+
+[2022-11-30T07:06:06.491+0000] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00201] [javax.enterprise.web] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791966491] [levelValue: 800] [[
+  Virtual server server loaded default web module ]]
+
+[2022-11-30T07:06:06.896+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791966896] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:06.902+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791966902] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:06.903+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791966903] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:06.903+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791966903] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:06.904+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791966904] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:06.905+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791966905] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:06.905+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791966905] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:06.977+0000] [glassfish 5.0] [WARNING] [] [javax.enterprise.web.util] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791966977] [levelValue: 900] [[
+  The web application [unknown] registered the JDBC driver [net.ucanaccess.jdbc.UcanaccessDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.]]
+
+[2022-11-30T07:06:06.978+0000] [glassfish 5.0] [WARNING] [] [javax.enterprise.web.util] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791966978] [levelValue: 900] [[
+  The web application [unknown] registered the JDBC driver [org.hsqldb.jdbc.JDBCDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.]]
+
+[2022-11-30T07:06:07.044+0000] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967044] [levelValue: 800] [[
+  Loading application [Dentist] at [/Dentist]]]
+
+[2022-11-30T07:06:07.046+0000] [glassfish 5.0] [INFO] [NCLS-CORE-00022] [javax.enterprise.system.core] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967046] [levelValue: 800] [[
+  Loading application Dentist done in 1,530 ms]]
+
+[2022-11-30T07:06:07.163+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967163] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:07.206+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967206] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:07.247+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967247] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:07.248+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967248] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:07.249+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967249] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:07.249+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967249] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:07.250+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967250] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:07.251+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967251] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:07.307+0000] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967307] [levelValue: 800] [[
+  Loading application [ChattBank] at [/build]]]
+
+[2022-11-30T07:06:07.308+0000] [glassfish 5.0] [INFO] [NCLS-CORE-00022] [javax.enterprise.system.core] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967308] [levelValue: 800] [[
+  Loading application ChattBank done in 262 ms]]
+
+[2022-11-30T07:06:07.445+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967445] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:07.499+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967499] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:07.517+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967517] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:07.518+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967518] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:07.518+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967518] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:07.519+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967519] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:07.520+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967520] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:07.521+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967521] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:06:07.605+0000] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967605] [levelValue: 800] [[
+  Loading application [DentalCare] at [/DentalCare]]]
+
+[2022-11-30T07:06:07.605+0000] [glassfish 5.0] [INFO] [NCLS-CORE-00022] [javax.enterprise.system.core] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1669791965132] [timeMillis: 1669791967605] [levelValue: 800] [[
+  Loading application DentalCare done in 297 ms]]
+
+[2022-11-30T07:06:07.606+0000] [glassfish 5.0] [INFO] [NCLS-CORE-00017] [javax.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1669791967606] [levelValue: 800] [[
+  GlassFish Server Open Source Edition  5.0.1  (5) startup time : Felix (1,897ms), startup services(2,478ms), total(4,375ms)]]
+
+[2022-11-30T07:06:07.651+0000] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=31 _ThreadName=RunLevelControllerThread-1669791965137] [timeMillis: 1669791967651] [levelValue: 800] [[
+  Grizzly Framework 2.4.3 started in: 2ms - bound to [/0.0.0.0:38924]]]
+
+[2022-11-30T07:06:07.690+0000] [glassfish 5.0] [INFO] [NCLS-BOOTSTRAP-00027] [javax.enterprise.bootstrap] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1669791967690] [levelValue: 800] [[
+  Registered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@12a160c2 as OSGi service registration: org.apache.felix.framework.ServiceRegistrationImpl@aa10649.]]
+
+[2022-11-30T07:06:07.725+0000] [glassfish 5.0] [INFO] [] [org.jvnet.hk2.osgiadapter] [tid: _ThreadID=20 _ThreadName=FelixStartLevel] [timeMillis: 1669791967725] [levelValue: 800] [[
+  Skipping registration of inhabitant for service reference [org.osgi.service.cm.ManagedService] as the service object could not be obtained.]]
+
+[2022-11-30T07:06:07.726+0000] [glassfish 5.0] [INFO] [] [org.jvnet.hk2.osgiadapter] [tid: _ThreadID=20 _ThreadName=FelixStartLevel] [timeMillis: 1669791967726] [levelValue: 800] [[
+  Skipping registration of inhabitant for service reference [org.osgi.service.metatype.MetaTypeProvider] as the service object could not be obtained.]]
+
+[2022-11-30T07:06:07.767+0000] [glassfish 5.0] [INFO] [NCLS-JMX-00005] [javax.enterprise.system.jmx] [tid: _ThreadID=88 _ThreadName=Thread-28] [timeMillis: 1669791967767] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://localhost:31334/jndi/rmi://localhost:31334/jmxrmi]]
+
+[2022-11-30T07:06:07.800+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=20 _ThreadName=Thread-8] [timeMillis: 1669791967800] [levelValue: 800] [[
+  /Users/muhyideenelias/Documents/fareeda/project_configs/glassfish51/glassfish/domains/EEWebDomain/autodeploy/bundles does not exist, please create it.]]
+
+[2022-11-30T07:06:07.809+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=20 _ThreadName=Thread-8] [timeMillis: 1669791967809] [levelValue: 800] [[
+  Root path does not exist: /Users/muhyideenelias/Documents/fareeda/project_configs/glassfish51/glassfish/domains/EEWebDomain/autodeploy/bundles]]
+
+[2022-11-30T07:06:08.120+0000] [glassfish 5.0] [INFO] [] [org.hibernate.validator.internal.util.Version] [tid: _ThreadID=58 _ThreadName=admin-listener(3)] [timeMillis: 1669791968120] [levelValue: 800] [[
+  HV000001: Hibernate Validator 6.0.10.Final]]
+
+[2022-11-30T07:06:08.423+0000] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=116 _ThreadName=pool-13-thread-1] [timeMillis: 1669791968423] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:31329]]
+
+[2022-11-30T07:06:08.437+0000] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=116 _ThreadName=pool-13-thread-1] [timeMillis: 1669791968437] [levelValue: 800] [[
+  Grizzly Framework 2.4.3 started in: 1ms - bound to [/0.0.0.0:31329]]]
+
+[2022-11-30T07:06:08.485+0000] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=116 _ThreadName=pool-13-thread-1] [timeMillis: 1669791968485] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:31328]]
+
+[2022-11-30T07:06:08.489+0000] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=116 _ThreadName=pool-13-thread-1] [timeMillis: 1669791968489] [levelValue: 800] [[
+  Grizzly Framework 2.4.3 started in: 1ms - bound to [/0.0.0.0:31328]]]
+
+[2022-11-30T07:08:01.260+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=59 _ThreadName=admin-listener(4)] [timeMillis: 1669792081260] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:08:01.359+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=59 _ThreadName=admin-listener(4)] [timeMillis: 1669792081359] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:08:01.376+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=59 _ThreadName=admin-listener(4)] [timeMillis: 1669792081376] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:08:01.377+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=59 _ThreadName=admin-listener(4)] [timeMillis: 1669792081377] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:08:01.378+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=59 _ThreadName=admin-listener(4)] [timeMillis: 1669792081378] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:08:01.379+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=59 _ThreadName=admin-listener(4)] [timeMillis: 1669792081379] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:08:01.380+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=59 _ThreadName=admin-listener(4)] [timeMillis: 1669792081380] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:08:01.380+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=59 _ThreadName=admin-listener(4)] [timeMillis: 1669792081380] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2022-11-30T07:08:01.518+0000] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=59 _ThreadName=admin-listener(4)] [timeMillis: 1669792081518] [levelValue: 800] [[
+  Loading application [DentalCare] at [/DentalCare]]]
+
+[2022-11-30T07:08:01.563+0000] [glassfish 5.0] [INFO] [] [javax.enterprise.system.core] [tid: _ThreadID=59 _ThreadName=admin-listener(4)] [timeMillis: 1669792081563] [levelValue: 800] [[
+  DentalCare was successfully deployed in 586 milliseconds.]]
+
+[2022-11-30T07:08:45.042+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=127 _ThreadName=Thread-8] [timeMillis: 1669792125042] [levelValue: 800] [[
+  Fareeda Anderson Marietta Blue Cross fanderson@gmail.com 1234]]
+
+[2022-11-30T07:08:45.351+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=127 _ThreadName=Thread-8] [timeMillis: 1669792125351] [levelValue: 800] [[
+  --> insertPatient was called <---]]
+
+[2022-11-30T07:08:46.135+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=127 _ThreadName=Thread-8] [timeMillis: 1669792126135] [levelValue: 800] [[
+  ---> Database connection successfull <---]]
+
+[2022-11-30T07:08:46.146+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=127 _ThreadName=Thread-8] [timeMillis: 1669792126146] [levelValue: 800] [[
+  --->INSERT INTO Patients (patId, passwd, firstName, lastName, addr, email, insCo) VALUES(?, ?, ?, ?, ?, ?, ?)<---]]
+
+[2022-11-30T07:08:46.160+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=127 _ThreadName=Thread-8] [timeMillis: 1669792126160] [levelValue: 800] [[
+  Records updated successfully]]
+
+[2022-11-30T07:08:46.160+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=127 _ThreadName=Thread-8] [timeMillis: 1669792126160] [levelValue: 800] [[
+  Patient ID: A598]]
+
+[2022-11-30T07:08:46.160+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=127 _ThreadName=Thread-8] [timeMillis: 1669792126160] [levelValue: 800] [[
+  Patient Password: ]]
+
+[2022-11-30T07:08:46.160+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=127 _ThreadName=Thread-8] [timeMillis: 1669792126160] [levelValue: 800] [[
+  Patient First Name: Fareeda]]
+
+[2022-11-30T07:08:46.160+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=127 _ThreadName=Thread-8] [timeMillis: 1669792126160] [levelValue: 800] [[
+  Patient Last Name: Anderson]]
+
+[2022-11-30T07:08:46.160+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=127 _ThreadName=Thread-8] [timeMillis: 1669792126160] [levelValue: 800] [[
+  Patient Address: Marietta]]
+
+[2022-11-30T07:08:46.160+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=127 _ThreadName=Thread-8] [timeMillis: 1669792126160] [levelValue: 800] [[
+  Patient Email: fanderson@gmail.com]]
+
+[2022-11-30T07:08:46.160+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=127 _ThreadName=Thread-8] [timeMillis: 1669792126160] [levelValue: 800] [[
+  Patient Insurance Company: Blue Cross]]
+
+[2022-11-30T07:08:46.160+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=127 _ThreadName=Thread-8] [timeMillis: 1669792126160] [levelValue: 800] [[
+  --> insertPatient was closed <---]]
+
+[2022-11-30T07:08:55.293+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=128 _ThreadName=Thread-8] [timeMillis: 1669792135293] [levelValue: 800] [[
+  ---> LoginServlet was called <---]]
+
+[2022-11-30T07:08:55.293+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=128 _ThreadName=Thread-8] [timeMillis: 1669792135293] [levelValue: 800] [[
+  --> selectPatient was called <---]]
+
+[2022-11-30T07:08:55.295+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=128 _ThreadName=Thread-8] [timeMillis: 1669792135295] [levelValue: 800] [[
+  ---> Database connection successfull <---]]
+
+[2022-11-30T07:08:55.296+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=128 _ThreadName=Thread-8] [timeMillis: 1669792135296] [levelValue: 800] [[
+  --->SELECT * FROM Patients WHERE email='fanderson@gmail.com'<---]]
+
+[2022-11-30T07:08:55.308+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=128 _ThreadName=Thread-8] [timeMillis: 1669792135308] [levelValue: 800] [[
+  Anderson]]
+
+[2022-11-30T07:08:55.309+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=128 _ThreadName=Thread-8] [timeMillis: 1669792135309] [levelValue: 800] [[
+  ---> selectPatient was closed <---]]
+
+[2022-11-30T07:08:55.309+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=128 _ThreadName=Thread-8] [timeMillis: 1669792135309] [levelValue: 800] [[
+  ---> getPatientProcedures() was called <---]]
+
+[2022-11-30T07:08:55.309+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=128 _ThreadName=Thread-8] [timeMillis: 1669792135309] [levelValue: 800] [[
+  ---> Database connection successfull <---]]
+
+[2022-11-30T07:08:55.309+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=128 _ThreadName=Thread-8] [timeMillis: 1669792135309] [levelValue: 800] [[
+  --->SELECT * FROM Appointments WHERE patId='A598'<---]]
+
+[2022-11-30T07:08:55.313+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=128 _ThreadName=Thread-8] [timeMillis: 1669792135313] [levelValue: 800] [[
+  ---> getPatientProcdures was closed <---]]
+
+[2022-11-30T07:08:55.313+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=128 _ThreadName=Thread-8] [timeMillis: 1669792135313] [levelValue: 800] [[
+  displayProcedureList was called]]
+
+[2022-11-30T07:08:55.313+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=128 _ThreadName=Thread-8] [timeMillis: 1669792135313] [levelValue: 800] [[
+  displayProcedureList was closed]]
+
+[2022-11-30T07:08:55.316+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=128 _ThreadName=Thread-8] [timeMillis: 1669792135316] [levelValue: 800] [[
+  --> selectAllDentist was called <---]]
+
+[2022-11-30T07:08:55.316+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=128 _ThreadName=Thread-8] [timeMillis: 1669792135316] [levelValue: 800] [[
+  ---> Database connection successfull <---]]
+
+[2022-11-30T07:08:55.317+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=128 _ThreadName=Thread-8] [timeMillis: 1669792135317] [levelValue: 800] [[
+  --->SELECT * FROM Dentists<---]]
+
+[2022-11-30T07:08:55.319+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=128 _ThreadName=Thread-8] [timeMillis: 1669792135319] [levelValue: 800] [[
+  --> selectAllDentist was closed <---]]
+
+[2022-11-30T07:08:55.533+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=128 _ThreadName=Thread-8] [timeMillis: 1669792135533] [levelValue: 800] [[
+  Patient added to session]]
+
+[2022-11-30T07:08:57.527+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=129 _ThreadName=Thread-8] [timeMillis: 1669792137527] [levelValue: 800] [[
+  ---> getProcedure array was called <---]]
+
+[2022-11-30T07:09:10.256+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150256] [levelValue: 800] [[
+  --> AddAppointmentServlet was called <---]]
+
+[2022-11-30T07:09:10.256+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150256] [levelValue: 800] [[
+  fanderson@gmail.com D202 A598 P304 May 14, 2018, 1 pm X-rays i am good $340]]
+
+[2022-11-30T07:09:10.258+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150258] [levelValue: 800] [[
+  --> insertAppointment was called <---]]
+
+[2022-11-30T07:09:10.259+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150259] [levelValue: 800] [[
+  ---> Database connection successfull <---]]
+
+[2022-11-30T07:09:10.260+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150260] [levelValue: 800] [[
+  --->INSERT INTO Appointments (apptDateTime, patId, dentId, procCode) VALUES(?, ?, ?, ?)<---]]
+
+[2022-11-30T07:09:10.262+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150262] [levelValue: 800] [[
+  Records updated successfully]]
+
+[2022-11-30T07:09:10.262+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150262] [levelValue: 800] [[
+  --> UpdateDentistAppointment was closed <---]]
+
+[2022-11-30T07:09:10.263+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150263] [levelValue: 800] [[
+  --> insertProcedure was called <---]]
+
+[2022-11-30T07:09:10.263+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150263] [levelValue: 800] [[
+  ---> Database connection successfull <---]]
+
+[2022-11-30T07:09:10.264+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150264] [levelValue: 800] [[
+  --->INSERT INTO Procedures (procCode, procName, procDesc, cost) VALUES(?, ?, ?, ?)<---]]
+
+[2022-11-30T07:09:10.266+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150266] [levelValue: 800] [[
+  Records updated successfully]]
+
+[2022-11-30T07:09:10.266+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150266] [levelValue: 800] [[
+  --> insertProcedure was closed <---]]
+
+[2022-11-30T07:09:10.266+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150266] [levelValue: 800] [[
+  --> selectPatient was called <---]]
+
+[2022-11-30T07:09:10.267+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150267] [levelValue: 800] [[
+  ---> Database connection successfull <---]]
+
+[2022-11-30T07:09:10.267+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150267] [levelValue: 800] [[
+  --->SELECT * FROM Patients WHERE email='fanderson@gmail.com'<---]]
+
+[2022-11-30T07:09:10.268+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150268] [levelValue: 800] [[
+  Anderson]]
+
+[2022-11-30T07:09:10.268+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150268] [levelValue: 800] [[
+  ---> selectPatient was closed <---]]
+
+[2022-11-30T07:09:10.268+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150268] [levelValue: 800] [[
+  ---> getPatientProcedures() was called <---]]
+
+[2022-11-30T07:09:10.268+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150268] [levelValue: 800] [[
+  ---> Database connection successfull <---]]
+
+[2022-11-30T07:09:10.269+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150269] [levelValue: 800] [[
+  --->SELECT * FROM Appointments WHERE patId='A598'<---]]
+
+[2022-11-30T07:09:10.270+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150270] [levelValue: 800] [[
+  ---> getAppointment() was called <---]]
+
+[2022-11-30T07:09:10.271+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150271] [levelValue: 800] [[
+  ---> Database connection successfull <---]]
+
+[2022-11-30T07:09:10.271+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150271] [levelValue: 800] [[
+  --->SELECT * FROM Procedures JOIN Appointments ON Procedures.procCode = Appointments.procCode JOIN Dentists ON Appointments.dentId = Dentists.id WHERE procCode='P304'<---]]
+
+[2022-11-30T07:09:10.274+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150274] [levelValue: 800] [[
+  ---> addProcedure array was called <----]]
+
+[2022-11-30T07:09:10.274+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150274] [levelValue: 800] [[
+  ---> getPatientProcdures was closed <---]]
+
+[2022-11-30T07:09:10.274+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150274] [levelValue: 800] [[
+  displayProcedureList was called]]
+
+[2022-11-30T07:09:10.274+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150274] [levelValue: 800] [[
+  --->Start of Appointment Display Method <---]]
+
+[2022-11-30T07:09:10.274+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150274] [levelValue: 800] [[
+  Patient ID: A598]]
+
+[2022-11-30T07:09:10.274+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150274] [levelValue: 800] [[
+  Dentist ID: D202]]
+
+[2022-11-30T07:09:10.274+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150274] [levelValue: 800] [[
+  Procedure Code: P304]]
+
+[2022-11-30T07:09:10.274+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150274] [levelValue: 800] [[
+  Procedure Name: X-rays]]
+
+[2022-11-30T07:09:10.274+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150274] [levelValue: 800] [[
+  Procedure Description: i am good]]
+
+[2022-11-30T07:09:10.274+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150274] [levelValue: 800] [[
+  Procedure Cost: 340.0]]
+
+[2022-11-30T07:09:10.274+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150274] [levelValue: 800] [[
+  Appointment Time: May 14, 2018, 1 pm]]
+
+[2022-11-30T07:09:10.274+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150274] [levelValue: 800] [[
+  Dentist First Name: Susan]]
+
+[2022-11-30T07:09:10.274+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150274] [levelValue: 800] [[
+  Dentist Last Name: Cassidy]]
+
+[2022-11-30T07:09:10.274+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150274] [levelValue: 800] [[
+  Dentist office: 540]]
+
+[2022-11-30T07:09:10.274+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150274] [levelValue: 800] [[
+  Patient First Name: ]]
+
+[2022-11-30T07:09:10.274+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150274] [levelValue: 800] [[
+  Patient Last Name: ]]
+
+[2022-11-30T07:09:10.274+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150274] [levelValue: 800] [[
+  Patient Email: ]]
+
+[2022-11-30T07:09:10.274+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150274] [levelValue: 800] [[
+  ---> End of Appointment Display Method <---]]
+
+[2022-11-30T07:09:10.274+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150274] [levelValue: 800] [[
+  displayProcedureList was closed]]
+
+[2022-11-30T07:09:10.353+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150353] [levelValue: 800] [[
+  ---> getProcedure array was called <---]]
+
+[2022-11-30T07:09:10.354+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=130 _ThreadName=Thread-8] [timeMillis: 1669792150354] [levelValue: 800] [[
+  --> AddAppointmentServlet was closed <---]]
+
+[2022-11-30T07:09:21.737+0000] [glassfish 5.0] [INFO] [NCLS-CORE-00092] [javax.enterprise.system.core] [tid: _ThreadID=176 _ThreadName=Thread-45] [timeMillis: 1669792161737] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2022-11-30T07:09:21.746+0000] [glassfish 5.0] [INFO] [NCLS-BOOTSTRAP-00028] [javax.enterprise.bootstrap] [tid: _ThreadID=176 _ThreadName=Thread-45] [timeMillis: 1669792161746] [levelValue: 800] [[
+  Unregistered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@12a160c2 from service registry.]]
+
+[2022-11-30T07:09:21.746+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=176 _ThreadName=Thread-8] [timeMillis: 1669792161746] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2022-11-30T07:09:21.749+0000] [glassfish 5.0] [INFO] [NCLS-JMX-00002] [javax.enterprise.system.jmx] [tid: _ThreadID=176 _ThreadName=Thread-45] [timeMillis: 1669792161749] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2022-11-30T07:09:21.749+0000] [glassfish 5.0] [INFO] [NCLS-JMX-00001] [javax.enterprise.system.jmx] [tid: _ThreadID=176 _ThreadName=Thread-45] [timeMillis: 1669792161749] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2022-11-30T07:09:21.811+0000] [glassfish 5.0] [WARNING] [] [javax.enterprise.web.util] [tid: _ThreadID=182 _ThreadName=RunLevelControllerThread-1669792161769] [timeMillis: 1669792161811] [levelValue: 900] [[
+  The web application [/DentalCare] registered the JDBC driver [net.ucanaccess.jdbc.UcanaccessDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.]]
+
+[2022-11-30T07:09:21.811+0000] [glassfish 5.0] [WARNING] [] [javax.enterprise.web.util] [tid: _ThreadID=182 _ThreadName=RunLevelControllerThread-1669792161769] [timeMillis: 1669792161811] [levelValue: 900] [[
+  The web application [/DentalCare] registered the JDBC driver [org.hsqldb.jdbc.JDBCDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.]]
+
+[2022-11-30T07:09:21.812+0000] [glassfish 5.0] [SEVERE] [] [javax.enterprise.web.util] [tid: _ThreadID=182 _ThreadName=RunLevelControllerThread-1669792161769] [timeMillis: 1669792161812] [levelValue: 1000] [[
+  The web application [/DentalCare] created a ThreadLocal with key of type [java.lang.ThreadLocal] (value [java.lang.ThreadLocal@2ba70262]) and a value of type [net.ucanaccess.jdbc.Context] (value [net.ucanaccess.jdbc.Context@137a1caa]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2022-11-30T07:09:21.812+0000] [glassfish 5.0] [SEVERE] [] [javax.enterprise.web.util] [tid: _ThreadID=182 _ThreadName=RunLevelControllerThread-1669792161769] [timeMillis: 1669792161812] [levelValue: 1000] [[
+  The web application [/DentalCare] created a ThreadLocal with key of type [java.lang.ThreadLocal] (value [java.lang.ThreadLocal@2ba70262]) and a value of type [net.ucanaccess.jdbc.Context] (value [net.ucanaccess.jdbc.Context@2f7bdc4f]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2022-11-30T07:09:21.837+0000] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=188 _ThreadName=Thread-8] [timeMillis: 1669792161837] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool]]]
+

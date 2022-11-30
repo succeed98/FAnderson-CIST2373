@@ -36,6 +36,9 @@
                     <div class="flex -mx-3">
                         <div class="w-1/2 px-3 mb-5 hidden">
                             <label for="" class="text-xs font-semibold px-1"></label>
+                            <div class="flex hidden">
+                                <input type="text" name="email" value="<%= patient.getEmail() %>">
+                            </div>
                             <div class="flex">
                                 <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
                                 <input type="textarea" name="patId" value="<%= patient.getPatId()%>" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none min-h-18 focus:border-indigo-500" placeholder="">
