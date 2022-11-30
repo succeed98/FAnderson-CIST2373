@@ -6,7 +6,8 @@
 package Business;
 
 /**
- *
+ * ProcedureList class serves as a container to hold the  many relationship of a dentist or patient.
+ * 
  * @author muhyideenelias
  */
 public class ProcedureList {

@@ -53,8 +53,13 @@ public class UpdateDentistAppointmentServlet extends HttpServlet {
             session = request.getSession(); // get current session
             session.setAttribute("patient", patient); // set new patient object to session
             
+            out.println("<script type=\"text/JavaScript\">");
+            out.println("alert(\"Update Successful\")");
+            out.println("</script>");
+            
             RequestDispatcher rd = request.getRequestDispatcher("/pages/patient/viewAppointment.jsp");
             rd.forward(request, response);
+            
             
             System.out.println("---> UpdateDentistAppointmentServlet was closed <---");
         }

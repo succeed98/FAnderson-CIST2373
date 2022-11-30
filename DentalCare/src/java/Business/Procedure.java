@@ -13,7 +13,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- *
+ * Procedure class representing a procedure with all minimal attributes of a procedure referencing the dentist, patient and appointment.
+ * 
  * @author muhyideenelias
  */
 public class Procedure {

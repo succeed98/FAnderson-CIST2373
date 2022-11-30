@@ -12,12 +12,10 @@ import java.sql.SQLException;
 
 /**
  *
+ * The Appointment Class handles appointment details.  
+ * 
  * @author muhyideenelias
- * The Appointment Class handles appointment details. 
- * it is mainly a many to many relationship between Dentist class and Procedure class, 
- * Patient class and Procedure class.
- * This class has two constructors. First constructor overrides the default constructor, 
- * and the second takes parameters: procCode, apptDateTime, patId and dentId.
+ * 
  */
 public class Appointment {
     

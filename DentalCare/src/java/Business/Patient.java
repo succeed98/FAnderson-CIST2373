@@ -13,7 +13,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- *
+ *Patient class representing a patient with all minimal attributes of a patient.
+ * 
  * @author muhyideenelias
  */
 public class Patient {
